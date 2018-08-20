@@ -1,0 +1,2262 @@
+[ 2018-07-22T00:17:02+08:00 ] 110.86.19.178 /nc.php?s=/Public/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000044s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000352s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000827s ]
+NOTIC: [8] Constant LANG_SET already defined /www/wwwroot/upay.fanglao.vip/ThinkPHP/Library/Behavior/CheckLangBehavior.class.php 第 55 行.
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000729s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001978s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000039s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000087s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003282s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003310s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000129s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000149s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000317s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000340s ]
+
+[ 2018-07-22T00:17:13+08:00 ] 110.86.19.178 /nc.php?s=/Public/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000042s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000309s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000811s ]
+NOTIC: [8] Constant LANG_SET already defined /www/wwwroot/upay.fanglao.vip/ThinkPHP/Library/Behavior/CheckLangBehavior.class.php 第 55 行.
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000765s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001954s ]
+SQL: SHOW COLUMNS FROM `nc_admin` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `nc_admin` WHERE `a_uname` = 'admin' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `nc_admin` [ RunTime:0.0004s ]
+SQL: UPDATE `nc_admin` SET `a_last_login_time`='1532189833',`a_login_count`=a_login_count+1,`a_last_login_ip`='110.86.19.178' WHERE `a_id` = 1 [ RunTime:0.0022s ]
+SQL: SHOW COLUMNS FROM `ysk_user_action` [ RunTime:0.0004s ]
+SQL: INSERT INTO `ysk_user_action` (`type`,`user_id`,`uname`,`add_time`,`info`) VALUES ('后台系统用户','1','admin','2018-07-22 00:17:13','登录了后台系统') [ RunTime:0.0014s ]
+
+[ 2018-07-22T00:17:15+08:00 ] 110.86.19.178 /nc.php?s=/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000045s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000351s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000814s ]
+NOTIC: [8] Constant LANG_SET already defined /www/wwwroot/upay.fanglao.vip/ThinkPHP/Library/Behavior/CheckLangBehavior.class.php 第 55 行.
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000714s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001963s ]
+SQL: SHOW COLUMNS FROM `ysk_order` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(1) AS tp_count FROM `ysk_order` WHERE `time` BETWEEN null AND null AND `status` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `ysk_member` [ RunTime:0.0007s ]
+SQL: SELECT COUNT(1) AS tp_count FROM `ysk_member` WHERE `create_time` BETWEEN null AND null LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000055s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000083s ]
+SQL: SHOW COLUMNS FROM `nc_menu` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `nc_menu` ORDER BY sort_order  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000035s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.003512s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002215s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002244s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000127s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000147s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002452s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002244s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000005s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.000078s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000328s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000351s ]
+
+[ 2018-07-22T00:17:20+08:00 ] 110.86.19.178 /nc.php?s=/Goods/verify
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000043s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000328s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000791s ]
+NOTIC: [8] Constant LANG_SET already defined /www/wwwroot/upay.fanglao.vip/ThinkPHP/Library/Behavior/CheckLangBehavior.class.php 第 55 行.
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000737s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001928s ]
+SQL: SHOW COLUMNS FROM `ysk_verify_list` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `ysk_verify_list` ORDER BY status asc  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000084s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000113s ]
+SQL: SHOW COLUMNS FROM `nc_menu` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `nc_menu` ORDER BY sort_order  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000028s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.003980s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002167s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002196s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000129s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000148s ]
+NOTIC: [8] Undefined variable: page /www/wwwroot/upay.fanglao.vip/Runtime/Cache/SAdmin/2b9a4cad497bfeb8eaf27a514be1eb98.php 第 200 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002641s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002196s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000005s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.000329s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000461s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000496s ]
+
+[ 2018-07-22T00:17:29+08:00 ] 110.86.19.178 /nc.php?s=/Goods/saveVerify/id/59/status/1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000046s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000344s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000848s ]
+NOTIC: [8] Constant LANG_SET already defined /www/wwwroot/upay.fanglao.vip/ThinkPHP/Library/Behavior/CheckLangBehavior.class.php 第 55 行.
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000783s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002096s ]
+SQL: SHOW COLUMNS FROM `ysk_verify_list` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `ysk_verify_list` WHERE `status` = 0 AND `id` = 59 LIMIT 1   [ RunTime:0.0003s ]
+SQL: UPDATE `ysk_verify_list` SET `status`='1' WHERE `status` = 0 AND `id` = 59 [ RunTime:0.0023s ]
+SQL: SHOW COLUMNS FROM `ysk_member` [ RunTime:0.0007s ]
+SQL: UPDATE `ysk_member` SET `is_p_verify`='1' WHERE `member_id` = 8892 [ RunTime:0.0017s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000039s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000071s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003508s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003536s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000172s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000201s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000311s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000334s ]
+
+[ 2018-07-22T00:17:30+08:00 ] 110.86.19.178 /nc.php?s=/Goods/verify
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000045s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000336s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000802s ]
+NOTIC: [8] Constant LANG_SET already defined /www/wwwroot/upay.fanglao.vip/ThinkPHP/Library/Behavior/CheckLangBehavior.class.php 第 55 行.
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000721s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001946s ]
+SQL: SHOW COLUMNS FROM `ysk_verify_list` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `ysk_verify_list` ORDER BY status asc  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000091s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000130s ]
+SQL: SHOW COLUMNS FROM `nc_menu` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `nc_menu` ORDER BY sort_order  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000027s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.004360s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002332s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002360s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000147s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000176s ]
+NOTIC: [8] Undefined variable: page /www/wwwroot/upay.fanglao.vip/Runtime/Cache/SAdmin/2b9a4cad497bfeb8eaf27a514be1eb98.php 第 200 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002785s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002360s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000005s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.000272s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000496s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000533s ]
+
+[ 2018-07-22T00:18:07+08:00 ] 110.86.19.178 /nc.php?s=/Goods/verify
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000043s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000314s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000822s ]
+NOTIC: [8] Constant LANG_SET already defined /www/wwwroot/upay.fanglao.vip/ThinkPHP/Library/Behavior/CheckLangBehavior.class.php 第 55 行.
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000732s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001942s ]
+SQL: SHOW COLUMNS FROM `ysk_verify_list` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `ysk_verify_list` ORDER BY status asc  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000067s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000095s ]
+SQL: SHOW COLUMNS FROM `nc_menu` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `nc_menu` ORDER BY sort_order  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000027s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.004061s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002276s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002304s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000124s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000144s ]
+NOTIC: [8] Undefined variable: page /www/wwwroot/upay.fanglao.vip/Runtime/Cache/SAdmin/2b9a4cad497bfeb8eaf27a514be1eb98.php 第 200 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002783s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002304s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000005s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.000359s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000350s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000376s ]
+
+[ 2018-07-22T00:18:10+08:00 ] 110.86.19.178 /nc.php?s=/Goods/saveVerify/id/60/status/1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000039s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000323s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000807s ]
+NOTIC: [8] Constant LANG_SET already defined /www/wwwroot/upay.fanglao.vip/ThinkPHP/Library/Behavior/CheckLangBehavior.class.php 第 55 行.
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000727s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001928s ]
+SQL: SHOW COLUMNS FROM `ysk_verify_list` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `ysk_verify_list` WHERE `status` = 0 AND `id` = 60 LIMIT 1   [ RunTime:0.0002s ]
+SQL: UPDATE `ysk_verify_list` SET `status`='1' WHERE `status` = 0 AND `id` = 60 [ RunTime:0.0026s ]
+SQL: SHOW COLUMNS FROM `ysk_member` [ RunTime:0.0007s ]
+SQL: UPDATE `ysk_member` SET `is_p_verify`='1' WHERE `member_id` = 8876 [ RunTime:0.0028s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000046s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000076s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003421s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003447s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000128s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000147s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000334s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000356s ]
+
+[ 2018-07-22T00:18:11+08:00 ] 110.86.19.178 /nc.php?s=/Goods/verify
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000041s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000302s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000824s ]
+NOTIC: [8] Constant LANG_SET already defined /www/wwwroot/upay.fanglao.vip/ThinkPHP/Library/Behavior/CheckLangBehavior.class.php 第 55 行.
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000738s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001936s ]
+SQL: SHOW COLUMNS FROM `ysk_verify_list` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `ysk_verify_list` ORDER BY status asc  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000065s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000097s ]
+SQL: SHOW COLUMNS FROM `nc_menu` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `nc_menu` ORDER BY sort_order  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000027s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.004024s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002196s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002225s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000125s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000145s ]
+NOTIC: [8] Undefined variable: page /www/wwwroot/upay.fanglao.vip/Runtime/Cache/SAdmin/2b9a4cad497bfeb8eaf27a514be1eb98.php 第 200 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002639s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002225s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000005s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.000290s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000444s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000480s ]
+
+[ 2018-07-22T00:26:29+08:00 ] 110.86.19.178 /nc.php?s=/Goods/saveVerify/id/60/status/1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000042s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000297s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000789s ]
+NOTIC: [8] Constant LANG_SET already defined /www/wwwroot/upay.fanglao.vip/ThinkPHP/Library/Behavior/CheckLangBehavior.class.php 第 55 行.
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000728s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001883s ]
+SQL: SHOW COLUMNS FROM `ysk_verify_list` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `ysk_verify_list` WHERE `status` = 0 AND `id` = 60 LIMIT 1   [ RunTime:0.0002s ]
+SQL: UPDATE `ysk_verify_list` SET `status`='1' WHERE `status` = 0 AND `id` = 60 [ RunTime:0.0016s ]
+SQL: SHOW COLUMNS FROM `ysk_member` [ RunTime:0.0007s ]
+SQL: UPDATE `ysk_member` SET `is_p_verify`='1' WHERE `member_id` = null [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000040s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000089s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003346s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003371s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000129s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000149s ]
+
+[ 2018-07-22T00:27:02+08:00 ] 110.86.19.178 /nc.php?s=/Goods/saveVerify/id/60/status/1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000043s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000315s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000836s ]
+NOTIC: [8] Constant LANG_SET already defined /www/wwwroot/upay.fanglao.vip/ThinkPHP/Library/Behavior/CheckLangBehavior.class.php 第 55 行.
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000741s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001964s ]
+SQL: SHOW COLUMNS FROM `ysk_verify_list` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `ysk_verify_list` WHERE `status` = 0 AND `id` = 60 LIMIT 1   [ RunTime:0.0003s ]
+SQL: UPDATE `ysk_verify_list` SET `status`='1' WHERE `status` = 0 AND `id` = 60 [ RunTime:0.0017s ]
+SQL: SHOW COLUMNS FROM `ysk_member` [ RunTime:0.0007s ]
+SQL: UPDATE `ysk_member` SET `is_p_verify`='1' WHERE `member_id` = null [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000035s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000065s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003198s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003223s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000124s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000144s ]
+
+[ 2018-07-22T00:27:11+08:00 ] 110.86.19.178 /nc.php?s=/Goods/saveVerify/id/60/status/1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000045s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000345s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000791s ]
+NOTIC: [8] Constant LANG_SET already defined /www/wwwroot/upay.fanglao.vip/ThinkPHP/Library/Behavior/CheckLangBehavior.class.php 第 55 行.
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000771s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001981s ]
+SQL: SHOW COLUMNS FROM `ysk_verify_list` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `ysk_verify_list` WHERE `status` = 0 AND `id` = 60 LIMIT 1   [ RunTime:0.0003s ]
+SQL: UPDATE `ysk_verify_list` SET `status`='1' WHERE `status` = 0 AND `id` = 60 [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `ysk_member` [ RunTime:0.0007s ]
+SQL: UPDATE `ysk_member` SET `is_p_verify`='1' WHERE `member_id` = null [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000039s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000071s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003435s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003462s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000135s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000156s ]
+
+[ 2018-07-22T00:27:16+08:00 ] 110.86.19.178 /nc.php?s=/Goods/verify
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000038s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000306s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000802s ]
+NOTIC: [8] Constant LANG_SET already defined /www/wwwroot/upay.fanglao.vip/ThinkPHP/Library/Behavior/CheckLangBehavior.class.php 第 55 行.
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000733s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001912s ]
+SQL: SHOW COLUMNS FROM `ysk_verify_list` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `ysk_verify_list` ORDER BY status asc  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000069s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000099s ]
+SQL: SHOW COLUMNS FROM `nc_menu` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `nc_menu` ORDER BY sort_order  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000037s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.004101s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002404s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002433s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000128s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000148s ]
+NOTIC: [8] Undefined variable: page /www/wwwroot/upay.fanglao.vip/Runtime/Cache/SAdmin/2b9a4cad497bfeb8eaf27a514be1eb98.php 第 200 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002829s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002433s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000005s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.000271s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000467s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000502s ]
+
+[ 2018-07-22T00:27:40+08:00 ] 110.86.19.178 /nc.php?s=/Goods/saveVerify/id/58/status/1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000038s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000322s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000808s ]
+NOTIC: [8] Constant LANG_SET already defined /www/wwwroot/upay.fanglao.vip/ThinkPHP/Library/Behavior/CheckLangBehavior.class.php 第 55 行.
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000767s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001970s ]
+SQL: SHOW COLUMNS FROM `ysk_verify_list` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `ysk_verify_list` WHERE `status` = 0 AND `id` = 58 LIMIT 1   [ RunTime:0.0002s ]
+SQL: UPDATE `ysk_verify_list` SET `status`='1' WHERE `status` = 0 AND `id` = 58 [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `ysk_member` [ RunTime:0.0007s ]
+SQL: UPDATE `ysk_member` SET `is_p_verify`='1' WHERE `member_id` = 8740 [ RunTime:0.0017s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000034s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000063s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003249s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003276s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000136s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000170s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000314s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000336s ]
+
+[ 2018-07-22T00:27:41+08:00 ] 110.86.19.178 /nc.php?s=/Goods/verify
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000041s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000321s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000866s ]
+NOTIC: [8] Constant LANG_SET already defined /www/wwwroot/upay.fanglao.vip/ThinkPHP/Library/Behavior/CheckLangBehavior.class.php 第 55 行.
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000806s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002072s ]
+SQL: SHOW COLUMNS FROM `ysk_verify_list` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `ysk_verify_list` ORDER BY status asc  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000072s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000104s ]
+SQL: SHOW COLUMNS FROM `nc_menu` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `nc_menu` ORDER BY sort_order  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000027s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.004192s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002306s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002337s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000130s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000150s ]
+NOTIC: [8] Undefined variable: page /www/wwwroot/upay.fanglao.vip/Runtime/Cache/SAdmin/2b9a4cad497bfeb8eaf27a514be1eb98.php 第 200 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002699s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002337s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000005s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.000236s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000486s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000523s ]
+
+[ 2018-07-22T00:27:47+08:00 ] 110.86.19.178 /nc.php?s=/Goods/ggshop
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000054s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000318s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000796s ]
+NOTIC: [8] Constant LANG_SET already defined /www/wwwroot/upay.fanglao.vip/ThinkPHP/Library/Behavior/CheckLangBehavior.class.php 第 55 行.
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000740s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001926s ]
+SQL: SHOW COLUMNS FROM `ysk_gerenshangpu` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `ysk_gerenshangpu` WHERE `id` <> 1  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000075s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000107s ]
+SQL: SHOW COLUMNS FROM `nc_menu` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `nc_menu` ORDER BY sort_order  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000028s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.004345s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002358s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002391s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000134s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000155s ]
+NOTIC: [8] Undefined variable: empty /www/wwwroot/upay.fanglao.vip/Runtime/Cache/SAdmin/3b6e3d7ed8008eacad931af8ea8f8f31.php 第 166 行.
+NOTIC: [8] Undefined variable: page /www/wwwroot/upay.fanglao.vip/Runtime/Cache/SAdmin/3b6e3d7ed8008eacad931af8ea8f8f31.php 第 224 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002648s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002391s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000004s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.000122s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000344s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000367s ]
+
+[ 2018-07-22T00:27:49+08:00 ] 110.86.19.178 /nc.php?s=/Goods/ggshop
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000042s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000335s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000788s ]
+NOTIC: [8] Constant LANG_SET already defined /www/wwwroot/upay.fanglao.vip/ThinkPHP/Library/Behavior/CheckLangBehavior.class.php 第 55 行.
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000708s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001906s ]
+SQL: SHOW COLUMNS FROM `ysk_gerenshangpu` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `ysk_gerenshangpu` WHERE `id` <> 1  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000070s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000098s ]
+SQL: SHOW COLUMNS FROM `nc_menu` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `nc_menu` ORDER BY sort_order  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000025s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.004127s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002236s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002264s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000125s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000144s ]
+NOTIC: [8] Undefined variable: empty /www/wwwroot/upay.fanglao.vip/Runtime/Cache/SAdmin/3b6e3d7ed8008eacad931af8ea8f8f31.php 第 166 行.
+NOTIC: [8] Undefined variable: page /www/wwwroot/upay.fanglao.vip/Runtime/Cache/SAdmin/3b6e3d7ed8008eacad931af8ea8f8f31.php 第 224 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002519s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002264s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000004s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.000135s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000435s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000463s ]
+
+[ 2018-07-22T00:27:50+08:00 ] 110.86.19.178 /nc.php?s=/Goods/verify
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000040s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000311s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000823s ]
+NOTIC: [8] Constant LANG_SET already defined /www/wwwroot/upay.fanglao.vip/ThinkPHP/Library/Behavior/CheckLangBehavior.class.php 第 55 行.
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000730s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001934s ]
+SQL: SHOW COLUMNS FROM `ysk_verify_list` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `ysk_verify_list` ORDER BY status asc  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000075s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000107s ]
+SQL: SHOW COLUMNS FROM `nc_menu` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `nc_menu` ORDER BY sort_order  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000028s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.004030s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002322s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002351s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000129s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000149s ]
+NOTIC: [8] Undefined variable: page /www/wwwroot/upay.fanglao.vip/Runtime/Cache/SAdmin/2b9a4cad497bfeb8eaf27a514be1eb98.php 第 200 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002732s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002351s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000005s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.000256s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000322s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000347s ]
+
+[ 2018-07-22T00:28:52+08:00 ] 110.86.19.178 /nc.php?s=/Goods/ggshop
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000045s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000317s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000850s ]
+NOTIC: [8] Constant LANG_SET already defined /www/wwwroot/upay.fanglao.vip/ThinkPHP/Library/Behavior/CheckLangBehavior.class.php 第 55 行.
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000806s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002053s ]
+SQL: SHOW COLUMNS FROM `ysk_gerenshangpu` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `ysk_gerenshangpu` WHERE `id` <> 1  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000073s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000102s ]
+SQL: SHOW COLUMNS FROM `nc_menu` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `nc_menu` ORDER BY sort_order  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000027s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.004292s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002219s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002249s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000130s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000150s ]
+NOTIC: [8] Undefined variable: empty /www/wwwroot/upay.fanglao.vip/Runtime/Cache/SAdmin/3b6e3d7ed8008eacad931af8ea8f8f31.php 第 166 行.
+NOTIC: [8] Undefined variable: page /www/wwwroot/upay.fanglao.vip/Runtime/Cache/SAdmin/3b6e3d7ed8008eacad931af8ea8f8f31.php 第 224 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002508s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002249s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000005s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.000128s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000312s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000335s ]
+
+[ 2018-07-22T00:28:53+08:00 ] 110.86.19.178 /nc.php?s=/Goods/verify
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000037s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000334s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000828s ]
+NOTIC: [8] Constant LANG_SET already defined /www/wwwroot/upay.fanglao.vip/ThinkPHP/Library/Behavior/CheckLangBehavior.class.php 第 55 行.
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000713s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001945s ]
+SQL: SHOW COLUMNS FROM `ysk_verify_list` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `ysk_verify_list` ORDER BY status asc  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000076s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000117s ]
+SQL: SHOW COLUMNS FROM `nc_menu` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `nc_menu` ORDER BY sort_order  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000025s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.003770s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002154s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002183s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000124s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000144s ]
+NOTIC: [8] Undefined variable: page /www/wwwroot/upay.fanglao.vip/Runtime/Cache/SAdmin/2b9a4cad497bfeb8eaf27a514be1eb98.php 第 200 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002525s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002183s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000005s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.000220s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000354s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000378s ]
+
+[ 2018-07-22T00:29:01+08:00 ] 110.86.19.178 /nc.php?s=/Goods/verify
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000041s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000320s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000792s ]
+NOTIC: [8] Constant LANG_SET already defined /www/wwwroot/upay.fanglao.vip/ThinkPHP/Library/Behavior/CheckLangBehavior.class.php 第 55 行.
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000733s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001916s ]
+SQL: SHOW COLUMNS FROM `ysk_verify_list` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `ysk_verify_list` ORDER BY status asc  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000067s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000096s ]
+SQL: SHOW COLUMNS FROM `nc_menu` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `nc_menu` ORDER BY sort_order  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000025s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.003909s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002273s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002301s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000125s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000144s ]
+NOTIC: [8] Undefined variable: page /www/wwwroot/upay.fanglao.vip/Runtime/Cache/SAdmin/2b9a4cad497bfeb8eaf27a514be1eb98.php 第 200 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002641s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002301s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000004s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.000217s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000309s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000331s ]
+
+[ 2018-07-22T00:29:27+08:00 ] 110.86.19.178 /nc.php?s=/AdminUser/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000039s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000311s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000820s ]
+NOTIC: [8] Constant LANG_SET already defined /www/wwwroot/upay.fanglao.vip/ThinkPHP/Library/Behavior/CheckLangBehavior.class.php 第 55 行.
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000742s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001944s ]
+SQL: select * from nc_admin  [ RunTime:0.0002s ]
+SQL: select * from nc_admin  order by a_id desc LIMIT 0,10 [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000064s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000091s ]
+SQL: SHOW COLUMNS FROM `nc_menu` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `nc_menu` ORDER BY sort_order  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000025s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.003790s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002218s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002247s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000124s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000143s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002547s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002247s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000005s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.000179s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000420s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000451s ]
+
+[ 2018-07-22T00:29:34+08:00 ] 110.86.19.178 /nc.php?s=/Goods/cate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000037s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000330s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000834s ]
+NOTIC: [8] Constant LANG_SET already defined /www/wwwroot/upay.fanglao.vip/ThinkPHP/Library/Behavior/CheckLangBehavior.class.php 第 55 行.
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000724s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001966s ]
+SQL: SHOW COLUMNS FROM `ysk_product_cate` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `ysk_product_cate` WHERE `pid` = 0 ORDER BY sort desc  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `ysk_product_cate` WHERE `pid` = 5  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ysk_product_cate` WHERE `pid` = 8  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ysk_product_cate` WHERE `pid` = 15  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ysk_product_cate` WHERE `pid` = 16  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ysk_product_cate` WHERE `pid` = 22  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ysk_product_cate` WHERE `pid` = 23  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ysk_product_cate` WHERE `pid` = 24  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ysk_product_cate` WHERE `pid` = 25  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ysk_product_cate` WHERE `pid` = 35  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ysk_product_cate` WHERE `pid` = 36  [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000070s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000097s ]
+SQL: SHOW COLUMNS FROM `nc_menu` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `nc_menu` ORDER BY sort_order  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000023s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.004004s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002150s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002178s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000123s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000143s ]
+NOTIC: [8] Undefined variable: page /www/wwwroot/upay.fanglao.vip/Runtime/Cache/SAdmin/eec4e1a625f6c1b707cd7f23df021551.php 第 209 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002755s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002178s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000005s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.000453s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000477s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000511s ]
+
+[ 2018-07-22T00:29:35+08:00 ] 110.86.19.178 /nc.php?s=/Goods/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000037s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000310s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000816s ]
+NOTIC: [8] Constant LANG_SET already defined /www/wwwroot/upay.fanglao.vip/ThinkPHP/Library/Behavior/CheckLangBehavior.class.php 第 55 行.
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000780s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001979s ]
+SQL: SHOW COLUMNS FROM `ysk_goods` [ RunTime:0.0004s ]
+SQL: SELECT pd.id,pd.type_id,pd.name,pd.price,pd.pic,pd.status,pd.shangjia,pd.stock,pd.ctime,pc.id as cid,pc.name as cname FROM ysk_product_detail pd,ysk_product_cate pc WHERE pd.type_id=pc.id and pd.is_duobao=1 [ RunTime:0.0002s ]
+SQL: SELECT pd.id,pd.type_id,pd.name,pd.price,pd.pic,pd.status,pd.shangjia,pd.stock,pd.ctime,pc.id as cid,pc.name as cname FROM ysk_product_detail pd,ysk_product_cate pc WHERE pd.type_id=pc.id and pd.is_duobao=1 order by pd.status desc,pd.ctime desc LIMIT 0,10 [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `ysk_product_cate` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ysk_product_cate`  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000068s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000099s ]
+SQL: SHOW COLUMNS FROM `nc_menu` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `nc_menu` ORDER BY sort_order  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000024s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.003991s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002195s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002224s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000124s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000144s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002496s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002224s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000005s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.000148s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000391s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000419s ]
+
+[ 2018-07-22T00:29:41+08:00 ] 110.86.19.178 /nc.php?s=/Order/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000043s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000312s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000836s ]
+NOTIC: [8] Constant LANG_SET already defined /www/wwwroot/upay.fanglao.vip/ThinkPHP/Library/Behavior/CheckLangBehavior.class.php 第 55 行.
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000741s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001960s ]
+SQL: SELECT o.order_id,o.order_no,o.uid,o.status,o.time,o.buy_price,o.buy_name,o.buy_phone,o.seluid FROM ysk_order o WHERE 1=1  and o.is_duobao like '%1%' [ RunTime:0.0003s ]
+SQL: SELECT o.order_id,o.order_no,o.uid,o.status,o.time,o.buy_price,o.buy_name,o.buy_phone,o.seluid FROM ysk_order o WHERE 1=1  and o.is_duobao like '%1%'ORDER BY field(o.status,1,2,0,3),o.time DESC LIMIT 0,10 [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000070s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000099s ]
+SQL: SHOW COLUMNS FROM `nc_menu` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `nc_menu` ORDER BY sort_order  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000028s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.004127s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002332s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002361s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000129s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000149s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002610s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002361s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000005s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.000120s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000410s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000439s ]
+
+[ 2018-07-22T20:51:36+08:00 ] 117.28.206.231 /nc.php?s=/Public/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000044s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000350s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000807s ]
+NOTIC: [8] Constant LANG_SET already defined /www/wwwroot/upay.fanglao.vip/ThinkPHP/Library/Behavior/CheckLangBehavior.class.php 第 55 行.
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000734s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001962s ]
+
+[ 2018-07-22T20:51:36+08:00 ] 117.28.206.231 /nc.php?s=/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000041s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000366s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000771s ]
+NOTIC: [8] Constant LANG_SET already defined /www/wwwroot/upay.fanglao.vip/ThinkPHP/Library/Behavior/CheckLangBehavior.class.php 第 55 行.
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000752s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001959s ]
+SQL: SHOW COLUMNS FROM `ysk_order` [ RunTime:0.0006s ]
+SQL: SELECT COUNT(1) AS tp_count FROM `ysk_order` WHERE `time` BETWEEN null AND null AND `status` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `ysk_member` [ RunTime:0.0006s ]
+SQL: SELECT COUNT(1) AS tp_count FROM `ysk_member` WHERE `create_time` BETWEEN null AND null LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000058s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000086s ]
+SQL: SHOW COLUMNS FROM `nc_menu` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `nc_menu` ORDER BY sort_order  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000027s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.003680s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002333s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002363s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000134s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000155s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002584s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002363s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000006s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.000084s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000313s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000336s ]
+
+[ 2018-07-22T20:51:40+08:00 ] 117.28.206.231 /nc.php?s=/Goods/verify
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000043s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000332s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000795s ]
+NOTIC: [8] Constant LANG_SET already defined /www/wwwroot/upay.fanglao.vip/ThinkPHP/Library/Behavior/CheckLangBehavior.class.php 第 55 行.
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000713s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001910s ]
+SQL: SHOW COLUMNS FROM `ysk_verify_list` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `ysk_verify_list` ORDER BY status asc  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000064s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000093s ]
+SQL: SHOW COLUMNS FROM `nc_menu` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `nc_menu` ORDER BY sort_order  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000026s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.003929s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002161s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002189s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000137s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000157s ]
+NOTIC: [8] Undefined variable: page /www/wwwroot/upay.fanglao.vip/Runtime/Cache/SAdmin/2b9a4cad497bfeb8eaf27a514be1eb98.php 第 200 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002649s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002189s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000005s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.000326s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000448s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000482s ]
+
+[ 2018-07-22T20:51:49+08:00 ] 117.28.206.231 /nc.php?s=/Goods/saveVerify/id/62/status/1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000043s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000329s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000776s ]
+NOTIC: [8] Constant LANG_SET already defined /www/wwwroot/upay.fanglao.vip/ThinkPHP/Library/Behavior/CheckLangBehavior.class.php 第 55 行.
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000694s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001873s ]
+SQL: SHOW COLUMNS FROM `ysk_verify_list` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `ysk_verify_list` WHERE `status` = 0 AND `id` = 62 LIMIT 1   [ RunTime:0.0002s ]
+SQL: UPDATE `ysk_verify_list` SET `status`='1' WHERE `status` = 0 AND `id` = 62 [ RunTime:0.0019s ]
+SQL: SHOW COLUMNS FROM `ysk_member` [ RunTime:0.0006s ]
+SQL: UPDATE `ysk_member` SET `is_p_verify`='1' WHERE `member_id` = 8892 [ RunTime:0.0014s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000036s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000066s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003230s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003256s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000124s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000144s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000312s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000334s ]
+
+[ 2018-07-22T20:51:51+08:00 ] 117.28.206.231 /nc.php?s=/Goods/verify
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000044s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000359s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000793s ]
+NOTIC: [8] Constant LANG_SET already defined /www/wwwroot/upay.fanglao.vip/ThinkPHP/Library/Behavior/CheckLangBehavior.class.php 第 55 行.
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000726s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001952s ]
+SQL: SHOW COLUMNS FROM `ysk_verify_list` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `ysk_verify_list` ORDER BY status asc  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000064s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000092s ]
+SQL: SHOW COLUMNS FROM `nc_menu` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `nc_menu` ORDER BY sort_order  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000027s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.003972s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002205s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002233s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000156s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000177s ]
+NOTIC: [8] Undefined variable: page /www/wwwroot/upay.fanglao.vip/Runtime/Cache/SAdmin/2b9a4cad497bfeb8eaf27a514be1eb98.php 第 200 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002668s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002233s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000005s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.000281s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000461s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000497s ]
+
+[ 2018-07-22T20:51:53+08:00 ] 117.28.206.231 /nc.php?s=/Goods/saveVerify/id/61/status/1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000042s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000306s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000786s ]
+NOTIC: [8] Constant LANG_SET already defined /www/wwwroot/upay.fanglao.vip/ThinkPHP/Library/Behavior/CheckLangBehavior.class.php 第 55 行.
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000715s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001898s ]
+SQL: SHOW COLUMNS FROM `ysk_verify_list` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `ysk_verify_list` WHERE `status` = 0 AND `id` = 61 LIMIT 1   [ RunTime:0.0002s ]
+SQL: UPDATE `ysk_verify_list` SET `status`='1' WHERE `status` = 0 AND `id` = 61 [ RunTime:0.0024s ]
+SQL: SHOW COLUMNS FROM `ysk_member` [ RunTime:0.0007s ]
+SQL: UPDATE `ysk_member` SET `is_p_verify`='1' WHERE `member_id` = 8869 [ RunTime:0.0014s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000035s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000065s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003284s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003310s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000156s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000177s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000299s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000321s ]
+
+[ 2018-07-22T20:51:54+08:00 ] 117.28.206.231 /nc.php?s=/Goods/verify
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000041s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000311s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000809s ]
+NOTIC: [8] Constant LANG_SET already defined /www/wwwroot/upay.fanglao.vip/ThinkPHP/Library/Behavior/CheckLangBehavior.class.php 第 55 行.
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000785s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001979s ]
+SQL: SHOW COLUMNS FROM `ysk_verify_list` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `ysk_verify_list` ORDER BY status asc  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000062s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000099s ]
+SQL: SHOW COLUMNS FROM `nc_menu` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `nc_menu` ORDER BY sort_order  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000025s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.003864s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002207s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002236s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000125s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000145s ]
+NOTIC: [8] Undefined variable: page /www/wwwroot/upay.fanglao.vip/Runtime/Cache/SAdmin/2b9a4cad497bfeb8eaf27a514be1eb98.php 第 200 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002588s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002236s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000005s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.000229s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000343s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000368s ]
+
+[ 2018-07-22T20:55:37+08:00 ] 117.28.206.231 /nc.php?s=/Goods/ggshop
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000045s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000318s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000854s ]
+NOTIC: [8] Constant LANG_SET already defined /www/wwwroot/upay.fanglao.vip/ThinkPHP/Library/Behavior/CheckLangBehavior.class.php 第 55 行.
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000767s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002016s ]
+SQL: SHOW COLUMNS FROM `ysk_gerenshangpu` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `ysk_gerenshangpu` WHERE `id` <> 1  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000079s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000109s ]
+SQL: SHOW COLUMNS FROM `nc_menu` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `nc_menu` ORDER BY sort_order  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000031s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.004243s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002283s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002313s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000130s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000150s ]
+NOTIC: [8] Undefined variable: empty /www/wwwroot/upay.fanglao.vip/Runtime/Cache/SAdmin/3b6e3d7ed8008eacad931af8ea8f8f31.php 第 166 行.
+NOTIC: [8] Undefined variable: page /www/wwwroot/upay.fanglao.vip/Runtime/Cache/SAdmin/3b6e3d7ed8008eacad931af8ea8f8f31.php 第 224 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002567s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002313s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000005s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.000122s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000434s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000463s ]
+
+[ 2018-07-22T20:55:39+08:00 ] 117.28.206.231 /nc.php?s=/Settings/wen.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000046s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000328s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000867s ]
+NOTIC: [8] Constant LANG_SET already defined /www/wwwroot/upay.fanglao.vip/ThinkPHP/Library/Behavior/CheckLangBehavior.class.php 第 55 行.
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000790s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002066s ]
+SQL: SHOW COLUMNS FROM `ysk_wentype` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `ysk_wentype`  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `ysk_wenzhang` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `ysk_wenzhang` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000155s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000184s ]
+SQL: SHOW COLUMNS FROM `nc_menu` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `nc_menu` ORDER BY sort_order  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000027s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.004221s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002211s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002241s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000129s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000148s ]
+NOTIC: [8] Undefined variable: option_row /www/wwwroot/upay.fanglao.vip/Runtime/Cache/SAdmin/44cc563b2138e37388d83b1a761e3c0a.php 第 309 行.
+NOTIC: [8] Undefined variable: button_option_value_add /www/wwwroot/upay.fanglao.vip/Runtime/Cache/SAdmin/44cc563b2138e37388d83b1a761e3c0a.php 第 370 行.
+NOTIC: [8] Undefined variable: option_value_row /www/wwwroot/upay.fanglao.vip/Runtime/Cache/SAdmin/44cc563b2138e37388d83b1a761e3c0a.php 第 396 行.
+NOTIC: [8] Undefined variable: entry_price /www/wwwroot/upay.fanglao.vip/Runtime/Cache/SAdmin/44cc563b2138e37388d83b1a761e3c0a.php 第 420 行.
+NOTIC: [8] Undefined variable: entry_weight /www/wwwroot/upay.fanglao.vip/Runtime/Cache/SAdmin/44cc563b2138e37388d83b1a761e3c0a.php 第 426 行.
+NOTIC: [8] Undefined variable: button_remove /www/wwwroot/upay.fanglao.vip/Runtime/Cache/SAdmin/44cc563b2138e37388d83b1a761e3c0a.php 第 430 行.
+NOTIC: [8] Undefined variable: image_row /www/wwwroot/upay.fanglao.vip/Runtime/Cache/SAdmin/44cc563b2138e37388d83b1a761e3c0a.php 第 466 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002654s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002241s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000005s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.000288s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000325s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000348s ]
+
+[ 2018-07-22T20:55:52+08:00 ] 117.28.206.231 /nc.php?s=/Settings/Savewen.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000044s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000323s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000805s ]
+NOTIC: [8] Constant LANG_SET already defined /www/wwwroot/upay.fanglao.vip/ThinkPHP/Library/Behavior/CheckLangBehavior.class.php 第 55 行.
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000749s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001951s ]
+SQL: SHOW COLUMNS FROM `ysk_wenzhang` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `ysk_wentype` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `ysk_wentype` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000382s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000412s ]
+
+[ 2018-07-22T20:56:00+08:00 ] 117.28.206.231 /nc.php?s=/Goods/ggshop
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000049s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000361s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000865s ]
+NOTIC: [8] Constant LANG_SET already defined /www/wwwroot/upay.fanglao.vip/ThinkPHP/Library/Behavior/CheckLangBehavior.class.php 第 55 行.
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000740s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002050s ]
+SQL: SHOW COLUMNS FROM `ysk_gerenshangpu` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `ysk_gerenshangpu` WHERE `id` <> 1  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000083s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000113s ]
+SQL: SHOW COLUMNS FROM `nc_menu` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `nc_menu` ORDER BY sort_order  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000026s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.004266s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002263s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002293s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000131s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000153s ]
+NOTIC: [8] Undefined variable: empty /www/wwwroot/upay.fanglao.vip/Runtime/Cache/SAdmin/3b6e3d7ed8008eacad931af8ea8f8f31.php 第 166 行.
+NOTIC: [8] Undefined variable: page /www/wwwroot/upay.fanglao.vip/Runtime/Cache/SAdmin/3b6e3d7ed8008eacad931af8ea8f8f31.php 第 224 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002563s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002293s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000005s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.000136s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000438s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000467s ]
+
+[ 2018-07-22T20:56:10+08:00 ] 117.28.206.231 /nc.php?s=/Goods/verify
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000043s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000344s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000860s ]
+NOTIC: [8] Constant LANG_SET already defined /www/wwwroot/upay.fanglao.vip/ThinkPHP/Library/Behavior/CheckLangBehavior.class.php 第 55 行.
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000717s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001996s ]
+SQL: SHOW COLUMNS FROM `ysk_verify_list` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `ysk_verify_list` ORDER BY status asc  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000065s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000093s ]
+SQL: SHOW COLUMNS FROM `nc_menu` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `nc_menu` ORDER BY sort_order  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000026s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.003965s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002178s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002207s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000139s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000159s ]
+NOTIC: [8] Undefined variable: page /www/wwwroot/upay.fanglao.vip/Runtime/Cache/SAdmin/2b9a4cad497bfeb8eaf27a514be1eb98.php 第 200 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002563s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002207s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000005s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.000220s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000307s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000331s ]
+
+[ 2018-07-22T20:56:56+08:00 ] 117.28.206.231 /nc.php?s=/AdminUser/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000044s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000315s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000796s ]
+NOTIC: [8] Constant LANG_SET already defined /www/wwwroot/upay.fanglao.vip/ThinkPHP/Library/Behavior/CheckLangBehavior.class.php 第 55 行.
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000760s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001946s ]
+SQL: select * from nc_admin  [ RunTime:0.0003s ]
+SQL: select * from nc_admin  order by a_id desc LIMIT 0,10 [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000074s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000104s ]
+SQL: SHOW COLUMNS FROM `nc_menu` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `nc_menu` ORDER BY sort_order  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000027s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.004192s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002413s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002443s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000146s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000168s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002814s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002443s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000006s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.000228s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000336s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000361s ]
+
+[ 2018-07-22T20:57:00+08:00 ] 117.28.206.231 /nc.php?s=/Goods/dianpu
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000044s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000338s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000826s ]
+NOTIC: [8] Constant LANG_SET already defined /www/wwwroot/upay.fanglao.vip/ThinkPHP/Library/Behavior/CheckLangBehavior.class.php 第 55 行.
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000720s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001958s ]
+SQL: SHOW COLUMNS FROM `ysk_product_cate` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `ysk_product_cate`  [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ysk_product_cate` WHERE `pid` = 5 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ysk_product_cate` WHERE `pid` = 8 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ysk_product_cate` WHERE `pid` = 15 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ysk_product_cate` WHERE `pid` = 16 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ysk_product_cate` WHERE `pid` = 22 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ysk_product_cate` WHERE `pid` = 23 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ysk_product_cate` WHERE `pid` = 24 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ysk_product_cate` WHERE `pid` = 25 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ysk_product_cate` WHERE `pid` = 35 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ysk_product_cate` WHERE `pid` = 36 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `ysk_gerenshangpu` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ysk_gerenshangpu` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000195s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000223s ]
+SQL: SHOW COLUMNS FROM `nc_menu` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `nc_menu` ORDER BY sort_order  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000025s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.004379s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002126s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002154s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000123s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000143s ]
+SQL: SELECT * FROM `ysk_product_cate` WHERE `type` = 8 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: shop_Vpay /www/wwwroot/upay.fanglao.vip/Runtime/Cache/SAdmin/887865a99a3226fec45fd8d30a765d78.php 第 234 行.
+NOTIC: [8] Undefined index: csize /www/wwwroot/upay.fanglao.vip/Runtime/Cache/SAdmin/887865a99a3226fec45fd8d30a765d78.php 第 291 行.
+NOTIC: [8] Undefined index: color_cate /www/wwwroot/upay.fanglao.vip/Runtime/Cache/SAdmin/887865a99a3226fec45fd8d30a765d78.php 第 301 行.
+NOTIC: [8] Undefined index: stock /www/wwwroot/upay.fanglao.vip/Runtime/Cache/SAdmin/887865a99a3226fec45fd8d30a765d78.php 第 311 行.
+NOTIC: [8] Undefined variable: option_row /www/wwwroot/upay.fanglao.vip/Runtime/Cache/SAdmin/887865a99a3226fec45fd8d30a765d78.php 第 414 行.
+NOTIC: [8] Undefined variable: button_option_value_add /www/wwwroot/upay.fanglao.vip/Runtime/Cache/SAdmin/887865a99a3226fec45fd8d30a765d78.php 第 475 行.
+NOTIC: [8] Undefined variable: option_value_row /www/wwwroot/upay.fanglao.vip/Runtime/Cache/SAdmin/887865a99a3226fec45fd8d30a765d78.php 第 501 行.
+NOTIC: [8] Undefined variable: entry_price /www/wwwroot/upay.fanglao.vip/Runtime/Cache/SAdmin/887865a99a3226fec45fd8d30a765d78.php 第 525 行.
+NOTIC: [8] Undefined variable: entry_weight /www/wwwroot/upay.fanglao.vip/Runtime/Cache/SAdmin/887865a99a3226fec45fd8d30a765d78.php 第 531 行.
+NOTIC: [8] Undefined variable: button_remove /www/wwwroot/upay.fanglao.vip/Runtime/Cache/SAdmin/887865a99a3226fec45fd8d30a765d78.php 第 534 行.
+NOTIC: [8] Undefined variable: image_row /www/wwwroot/upay.fanglao.vip/Runtime/Cache/SAdmin/887865a99a3226fec45fd8d30a765d78.php 第 570 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002870s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002154s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000005s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.000598s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000315s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000347s ]
+
+[ 2018-07-22T20:57:35+08:00 ] 117.28.206.231 /nc.php?s=/Goods/cate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000046s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000342s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000792s ]
+NOTIC: [8] Constant LANG_SET already defined /www/wwwroot/upay.fanglao.vip/ThinkPHP/Library/Behavior/CheckLangBehavior.class.php 第 55 行.
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000710s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001916s ]
+SQL: SHOW COLUMNS FROM `ysk_product_cate` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `ysk_product_cate` WHERE `pid` = 0 ORDER BY sort desc  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ysk_product_cate` WHERE `pid` = 5  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `ysk_product_cate` WHERE `pid` = 8  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `ysk_product_cate` WHERE `pid` = 15  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `ysk_product_cate` WHERE `pid` = 16  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `ysk_product_cate` WHERE `pid` = 22  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ysk_product_cate` WHERE `pid` = 23  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `ysk_product_cate` WHERE `pid` = 24  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ysk_product_cate` WHERE `pid` = 25  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ysk_product_cate` WHERE `pid` = 35  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ysk_product_cate` WHERE `pid` = 36  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000072s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000100s ]
+SQL: SHOW COLUMNS FROM `nc_menu` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `nc_menu` ORDER BY sort_order  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000026s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.004160s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002136s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002165s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000124s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000143s ]
+NOTIC: [8] Undefined variable: page /www/wwwroot/upay.fanglao.vip/Runtime/Cache/SAdmin/eec4e1a625f6c1b707cd7f23df021551.php 第 209 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002743s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002165s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000004s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.000455s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000318s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000341s ]
+
+[ 2018-07-22T20:57:38+08:00 ] 117.28.206.231 /nc.php?s=/Goods/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000043s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000339s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000797s ]
+NOTIC: [8] Constant LANG_SET already defined /www/wwwroot/upay.fanglao.vip/ThinkPHP/Library/Behavior/CheckLangBehavior.class.php 第 55 行.
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000731s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001938s ]
+SQL: SHOW COLUMNS FROM `ysk_goods` [ RunTime:0.0006s ]
+SQL: SELECT pd.id,pd.type_id,pd.name,pd.price,pd.pic,pd.status,pd.shangjia,pd.stock,pd.ctime,pc.id as cid,pc.name as cname FROM ysk_product_detail pd,ysk_product_cate pc WHERE pd.type_id=pc.id and pd.is_duobao=1 [ RunTime:0.0003s ]
+SQL: SELECT pd.id,pd.type_id,pd.name,pd.price,pd.pic,pd.status,pd.shangjia,pd.stock,pd.ctime,pc.id as cid,pc.name as cname FROM ysk_product_detail pd,ysk_product_cate pc WHERE pd.type_id=pc.id and pd.is_duobao=1 order by pd.status desc,pd.ctime desc LIMIT 0,10 [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `ysk_product_cate` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `ysk_product_cate`  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000066s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000094s ]
+SQL: SHOW COLUMNS FROM `nc_menu` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `nc_menu` ORDER BY sort_order  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000027s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.003961s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002176s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002204s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000136s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000156s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002506s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002204s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000005s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.000165s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000309s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000330s ]
+
+[ 2018-07-22T20:57:52+08:00 ] 117.28.206.231 /nc.php?s=/Goods/verify
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000042s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000313s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000820s ]
+NOTIC: [8] Constant LANG_SET already defined /www/wwwroot/upay.fanglao.vip/ThinkPHP/Library/Behavior/CheckLangBehavior.class.php 第 55 行.
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000755s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001962s ]
+SQL: SHOW COLUMNS FROM `ysk_verify_list` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `ysk_verify_list` ORDER BY status asc  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000069s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000099s ]
+SQL: SHOW COLUMNS FROM `nc_menu` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `nc_menu` ORDER BY sort_order  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000029s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.004144s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002242s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002272s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000132s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000153s ]
+NOTIC: [8] Undefined variable: page /www/wwwroot/upay.fanglao.vip/Runtime/Cache/SAdmin/2b9a4cad497bfeb8eaf27a514be1eb98.php 第 200 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002673s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002272s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000005s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.000270s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000337s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000360s ]
+
+[ 2018-07-22T20:58:01+08:00 ] 117.28.206.231 /nc.php?s=/Goods/ggshop
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000054s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000323s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000818s ]
+NOTIC: [8] Constant LANG_SET already defined /www/wwwroot/upay.fanglao.vip/ThinkPHP/Library/Behavior/CheckLangBehavior.class.php 第 55 行.
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000730s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001942s ]
+SQL: SHOW COLUMNS FROM `ysk_gerenshangpu` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `ysk_gerenshangpu` WHERE `id` <> 1  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000073s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000101s ]
+SQL: SHOW COLUMNS FROM `nc_menu` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `nc_menu` ORDER BY sort_order  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000031s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.003887s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002154s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002183s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000125s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000145s ]
+NOTIC: [8] Undefined variable: empty /www/wwwroot/upay.fanglao.vip/Runtime/Cache/SAdmin/3b6e3d7ed8008eacad931af8ea8f8f31.php 第 166 行.
+NOTIC: [8] Undefined variable: page /www/wwwroot/upay.fanglao.vip/Runtime/Cache/SAdmin/3b6e3d7ed8008eacad931af8ea8f8f31.php 第 224 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002427s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002183s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000005s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.000117s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000334s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000356s ]
+
+[ 2018-07-22T20:58:03+08:00 ] 117.28.206.231 /nc.php?s=/Goods/verify
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000038s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000352s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000828s ]
+NOTIC: [8] Constant LANG_SET already defined /www/wwwroot/upay.fanglao.vip/ThinkPHP/Library/Behavior/CheckLangBehavior.class.php 第 55 行.
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000746s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002001s ]
+SQL: SHOW COLUMNS FROM `ysk_verify_list` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `ysk_verify_list` ORDER BY status asc  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000062s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000090s ]
+SQL: SHOW COLUMNS FROM `nc_menu` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `nc_menu` ORDER BY sort_order  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000026s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.003919s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002209s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002237s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000139s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000159s ]
+NOTIC: [8] Undefined variable: page /www/wwwroot/upay.fanglao.vip/Runtime/Cache/SAdmin/2b9a4cad497bfeb8eaf27a514be1eb98.php 第 200 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002618s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002237s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000005s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.000245s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000461s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000495s ]
+
+[ 2018-07-22T20:58:06+08:00 ] 117.28.206.231 /nc.php?s=/Goods/verify
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000043s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000359s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000807s ]
+NOTIC: [8] Constant LANG_SET already defined /www/wwwroot/upay.fanglao.vip/ThinkPHP/Library/Behavior/CheckLangBehavior.class.php 第 55 行.
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000716s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001955s ]
+SQL: SHOW COLUMNS FROM `ysk_verify_list` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `ysk_verify_list` ORDER BY status asc  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000065s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000093s ]
+SQL: SHOW COLUMNS FROM `nc_menu` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `nc_menu` ORDER BY sort_order  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000024s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.003976s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002203s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002232s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000125s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000144s ]
+NOTIC: [8] Undefined variable: page /www/wwwroot/upay.fanglao.vip/Runtime/Cache/SAdmin/2b9a4cad497bfeb8eaf27a514be1eb98.php 第 200 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002612s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002232s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000005s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.000259s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000473s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000508s ]
+
+[ 2018-07-22T21:20:21+08:00 ] 117.28.206.231 /nc.php?s=/Public/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000043s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000331s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000789s ]
+NOTIC: [8] Constant LANG_SET already defined /www/wwwroot/upay.fanglao.vip/ThinkPHP/Library/Behavior/CheckLangBehavior.class.php 第 55 行.
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000719s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001910s ]
+
+[ 2018-07-22T21:20:21+08:00 ] 117.28.206.231 /nc.php?s=/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000040s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000337s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000786s ]
+NOTIC: [8] Constant LANG_SET already defined /www/wwwroot/upay.fanglao.vip/ThinkPHP/Library/Behavior/CheckLangBehavior.class.php 第 55 行.
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000752s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001953s ]
+SQL: SHOW COLUMNS FROM `ysk_order` [ RunTime:0.0007s ]
+SQL: SELECT COUNT(1) AS tp_count FROM `ysk_order` WHERE `time` BETWEEN null AND null AND `status` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `ysk_member` [ RunTime:0.0006s ]
+SQL: SELECT COUNT(1) AS tp_count FROM `ysk_member` WHERE `create_time` BETWEEN null AND null LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000057s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000087s ]
+SQL: SHOW COLUMNS FROM `nc_menu` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `nc_menu` ORDER BY sort_order  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000028s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.003650s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002328s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002359s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000134s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000155s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002577s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002359s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000005s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.000081s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000339s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000363s ]
+
+[ 2018-07-22T21:20:28+08:00 ] 117.28.206.231 /nc.php?s=/Goods/ggshop
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000048s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000343s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000845s ]
+NOTIC: [8] Constant LANG_SET already defined /www/wwwroot/upay.fanglao.vip/ThinkPHP/Library/Behavior/CheckLangBehavior.class.php 第 55 行.
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000764s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002031s ]
+SQL: SHOW COLUMNS FROM `ysk_gerenshangpu` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `ysk_gerenshangpu` WHERE `id` <> 1  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000090s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000122s ]
+SQL: SHOW COLUMNS FROM `nc_menu` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `nc_menu` ORDER BY sort_order  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000027s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.004230s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002367s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002406s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000163s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000188s ]
+NOTIC: [8] Undefined variable: empty /www/wwwroot/upay.fanglao.vip/Runtime/Cache/SAdmin/3b6e3d7ed8008eacad931af8ea8f8f31.php 第 166 行.
+NOTIC: [8] Undefined variable: page /www/wwwroot/upay.fanglao.vip/Runtime/Cache/SAdmin/3b6e3d7ed8008eacad931af8ea8f8f31.php 第 224 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002703s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002406s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000005s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.000127s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000331s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000354s ]
+
+[ 2018-07-22T21:20:30+08:00 ] 117.28.206.231 /nc.php?s=/Settings/wen.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000044s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000350s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000797s ]
+NOTIC: [8] Constant LANG_SET already defined /www/wwwroot/upay.fanglao.vip/ThinkPHP/Library/Behavior/CheckLangBehavior.class.php 第 55 行.
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000718s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001935s ]
+SQL: SHOW COLUMNS FROM `ysk_wentype` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `ysk_wentype`  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `ysk_wenzhang` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `ysk_wenzhang` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000152s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000180s ]
+SQL: SHOW COLUMNS FROM `nc_menu` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `nc_menu` ORDER BY sort_order  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000024s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.004165s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002183s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002212s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000126s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000145s ]
+NOTIC: [8] Undefined variable: option_row /www/wwwroot/upay.fanglao.vip/Runtime/Cache/SAdmin/44cc563b2138e37388d83b1a761e3c0a.php 第 309 行.
+NOTIC: [8] Undefined variable: button_option_value_add /www/wwwroot/upay.fanglao.vip/Runtime/Cache/SAdmin/44cc563b2138e37388d83b1a761e3c0a.php 第 370 行.
+NOTIC: [8] Undefined variable: option_value_row /www/wwwroot/upay.fanglao.vip/Runtime/Cache/SAdmin/44cc563b2138e37388d83b1a761e3c0a.php 第 396 行.
+NOTIC: [8] Undefined variable: entry_price /www/wwwroot/upay.fanglao.vip/Runtime/Cache/SAdmin/44cc563b2138e37388d83b1a761e3c0a.php 第 420 行.
+NOTIC: [8] Undefined variable: entry_weight /www/wwwroot/upay.fanglao.vip/Runtime/Cache/SAdmin/44cc563b2138e37388d83b1a761e3c0a.php 第 426 行.
+NOTIC: [8] Undefined variable: button_remove /www/wwwroot/upay.fanglao.vip/Runtime/Cache/SAdmin/44cc563b2138e37388d83b1a761e3c0a.php 第 430 行.
+NOTIC: [8] Undefined variable: image_row /www/wwwroot/upay.fanglao.vip/Runtime/Cache/SAdmin/44cc563b2138e37388d83b1a761e3c0a.php 第 466 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002593s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002212s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000005s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.000259s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000318s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000339s ]
+
+[ 2018-07-22T21:20:57+08:00 ] 117.28.206.231 /nc.php?s=/Settings/Savewen.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000043s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000347s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000781s ]
+NOTIC: [8] Constant LANG_SET already defined /www/wwwroot/upay.fanglao.vip/ThinkPHP/Library/Behavior/CheckLangBehavior.class.php 第 55 行.
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000715s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001924s ]
+SQL: SHOW COLUMNS FROM `ysk_wenzhang` [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `ysk_wentype` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ysk_wentype` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000403s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000434s ]
+
+[ 2018-07-22T21:21:05+08:00 ] 117.28.206.231 /nc.php?s=/Settings/Savewen.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000054s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000298s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000807s ]
+NOTIC: [8] Constant LANG_SET already defined /www/wwwroot/upay.fanglao.vip/ThinkPHP/Library/Behavior/CheckLangBehavior.class.php 第 55 行.
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000745s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001919s ]
+SQL: SHOW COLUMNS FROM `ysk_wenzhang` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `ysk_wentype` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ysk_wentype` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000366s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000395s ]
+
+[ 2018-07-22T21:21:10+08:00 ] 117.28.206.231 /nc.php?s=/Settings/Savewen.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000044s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000303s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000820s ]
+NOTIC: [8] Constant LANG_SET already defined /www/wwwroot/upay.fanglao.vip/ThinkPHP/Library/Behavior/CheckLangBehavior.class.php 第 55 行.
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000757s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001956s ]
+SQL: SHOW COLUMNS FROM `ysk_wenzhang` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `ysk_wentype` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ysk_wentype` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000424s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000457s ]
+
+[ 2018-07-22T21:21:17+08:00 ] 117.28.206.231 /nc.php?s=/Settings/Savewen.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000044s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000315s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000808s ]
+NOTIC: [8] Constant LANG_SET already defined /www/wwwroot/upay.fanglao.vip/ThinkPHP/Library/Behavior/CheckLangBehavior.class.php 第 55 行.
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000727s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001922s ]
+SQL: SHOW COLUMNS FROM `ysk_wenzhang` [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `ysk_wentype` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ysk_wentype` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000387s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000418s ]
+
+[ 2018-07-22T21:21:27+08:00 ] 117.28.206.231 /nc.php?s=/Settings/Savewen.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000043s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000303s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000829s ]
+NOTIC: [8] Constant LANG_SET already defined /www/wwwroot/upay.fanglao.vip/ThinkPHP/Library/Behavior/CheckLangBehavior.class.php 第 55 行.
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000782s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001994s ]
+SQL: SHOW COLUMNS FROM `ysk_wenzhang` [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `ysk_wentype` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ysk_wentype` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000360s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000389s ]
+
+[ 2018-07-22T21:21:36+08:00 ] 117.28.206.231 /nc.php?s=/Goods/dianpu
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000043s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000348s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000783s ]
+NOTIC: [8] Constant LANG_SET already defined /www/wwwroot/upay.fanglao.vip/ThinkPHP/Library/Behavior/CheckLangBehavior.class.php 第 55 行.
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000725s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001929s ]
+SQL: SHOW COLUMNS FROM `ysk_product_cate` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `ysk_product_cate`  [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ysk_product_cate` WHERE `pid` = 5 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ysk_product_cate` WHERE `pid` = 8 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ysk_product_cate` WHERE `pid` = 15 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ysk_product_cate` WHERE `pid` = 16 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ysk_product_cate` WHERE `pid` = 22 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ysk_product_cate` WHERE `pid` = 23 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ysk_product_cate` WHERE `pid` = 24 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ysk_product_cate` WHERE `pid` = 25 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ysk_product_cate` WHERE `pid` = 35 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ysk_product_cate` WHERE `pid` = 36 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `ysk_gerenshangpu` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ysk_gerenshangpu` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000216s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000247s ]
+SQL: SHOW COLUMNS FROM `nc_menu` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `nc_menu` ORDER BY sort_order  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000024s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.004657s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002169s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002198s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000127s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000146s ]
+SQL: SELECT * FROM `ysk_product_cate` WHERE `type` = 8 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: shop_Vpay /www/wwwroot/upay.fanglao.vip/Runtime/Cache/SAdmin/887865a99a3226fec45fd8d30a765d78.php 第 234 行.
+NOTIC: [8] Undefined index: csize /www/wwwroot/upay.fanglao.vip/Runtime/Cache/SAdmin/887865a99a3226fec45fd8d30a765d78.php 第 291 行.
+NOTIC: [8] Undefined index: color_cate /www/wwwroot/upay.fanglao.vip/Runtime/Cache/SAdmin/887865a99a3226fec45fd8d30a765d78.php 第 301 行.
+NOTIC: [8] Undefined index: stock /www/wwwroot/upay.fanglao.vip/Runtime/Cache/SAdmin/887865a99a3226fec45fd8d30a765d78.php 第 311 行.
+NOTIC: [8] Undefined variable: option_row /www/wwwroot/upay.fanglao.vip/Runtime/Cache/SAdmin/887865a99a3226fec45fd8d30a765d78.php 第 414 行.
+NOTIC: [8] Undefined variable: button_option_value_add /www/wwwroot/upay.fanglao.vip/Runtime/Cache/SAdmin/887865a99a3226fec45fd8d30a765d78.php 第 475 行.
+NOTIC: [8] Undefined variable: option_value_row /www/wwwroot/upay.fanglao.vip/Runtime/Cache/SAdmin/887865a99a3226fec45fd8d30a765d78.php 第 501 行.
+NOTIC: [8] Undefined variable: entry_price /www/wwwroot/upay.fanglao.vip/Runtime/Cache/SAdmin/887865a99a3226fec45fd8d30a765d78.php 第 525 行.
+NOTIC: [8] Undefined variable: entry_weight /www/wwwroot/upay.fanglao.vip/Runtime/Cache/SAdmin/887865a99a3226fec45fd8d30a765d78.php 第 531 行.
+NOTIC: [8] Undefined variable: button_remove /www/wwwroot/upay.fanglao.vip/Runtime/Cache/SAdmin/887865a99a3226fec45fd8d30a765d78.php 第 534 行.
+NOTIC: [8] Undefined variable: image_row /www/wwwroot/upay.fanglao.vip/Runtime/Cache/SAdmin/887865a99a3226fec45fd8d30a765d78.php 第 570 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002937s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002198s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000006s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.000616s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000454s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000489s ]
+
+[ 2018-07-22T21:21:47+08:00 ] 117.28.206.231 /nc.php?s=/Goods/dianpu.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000056s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000323s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000823s ]
+NOTIC: [8] Constant LANG_SET already defined /www/wwwroot/upay.fanglao.vip/ThinkPHP/Library/Behavior/CheckLangBehavior.class.php 第 55 行.
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000772s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001989s ]
+SQL: SHOW COLUMNS FROM `ysk_goods` [ RunTime:0.0005s ]
+NOTIC: [8] Undefined index: shop_vpay /www/wwwroot/upay.fanglao.vip/shop/SAdmin/Model/GoodsModel.class.php 第 458 行.
+SQL: SHOW COLUMNS FROM `ysk_gerenshangpu` [ RunTime:0.0004s ]
+SQL: UPDATE `ysk_gerenshangpu` SET `shop_name`='后台商店',`shop_logo`='/Uploads/image/product/5ad83a4b9c41c.jpg',`shop_vpay`=NULL,`shop_weixin`='/Uploads/image/product/5a9669bf09789.jpg',`shop_zhifubao`='/Uploads/image/product/5a9669c45b4f3.jpg',`shop_address`='深圳北海',`shop_type`='8' WHERE `id` = 1 [ RunTime:0.0026s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000035s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000063s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003224s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003250s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000125s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000144s ]
+
+[ 2018-07-22T21:21:50+08:00 ] 117.28.206.231 /nc.php?s=/goods/dianpu.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000041s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000304s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000791s ]
+NOTIC: [8] Constant LANG_SET already defined /www/wwwroot/upay.fanglao.vip/ThinkPHP/Library/Behavior/CheckLangBehavior.class.php 第 55 行.
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000730s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001895s ]
+SQL: SHOW COLUMNS FROM `ysk_product_cate` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `ysk_product_cate`  [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ysk_product_cate` WHERE `pid` = 5 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ysk_product_cate` WHERE `pid` = 8 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ysk_product_cate` WHERE `pid` = 15 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ysk_product_cate` WHERE `pid` = 16 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ysk_product_cate` WHERE `pid` = 22 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ysk_product_cate` WHERE `pid` = 23 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ysk_product_cate` WHERE `pid` = 24 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ysk_product_cate` WHERE `pid` = 25 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ysk_product_cate` WHERE `pid` = 35 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ysk_product_cate` WHERE `pid` = 36 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `ysk_gerenshangpu` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `ysk_gerenshangpu` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000193s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000223s ]
+SQL: SHOW COLUMNS FROM `nc_menu` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `nc_menu` ORDER BY sort_order  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000026s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.004719s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002242s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002271s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000131s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000151s ]
+SQL: SELECT * FROM `ysk_product_cate` WHERE `type` = 8 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: shop_Vpay /www/wwwroot/upay.fanglao.vip/Runtime/Cache/SAdmin/887865a99a3226fec45fd8d30a765d78.php 第 234 行.
+NOTIC: [8] Undefined index: csize /www/wwwroot/upay.fanglao.vip/Runtime/Cache/SAdmin/887865a99a3226fec45fd8d30a765d78.php 第 291 行.
+NOTIC: [8] Undefined index: color_cate /www/wwwroot/upay.fanglao.vip/Runtime/Cache/SAdmin/887865a99a3226fec45fd8d30a765d78.php 第 301 行.
+NOTIC: [8] Undefined index: stock /www/wwwroot/upay.fanglao.vip/Runtime/Cache/SAdmin/887865a99a3226fec45fd8d30a765d78.php 第 311 行.
+NOTIC: [8] Undefined variable: option_row /www/wwwroot/upay.fanglao.vip/Runtime/Cache/SAdmin/887865a99a3226fec45fd8d30a765d78.php 第 414 行.
+NOTIC: [8] Undefined variable: button_option_value_add /www/wwwroot/upay.fanglao.vip/Runtime/Cache/SAdmin/887865a99a3226fec45fd8d30a765d78.php 第 475 行.
+NOTIC: [8] Undefined variable: option_value_row /www/wwwroot/upay.fanglao.vip/Runtime/Cache/SAdmin/887865a99a3226fec45fd8d30a765d78.php 第 501 行.
+NOTIC: [8] Undefined variable: entry_price /www/wwwroot/upay.fanglao.vip/Runtime/Cache/SAdmin/887865a99a3226fec45fd8d30a765d78.php 第 525 行.
+NOTIC: [8] Undefined variable: entry_weight /www/wwwroot/upay.fanglao.vip/Runtime/Cache/SAdmin/887865a99a3226fec45fd8d30a765d78.php 第 531 行.
+NOTIC: [8] Undefined variable: button_remove /www/wwwroot/upay.fanglao.vip/Runtime/Cache/SAdmin/887865a99a3226fec45fd8d30a765d78.php 第 534 行.
+NOTIC: [8] Undefined variable: image_row /www/wwwroot/upay.fanglao.vip/Runtime/Cache/SAdmin/887865a99a3226fec45fd8d30a765d78.php 第 570 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003022s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002271s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000006s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.000631s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000326s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000353s ]
+
+[ 2018-07-22T21:21:50+08:00 ] 117.28.206.231 /nc.php?s=/goods/dianpu.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000036s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000301s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000798s ]
+NOTIC: [8] Constant LANG_SET already defined /www/wwwroot/upay.fanglao.vip/ThinkPHP/Library/Behavior/CheckLangBehavior.class.php 第 55 行.
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000677s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001843s ]
+SQL: SHOW COLUMNS FROM `ysk_product_cate` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `ysk_product_cate`  [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ysk_product_cate` WHERE `pid` = 5 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ysk_product_cate` WHERE `pid` = 8 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ysk_product_cate` WHERE `pid` = 15 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ysk_product_cate` WHERE `pid` = 16 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ysk_product_cate` WHERE `pid` = 22 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ysk_product_cate` WHERE `pid` = 23 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ysk_product_cate` WHERE `pid` = 24 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ysk_product_cate` WHERE `pid` = 25 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ysk_product_cate` WHERE `pid` = 35 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ysk_product_cate` WHERE `pid` = 36 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `ysk_gerenshangpu` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `ysk_gerenshangpu` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000198s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000227s ]
+SQL: SHOW COLUMNS FROM `nc_menu` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `nc_menu` ORDER BY sort_order  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000026s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.004441s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002169s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002197s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000127s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000147s ]
+SQL: SELECT * FROM `ysk_product_cate` WHERE `type` = 8 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: shop_Vpay /www/wwwroot/upay.fanglao.vip/Runtime/Cache/SAdmin/887865a99a3226fec45fd8d30a765d78.php 第 234 行.
+NOTIC: [8] Undefined index: csize /www/wwwroot/upay.fanglao.vip/Runtime/Cache/SAdmin/887865a99a3226fec45fd8d30a765d78.php 第 291 行.
+NOTIC: [8] Undefined index: color_cate /www/wwwroot/upay.fanglao.vip/Runtime/Cache/SAdmin/887865a99a3226fec45fd8d30a765d78.php 第 301 行.
+NOTIC: [8] Undefined index: stock /www/wwwroot/upay.fanglao.vip/Runtime/Cache/SAdmin/887865a99a3226fec45fd8d30a765d78.php 第 311 行.
+NOTIC: [8] Undefined variable: option_row /www/wwwroot/upay.fanglao.vip/Runtime/Cache/SAdmin/887865a99a3226fec45fd8d30a765d78.php 第 414 行.
+NOTIC: [8] Undefined variable: button_option_value_add /www/wwwroot/upay.fanglao.vip/Runtime/Cache/SAdmin/887865a99a3226fec45fd8d30a765d78.php 第 475 行.
+NOTIC: [8] Undefined variable: option_value_row /www/wwwroot/upay.fanglao.vip/Runtime/Cache/SAdmin/887865a99a3226fec45fd8d30a765d78.php 第 501 行.
+NOTIC: [8] Undefined variable: entry_price /www/wwwroot/upay.fanglao.vip/Runtime/Cache/SAdmin/887865a99a3226fec45fd8d30a765d78.php 第 525 行.
+NOTIC: [8] Undefined variable: entry_weight /www/wwwroot/upay.fanglao.vip/Runtime/Cache/SAdmin/887865a99a3226fec45fd8d30a765d78.php 第 531 行.
+NOTIC: [8] Undefined variable: button_remove /www/wwwroot/upay.fanglao.vip/Runtime/Cache/SAdmin/887865a99a3226fec45fd8d30a765d78.php 第 534 行.
+NOTIC: [8] Undefined variable: image_row /www/wwwroot/upay.fanglao.vip/Runtime/Cache/SAdmin/887865a99a3226fec45fd8d30a765d78.php 第 570 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002952s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002197s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000005s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.000621s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000353s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000376s ]
+
+[ 2018-07-22T21:21:53+08:00 ] 117.28.206.231 /nc.php?s=/Goods/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000042s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000358s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000794s ]
+NOTIC: [8] Constant LANG_SET already defined /www/wwwroot/upay.fanglao.vip/ThinkPHP/Library/Behavior/CheckLangBehavior.class.php 第 55 行.
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000728s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001954s ]
+SQL: SHOW COLUMNS FROM `ysk_goods` [ RunTime:0.0005s ]
+SQL: SELECT pd.id,pd.type_id,pd.name,pd.price,pd.pic,pd.status,pd.shangjia,pd.stock,pd.ctime,pc.id as cid,pc.name as cname FROM ysk_product_detail pd,ysk_product_cate pc WHERE pd.type_id=pc.id and pd.is_duobao=1 [ RunTime:0.0002s ]
+SQL: SELECT pd.id,pd.type_id,pd.name,pd.price,pd.pic,pd.status,pd.shangjia,pd.stock,pd.ctime,pc.id as cid,pc.name as cname FROM ysk_product_detail pd,ysk_product_cate pc WHERE pd.type_id=pc.id and pd.is_duobao=1 order by pd.status desc,pd.ctime desc LIMIT 0,10 [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `ysk_product_cate` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `ysk_product_cate`  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000090s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000126s ]
+SQL: SHOW COLUMNS FROM `nc_menu` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `nc_menu` ORDER BY sort_order  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000031s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.003898s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002165s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002192s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000124s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000143s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002466s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002192s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000005s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.000149s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000423s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000452s ]
+
+[ 2018-07-22T21:21:55+08:00 ] 117.28.206.231 /nc.php?s=/Goods/cate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000040s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000310s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000802s ]
+NOTIC: [8] Constant LANG_SET already defined /www/wwwroot/upay.fanglao.vip/ThinkPHP/Library/Behavior/CheckLangBehavior.class.php 第 55 行.
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000727s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001909s ]
+SQL: SHOW COLUMNS FROM `ysk_product_cate` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `ysk_product_cate` WHERE `pid` = 0 ORDER BY sort desc  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `ysk_product_cate` WHERE `pid` = 5  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `ysk_product_cate` WHERE `pid` = 8  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `ysk_product_cate` WHERE `pid` = 15  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `ysk_product_cate` WHERE `pid` = 16  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `ysk_product_cate` WHERE `pid` = 22  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `ysk_product_cate` WHERE `pid` = 23  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `ysk_product_cate` WHERE `pid` = 24  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `ysk_product_cate` WHERE `pid` = 25  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `ysk_product_cate` WHERE `pid` = 35  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `ysk_product_cate` WHERE `pid` = 36  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000071s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000099s ]
+SQL: SHOW COLUMNS FROM `nc_menu` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `nc_menu` ORDER BY sort_order  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000027s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.004149s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002194s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002222s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000138s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000158s ]
+NOTIC: [8] Undefined variable: page /www/wwwroot/upay.fanglao.vip/Runtime/Cache/SAdmin/eec4e1a625f6c1b707cd7f23df021551.php 第 209 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002829s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002222s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000005s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.000458s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000320s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000343s ]
+
+[ 2018-07-22T21:23:55+08:00 ] 117.28.206.231 /nc.php?s=/Goods/editCate/id/23.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000041s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000326s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000791s ]
+NOTIC: [8] Constant LANG_SET already defined /www/wwwroot/upay.fanglao.vip/ThinkPHP/Library/Behavior/CheckLangBehavior.class.php 第 55 行.
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000704s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001902s ]
+SQL: SHOW COLUMNS FROM `ysk_product_cate` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `ysk_product_cate` WHERE `id` = 23 LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000051s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000078s ]
+SQL: SHOW COLUMNS FROM `nc_menu` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `nc_menu` ORDER BY sort_order  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000026s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.003423s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002244s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002270s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000126s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000146s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002497s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002270s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000005s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.000098s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000431s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000460s ]
+
+[ 2018-07-22T21:23:55+08:00 ] 117.28.206.231 /nc.php?s=/Goods/editCate/id/23.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000038s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000314s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000762s ]
+NOTIC: [8] Constant LANG_SET already defined /www/wwwroot/upay.fanglao.vip/ThinkPHP/Library/Behavior/CheckLangBehavior.class.php 第 55 行.
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000730s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001887s ]
+SQL: SHOW COLUMNS FROM `ysk_product_cate` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `ysk_product_cate` WHERE `id` = 23 LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000053s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000083s ]
+SQL: SHOW COLUMNS FROM `nc_menu` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `nc_menu` ORDER BY sort_order  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000028s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.003511s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002284s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002313s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000142s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000163s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002564s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002313s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000004s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.000107s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000410s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000440s ]
+
+[ 2018-07-22T21:25:12+08:00 ] 117.28.206.231 /nc.php?s=/Goods/cateUpdate.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000051s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000298s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000806s ]
+NOTIC: [8] Constant LANG_SET already defined /www/wwwroot/upay.fanglao.vip/ThinkPHP/Library/Behavior/CheckLangBehavior.class.php 第 55 行.
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000775s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001953s ]
+
+[ 2018-07-22T21:25:20+08:00 ] 117.28.206.231 /nc.php?s=/Order/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000041s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000311s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000823s ]
+NOTIC: [8] Constant LANG_SET already defined /www/wwwroot/upay.fanglao.vip/ThinkPHP/Library/Behavior/CheckLangBehavior.class.php 第 55 行.
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000726s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001933s ]
+SQL: SELECT o.order_id,o.order_no,o.uid,o.status,o.time,o.buy_price,o.buy_name,o.buy_phone,o.seluid FROM ysk_order o WHERE 1=1  and o.is_duobao like '%1%' [ RunTime:0.0002s ]
+SQL: SELECT o.order_id,o.order_no,o.uid,o.status,o.time,o.buy_price,o.buy_name,o.buy_phone,o.seluid FROM ysk_order o WHERE 1=1  and o.is_duobao like '%1%'ORDER BY field(o.status,1,2,0,3),o.time DESC LIMIT 0,10 [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000066s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000096s ]
+SQL: SHOW COLUMNS FROM `nc_menu` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `nc_menu` ORDER BY sort_order  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000028s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.004130s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002376s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002405s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000132s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000151s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002655s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002405s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000005s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.000118s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000331s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000356s ]
+
+[ 2018-07-22T21:26:14+08:00 ] 117.28.206.231 /nc.php?s=/Order/index.html&status=3
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000043s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000337s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000796s ]
+NOTIC: [8] Constant LANG_SET already defined /www/wwwroot/upay.fanglao.vip/ThinkPHP/Library/Behavior/CheckLangBehavior.class.php 第 55 行.
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000724s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001929s ]
+SQL: SELECT o.order_id,o.order_no,o.uid,o.status,o.time,o.buy_price,o.buy_name,o.buy_phone,o.seluid FROM ysk_order o WHERE 1=1  and o.status like '%3%' and o.is_duobao like '%1%' [ RunTime:0.0003s ]
+SQL: SELECT o.order_id,o.order_no,o.uid,o.status,o.time,o.buy_price,o.buy_name,o.buy_phone,o.seluid FROM ysk_order o WHERE 1=1  and o.status like '%3%' and o.is_duobao like '%1%'ORDER BY field(o.status,1,2,0,3),o.time DESC LIMIT 0,10 [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000065s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000093s ]
+SQL: SHOW COLUMNS FROM `nc_menu` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `nc_menu` ORDER BY sort_order  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000025s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.004018s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002138s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002167s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000125s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000145s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002420s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002167s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000005s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.000130s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000421s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000451s ]
+
+[ 2018-07-22T21:26:14+08:00 ] 117.28.206.231 /nc.php?s=/Order/index.html&status=3
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000035s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000291s ]
+INFO: Run Common\Behavior\CheckLangBehavior [ RunTime:0.000784s ]
+NOTIC: [8] Constant LANG_SET already defined /www/wwwroot/upay.fanglao.vip/ThinkPHP/Library/Behavior/CheckLangBehavior.class.php 第 55 行.
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000701s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001846s ]
+SQL: SELECT o.order_id,o.order_no,o.uid,o.status,o.time,o.buy_price,o.buy_name,o.buy_phone,o.seluid FROM ysk_order o WHERE 1=1  and o.status like '%3%' and o.is_duobao like '%1%' [ RunTime:0.0002s ]
+SQL: SELECT o.order_id,o.order_no,o.uid,o.status,o.time,o.buy_price,o.buy_name,o.buy_phone,o.seluid FROM ysk_order o WHERE 1=1  and o.status like '%3%' and o.is_duobao like '%1%'ORDER BY field(o.status,1,2,0,3),o.time DESC LIMIT 0,10 [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000059s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000086s ]
+SQL: SHOW COLUMNS FROM `nc_menu` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `nc_menu` ORDER BY sort_order  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000025s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.003896s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002190s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002220s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000137s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000162s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002510s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002220s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000005s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.000134s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000417s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000449s ]
+
