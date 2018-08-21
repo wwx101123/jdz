@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>app下载页</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .wrap{
+            position: fixed;
+            top: 0;
+            left: 0;
+            background: url('./img/bg.jpg') no-repeat;
+            width: 100%;
+            height: 100%;
+            background-size: 100%; 
+        }
+        .header{
+            margin-top: 10%;
+            color: #cacaca;
+            text-align: center;
+            
+        }
+        .header .logo{
+            width: 20%;
+            margin: 0 auto;
+        }
+        .header .logo img{
+            width: 100%;
+            display: inline-block;
+        }
+        .header .subTitle{
+            text-align: center;
+            margin-top: 10px;
+            padding: 0 15px;
+            font-size: 20px;
+            color: white;
+        }
+        .btn{
+            margin-top: 90%;
+        }
+        .ios{
+            width: 60%;
+            height: 50px;
+            background-color: white;
+            border-radius: 10px;
+            text-align: center;
+            margin: 0 auto;
+            line-height: 50px;
+            color: red;
+            font-size: 20px;
+        }
+        .ios a{
+            text-decoration: none;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="header">
+            <div class="logo">
+                <img src="./img/logo.png" alt="">
+            </div>
+            <p class="subTitle">爱花钱</p>
+        </div>
+        <div class="btn">
+            <!-- <div class="android"><span class="icon"></span>立即下载</div> -->
+            <div class="ios"><a href="" id="links">立即下载</a></div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        var u = navigator.userAgent;
+        var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
+        var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+        if(isAndroid){
+            /* 安卓链接 */
+            document.getElementById("links").href="http://www.baidu.com";
+        }else if(isiOS){
+            /* 苹果链接 */
+            document.getElementById("links").href="https://blog.csdn.net/yual365/article/details/9366171";
+        }
+    </script>
+</body>
+</html>

@@ -17,6 +17,7 @@ class LoginController extends Controller
         }
     }
 
+
     public function msglogin()
     {
         //判断网站是否关闭
