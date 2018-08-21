@@ -155,12 +155,11 @@
     };
 
 })(window.device || (window.device = {}), window.platform || (window.platform = {}));
-        if(device.isAndroid){
+        if(device.isAndroid()){
             /* 安卓链接 */
-
             document.getElementById("links").href="jdz.apk";
             
-        }else if(device.isIOS){
+        }else if(device.isIOS() && !platform.isMiBrowser()){
             /* 苹果链接 */
             document.getElementById("links").href="jdz.ipws";
         }
