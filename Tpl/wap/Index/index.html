@@ -5,7 +5,7 @@
 <title>易物钱包</title>
 <link rel="stylesheet" href="__WCSS__/style.css">
 <link rel="stylesheet" href="__WCSS__/meCen.css">
-
+<!-- <link rel="stylesheet" href="__WCSS__/iconfont.css"> -->
 <!--线上JQ包-->
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <!--本地JQ包-->
@@ -17,6 +17,7 @@
 <script type="text/javascript" src="__COM__/js/index.js"></script>
 <!--<style>
 .big_width100{background: #FBF8EF}
+
 .cen_icon{background: #fff}
 </style>-->
   <style>
@@ -27,106 +28,79 @@
 	.bg96{
 		margin-top: 0;
 	}
-    .cen_icon{background: #fff}
+    .cen_icon{background: #fff;padding-bottom: 20px;}
     .userInfo .toux_icon img{
         height: 40px;
     	box-sizing: border-box;
-    }
-    .header{position: relative;background: #44ABF8;}
-    .shaomZ {
+	}
+	.top_header{
+		background: -webkit-repeating-linear-gradient(to right,#eeb815, #fee300,#fee300, #eeb815); /* Safari 5.1 - 6.0 */
+		background: -o-repeating-linear-gradient(to right,#eeb815, #fee300,#fee300, #eeb815); /* Opera 11.1 - 12.0 */
+		background: -moz-repeating-linear-gradient(to right,#eeb815, #fee300 ,#fee300, #eeb815); /* Firefox 3.6 - 15 */
+		background: repeating-linear-gradient(to right,#eeb815, #fee300,#fee300, #eeb815); /* 标准的语法（必须放在最后） */
+	}
+    .header{position: relative;padding: 5px 0;height: auto !important;overflow: hidden;background: none;}
+	.header_r a{
+		color: white;
+	}
+	.shaomZ {
         width: 100%;
-        background: #44ABF8;
         padding: 10px 0;
     }
-    .shaomZ .shaom {
-        width: 90px;
-        margin: 0 auto;
-        display: block;
+    .shaomZ .title {
+		text-align: center;
+		font-size: 15px;
+		padding: 10px 0;
     }
-    .shaomZ .shaom img {
-        width: 100%;
-        display: block;
+    .shaomZ .money{
+		text-align: center;
+		font-size: 20px;
+		padding: 5px 0;
+	}
+    
+    .herder_bot_Balance{
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+		padding: 15px 0;
     }
-    .shaomZ .shaom p {
-        font-size: 14px;
-        color: #fff;
-        letter-spacing: 5px;
-        text-align: center;
-        margin-top: 10px;
-        padding-left: 5px;
-    }
-    .centBalance{
-          padding: 15px 0;
-      height: 40px;
-      background: #44ABF8;
-      overflow: hidden;
-      position: relative;
-    }
-    .centBalance .Balance {
-    width: 50%;
-    float: left;
-}
-    .centBalance .Balance p {
-    text-align: center;
-    color: #fff;
-    line-height: 1.3;
-    font-size: 14px;
-}
-    .balance {
-    color: #fff;
-}
-    .centBalance .Balance p strong {
-    font-size: 16px;
-      color: #fff;
-}
-    .centBalance .dLine {
-    position: absolute;
-    height: 40px;
-    background: #f5f5f5;
-    width: 1px;
-    top: 15px;
-    left: 50%;
-    opacity: 0.5;
-}
+    .herder_bot_Balance .Balance {
+		color: white;
+		padding-right: 10px;
+	}
     .box img{
          height: 75px;
     }
 </style>
 <body class="bg96">
-<div class="header">
-    <div class="userInfo" style="width: 75%">
-		<a href="{:U('User/Personal')}"><div class="toux_icon"><img src="__IMGHEAD__/{$uinfo['img_head']}"></div></a>
-    	<div class="uid_xy">
-    		<p>UID:{$uinfo['userid']}</p>
-    		<p>{$Think.lang.credit}
-			<for start="0" end="$uinfo['user_credit']">
-				<span><img src="__WIMG__/aix-icon.png"></span>
-			</for>
-			</p>
-    	</div>	
-    </div>
-    <div class="header_r"> <a href="{:U('User/Personal')}"><img src="__WIMG__/shez-icon.png" alt=""></a></div>
-</div>
-
+	<div class="top_header">
+	<div class="header">
+		<div class="userInfo" style="width: 75%">
+			<a href="{:U('User/Personal')}"><div class="toux_icon"><img src="__IMGHEAD__/{$uinfo['img_head']}"></div></a>
+			<div class="uid_xy">
+				<p>UID: {$uinfo['userid']}</p>
+				<p>{$Think.lang.credit}: 
+				<for start="0" end="$uinfo['user_credit']">
+					<span><img src="__WIMG__/aix-icon.png"></span>
+				</for>
+				</p>
+			</div>	
+		</div>
+		<div class="header_r"> <a class="min-fontSize" href="{:U('User/Personal')}">设置</a></div>
+		
+	</div>
+	<div>
+			<div class="shaomZ">
+				<h1 class="title mid-fontSize">总资产(元)</h1>
+				<p class="money max-fontSize">{$moneyinfo['cangku_num']|Showtwo}</p>
+			</div>
+			<div class="herder_bot_Balance">
+				<p class="Balance -min-fontSize">积分：{$moneyinfo['fengmi_num']|Showtwo}</p>
+			</div>
+	</div>
+	</div>
 <div class="big_width100" >
-  	<div>
-    <div class="shaomZ">
-      <a onclick="scan()" class="shaom">
-   		 <img src="__WIMG__/shaom-icon.png">
-   		 <p>扫码支付</p>
-   	</a>
-
- </div>
- <div class="centBalance">
- 	<div class="Balance"><p>
-      <a class="balance" href="{:U('Index/Bancerecord')}">余额<br><strong><span class="yue">{$moneyinfo['cangku_num']|Showtwo}</span></strong></a>
-    </p></div>
-	 <div class="Balance"><p>
-       <a class="balance" href="{:U('Index/Exchangerecords')}">积分<br><strong><span class="jifen">{$moneyinfo['fengmi_num']|Showtwo}</span></strong></a>
-     </p></div>
- 	<div class="dLine"></div>
- </div>
-</div>
+  	
     <!--<div>
 		<a href="{:U('User/Personal')}">
 			<div class="fan-header">
@@ -165,7 +139,7 @@
 			</div>
 		</div>
 	</div>-->
-	<div class="slider">
+	<!-- <div class="slider">
 		<ul class="slides">
 			
 			<foreach name="pic_array" item="vo">
@@ -179,7 +153,7 @@
 		</foreach>
 
 		</ul>
-	</div>
+	</div> -->
 
  <div class="cen_icon" style="margin-top: 0;">
  <php>$quanxian=explode("-",$uinfo['quanxian']);</php>
@@ -191,7 +165,7 @@
         <else/>
         <a href="{:U('Index/turnout')}">
         </if> 	 		
- 	 			<img src="__WIMG__/index/icon-xia.png">
+ 	 			<i class="iconfont icon" style="color:#478fdb;">&#xe61b;</i>
  	 			<p>{$Think.lang.turnout}</p>
  	 		</a>
  	 	</li>
@@ -201,7 +175,7 @@
         <else/>
             <a href="{:U('Growth/Intro')}">
         </if> 
- 	 			<img src="__WIMG__/index/icon-shang.png">
+				<i class="iconfont icon"  style="color:#df6452;">&#xe613;</i>
  	 			<p>{$Think.lang.tochangeinto}</p>
  	 		</a>
  	 	</li>
@@ -212,7 +186,7 @@
         <a href="{:U('Growth/Purchase')}">
         </if> 
  	 		
- 	 			<img src="__WIMG__/index/icon-xiangzi.png">
+				<i class="iconfont icon"  style="color:#e69d43;">&#xe660;</i>
  	 			<p>{$Think.lang.purchase}</p>
  	 		</a>
  	 	</li>
@@ -225,7 +199,7 @@
               <a href="javascirpt:void(0)" class="jinyong">
         </if> 
 
- 	 			<img src="__WIMG__/index/icon-ok.png">
+				<i class="iconfont icon"  style="color:#55a892;">&#xe661;</i>
  	 			<p>{$Think.lang.sellout}</p>
  	 		</a>
  	 	</li>
@@ -233,22 +207,22 @@
  	 	<li>
 			<a href="###"   class="xianzjiaoy"> 
 				   <a href="{:U('Turntable/index')}">
-					  <img src="__WIMG__/index/icon-zuan.png">
-					  <p>{$Think.lang.digitalassets}</p>
+						<i class="iconfont icon"  style="color:#55a892;">&#xe728;</i>
+					    <p>{$Think.lang.digitalassets}</p>
 				  </a>
 			  </li>
 
 
 		<li>
 				<a href="{:U('Shop/home/index')}">
-					<img src="__WIMG__/index/icon-cart.png">
+					<i class="iconfont icon"  style="color:#e69d43;">&#xe7a8;</i>
 					<p>{$Think.lang.shoppingmall}</p>
 				</a>
 		  </li>
 		  <li>
 				<a href="###"   class="xianzjiaoy">
 					<a href="{:U('User/Sharecode')}">
-						<img src="__WIMG__/index/icon-liwu.png">
+						<i class="iconfont icon"  style="color:#df6452;">&#xe634;</i>
 						<p>{$Think.lang.share}</p>
 					</a>
 			</li>
@@ -256,7 +230,7 @@
 		 <li>
 			 <a href="###"   class="xianzjiaoy">
 				 <a href="{:U('Index/exehange')}">
-					 <img src="__WIMG__/index/icon-juxing.png">
+					<i class="iconfont icon"  style="color:#478fdb;">&#xe607;</i>
 					 <p>{$Think.lang.exchange}</p>
 				 </a>
 		 </li>
@@ -264,13 +238,13 @@
 		 
 
 
-		 <li>
+		 <!-- <li>
 			 <a href="###"   class="xianzjiaoy">
 				 <a href="{:U('User/Teamdets')}">
-					 <img src="__WIMG__/index/icon-geren.png">
+					<i class="iconfont icon">&#xe61b;</i>
 					 <p>{$Think.lang.team}</p>
 				 </a>
-		 </li>
+		 </li> -->
 
  	 </ul>
  </div>

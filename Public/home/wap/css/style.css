@@ -7,7 +7,22 @@ blockquote,q{quotes:none}
 blockquote:after,blockquote:before,q:after,q:before{content:'';content:none}
 table{border-collapse:collapse;border-spacing:0}
 body{background:#f8f8f8;text-align:center;color:#fff; width: 100%;}
-
+@font-face {
+    font-family: 'iconfont';  /* project id 803693 */
+    src: url('//at.alicdn.com/t/font_803693_324psrmeoza.eot');
+    src: url('//at.alicdn.com/t/font_803693_324psrmeoza.eot?#iefix') format('embedded-opentype'),
+    url('//at.alicdn.com/t/font_803693_324psrmeoza.woff') format('woff'),
+    url('//at.alicdn.com/t/font_803693_324psrmeoza.ttf') format('truetype'),
+    url('//at.alicdn.com/t/font_803693_324psrmeoza.svg#iconfont') format('svg');
+  }
+  
+.iconfont {
+    font-family:"iconfont" !important;
+    font-size:23px;
+    font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
 @media (min-width:670px){
     body{ width: 640px !important; margin: 0 auto; }
     .login-container {margin: 8% auto 0 auto;}
@@ -17,7 +32,23 @@ body{background:#f8f8f8;text-align:center;color:#fff; width: 100%;}
     .big_width100{ width: 640px !important; margin: 0 auto; }
     .big_width80{ width: 640px !important; margin: 0 auto; }
 }
+@media screen and (max-width:321px){
+    .min-fontSize{font-size: 15px}
+    .mid-fontSize{font-size: 17px}
+    .max-fontSize{font-size: 19px}
+}
 
+@media screen and (min-width:321px) and (max-width:400px){
+    .fontSize{font-size:16px}
+    .mid-fontSize{font-size: 18px}
+    .max-fontSize{font-size: 20px}
+}
+
+@media screen and (min-width:400px){
+    .fontSize{font-size:18px}
+    .mid-fontSize{font-size: 20px}
+    .max-fontSize{font-size: 22px}
+}
 /*通用*/
 .big_width{ width: 90%; margin: 0 auto; margin-top: 46px;}
 .big_width80{ width: 80%; margin: 0 auto; margin-top: 46px;}
@@ -53,7 +84,7 @@ input{outline:none; -webkit-appearance: none;}
 .footer-fan{
     position: fixed;
     height: 46px;
-    background-color: #0290F4;
+    background-color: #ffb900;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -69,7 +100,6 @@ input{outline:none; -webkit-appearance: none;}
     align-items: center;
     font-size: 12px;
     color:#fff;
-    border-right:1px solid #1682D0;
     flex:1;
 }
 .footer-fan a:last-child{

@@ -13,8 +13,7 @@ body{ text-align: left; }
 
 .clear_wl:after { content: "."; height: 0; visibility: hidden; display: block; clear: both; }
 
-.shuzbzonge{ width: 100%; padding:25px  0 15px; background: url(../images/index/index-header.png) 0 0 /100% 100%;text-align: center;
-    box-shadow: 0 8px 5px #c5c5c5;
+.shuzbzonge{ width: 100%; padding:25px  0 15px; background: url(../images/index/head_bg.jpg) 0 0 /100% 100%;text-align: center;
 }
 
 .shuzbzonge .icon{ 
