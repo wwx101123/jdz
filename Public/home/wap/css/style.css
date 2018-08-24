@@ -18,7 +18,7 @@ body{background:#f8f8f8;text-align:center;color:#fff; width: 100%;}
   
 .iconfont {
     font-family:"iconfont" !important;
-    font-size:23px;
+    font-size:32px;
     font-style:normal;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -50,8 +50,8 @@ body{background:#f8f8f8;text-align:center;color:#fff; width: 100%;}
     .max-fontSize{font-size: 22px}
 }
 /*通用*/
-.big_width{ width: 90%; margin: 0 auto; margin-top: 46px;}
-.big_width80{ width: 80%; margin: 0 auto; margin-top: 46px;}
+.big_width{ width: 80%; margin: 0 auto; margin-top: 46px;overflow: hidden;}
+.big_width80{ width: 80%; margin: 0 auto; margin-top: 46px;overflow: hidden;}
 .big_width100{ width: 100%; margin: 46px auto;}
 .mgt46{
     margin-top: 46px;
@@ -113,15 +113,15 @@ input{outline:none; -webkit-appearance: none;}
 .header{
     width:100%;
     height:46px;
-    background: #0572C5;
-   color: #C2E7FF;
+    background: #ffb900;
+   color: white;
    position: fixed;
    top: 0;
    left: 0;
     z-index: 1;
 }
 .header h2{
-    color:#C2E7FF;
+    color:white;
     text-align: center;
     line-height: 46px;
     font-size:18px;
@@ -164,7 +164,7 @@ input{outline:none; -webkit-appearance: none;}
 }
 .header_r a{
     line-height: 46px;
-    color:#C2E7FF;
+    color:white;
     font-size:14px;
     float: right;
     margin-right:10px;
