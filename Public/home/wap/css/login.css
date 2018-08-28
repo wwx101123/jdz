@@ -33,11 +33,28 @@
     text-align: right;
     margin-top: .3rem;
 }
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color:white; 
+    }
+    
+    ::-moz-placeholder { /* Mozilla Firefox 19+ */
+        color:white; 
+    }
+    
+    input:-ms-input-placeholder,
+    textarea:-ms-input-placeholder {
+        color:white; 
+    }
+    
+    input::-webkit-input-placeholder,
+    textarea::-webkit-input-placeholder {
+        color:white; 
+    }
 .register-title{color: #fff;font-size: .5rem;text-align: center;padding: .5rem 0;letter-spacing: .1rem;text-indent: .1rem;}
 .formrgister{margin:0 auto;padding-top: .2rem;font-size: .28rem;}
 .register-container .formbox{margin-top: 0;}
 .formrgister .input_box{margin-top: .3rem;}
-.formrgister .input_box p{color: #cfbdb4}
+.formrgister .input_box p{color: white}
 .formrgister .inde-btn button{margin: .5rem 0;}
 .register-container .extra_btn{-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;margin: .5rem 0 1rem 0;}
 .input_box .input-code{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack: justify;-ms-flex-pack: justify;justify-content: space-between;-webkit-box-align: center;-ms-flex-align: center;align-items: center;margin-top: .2rem;}
