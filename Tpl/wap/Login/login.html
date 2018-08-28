@@ -25,19 +25,20 @@
 		</div>
 		<form name="formlogin" id="loginForm" class="formlogin" method="post" action="{:U('Login/checkLogin')}">
 			<div class="input_box">
-				<p>手机号/UID</p>
 				<input type="text" name="account" class="username" placeholder="{$Think.lang.mobile}/UID" autocomplete="off"/>
 			</div>
 			<div class="input_box">
-				<p>登录密码</p>
 				<input type="password" name="password" class="password" placeholder="{$Think.lang.loginpwd}" oncontextmenu="return false" onpaste="return false" />
 			</div>
 			<div  class="inde-btn">
 				<button id="submit" type="button" onclick="login()">{$Think.lang.login1}</button>
 			</div>
+			<div class="password">
+				<a href="{:U('login/getpsw')}">{$Think.lang.forget_pwd}</a>
+			</div>
+			
 			<div class="extra_btn">
 				<a href="{:U('Login/register')}">{$Think.lang.has_account}</a>
-				<a href="{:U('login/getpsw')}">{$Think.lang.forget_pwd}</a>
 		    </div>
 		</form>
 	</div>
