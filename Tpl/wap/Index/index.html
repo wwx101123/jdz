@@ -44,123 +44,77 @@
 		color: white;
 	}
 	.shaomZ {
-        width: 100%;
-        padding: 10px 0;
+		padding: 10px 0;
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
     }
     .shaomZ .title {
 		text-align: center;
-		font-size: 15px;
-		padding: 10px 0;
+		padding-right: 10px;
     }
     .shaomZ .money{
 		text-align: center;
-		font-size: 20px;
 		padding: 5px 0;
 	}
     
     .herder_bot_Balance{
 		display: flex;
-		justify-content: flex-end;
+		justify-content: space-between;
 		align-items: center;
-		padding: 15px 0;
+		padding: 10px;
     }
     .herder_bot_Balance .Balance {
 		color: white;
-		padding-right: 10px;
 	}
     .box img{
          height: 75px;
-    }
+	}
+	.sao{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: 10px 0;
+		margin-top: 10px;
+	}
+	.sao img{
+		width: 100px;
+		height: 100px;
+	}
 </style>
 <body class="bg96">
 	<div class="top_header">
-	<div class="header">
-		<div class="userInfo" style="width: 75%">
-			<a href="{:U('User/Personal')}"><div class="toux_icon"><img src="__IMGHEAD__/{$uinfo['img_head']}"></div></a>
-			<div class="uid_xy">
-				<p>UID: {$uinfo['userid']}</p>
-				<p>{$Think.lang.credit}: 
-				<for start="0" end="$uinfo['user_credit']">
-					<span><img src="__WIMG__/aix-icon.png"></span>
-				</for>
-				</p>
-			</div>	
+		<div class="header">
+			<div class="userInfo" style="width: 75%">
+				<a href="{:U('User/Personal')}"><div class="toux_icon"><img src="__IMGHEAD__/{$uinfo['img_head']}"></div></a>
+				<div class="uid_xy">
+					<p>UID: {$uinfo['userid']}</p>
+					<p>{$Think.lang.credit}: 
+					<for start="0" end="$uinfo['user_credit']">
+						<span><img src="__WIMG__/aix-icon.png"></span>
+					</for>
+					</p>
+				</div>	
+			</div>
+			<div class="header_r"> <a class="min-fontSize" href="{:U('User/Personal')}">设置</a></div>
 		</div>
-		<div class="header_r"> <a class="min-fontSize" href="{:U('User/Personal')}">设置</a></div>
-		
-	</div>
-	<div>
-			<div class="shaomZ">
-				<h1 class="title mid-fontSize">总资产(元)</h1>
-				<p class="money max-fontSize">{$moneyinfo['cangku_num']|Showtwo}</p>
+		<div>
+			<div class="sao">
+				<a onclick="scan();">
+					<img src="__WIMG__/shaom-icon.png" alt="">
+				</a>
 			</div>
 			<div class="herder_bot_Balance">
-				<p class="Balance -min-fontSize">积分：{$moneyinfo['fengmi_num']|Showtwo}</p>
-			</div>
-	</div>
-	</div>
-<div class="big_width100" >
-  	
-    <!--<div>
-		<a href="{:U('User/Personal')}">
-			<div class="fan-header">
-				<img src="__IMGHEAD__/{$uinfo['img_head']}" class="icon">
-				<p>UID：{$uinfo['userid']}</p>
-			</div>
-		</a>
-		<div class="centBalance">
-			<div class="Balance">
-				<a class="balance" href="{:U('Index/Bancerecord')}">
-					<img src="__WIMG__/index/libao.png" alt="">
-					<div class="info">
-						<p>我的资产</p>
-						<strong><span  class="yue">{$moneyinfo['cangku_num']|Showtwo}</span></strong>
-					</div>		
-				</a>	
-			</div>
-			<div class="Balance">
-				<a onclick="BSL.Qcode('0','qrcodeCallback')" class="shaom">
-					<img src="__WIMG__/index/erweima.png">
-					<div class="info">
-						<p>扫一扫</p>
-						<strong></strong>
-					</div>
-				</a>
-	
-			</div>
-			<div class="Balance">	
-					<a class="balance" href="{:U('Index/Exchangerecords')}">
-						<img src="__WIMG__/index/zuan.png">
-						<div class="info">
-							<p>我的积分</p>
-							<strong><span class="jifen">{$moneyinfo['fengmi_num']|Showtwo}</span></strong>
-						</div>
-					</a>
+				<div class="shaomZ">
+						<h1 class="title mid-fontSize">总资产(元):</h1>
+						<p class="money mid-fontSize">{$moneyinfo['cangku_num']|Showtwo}</p>
+				</div>
+				<p class="Balance mid-fontSize">积分：{$moneyinfo['fengmi_num']|Showtwo}</p>
 			</div>
 		</div>
-	</div>-->
-	<!-- <div class="slider">
-		<ul class="slides">
-			
-			<foreach name="pic_array" item="vo">
-			<li class="slide">
-			 <div class="box">
-			<if condition="($vo.status eq 1)">
-			  <img href="#" src="{$vo.picture|get_cover_url}"/>
-			  <else /></if>
-			 </div>
-			</li>
-		</foreach>
+	</div>
+<div class="big_width100" >
 
-		</ul>
-	</div> -->
-<div>
-	<a onclick="scan()" class="shaomZ">
-		<img src="__WIMG__/shaom-icon.png">
-		<p>扫码支付</p>
-	</a>
-
-</div>
  <div class="cen_icon" style="margin-top: 0;">
  <php>$quanxian=explode("-",$uinfo['quanxian']);</php>
 
@@ -202,7 +156,7 @@
         <else/>
            
               <!-- <a href="{:U('Trading/SellCentr')}" class="jinyong">-->
-              <a href="{:U('Trading/Selldets')}" class="jinyong">
+              <a href="javascirpt:void(0)" class="jinyong">
         </if> 
 
 				<i class="iconfont icon"  style="color:#55a892;">&#xe661;</i>
@@ -304,9 +258,9 @@
         }); */
 
     });
-  /*  $(".jinyong").click(function(){
+    $(".jinyong").click(function(){
       alert("商城未开启");
-    })*/
+    })
 </script>
 
 <script type="text/javascript">
