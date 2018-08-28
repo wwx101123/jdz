@@ -16,41 +16,33 @@
     <div class="formbox">
         <form name="AddUser" action="{:U('Login/register')}" id="registerForm" class="formrgister" method="get">
             <div class="input_box">
-                <p>请输入昵称</p>
                 <input type="text" name="username" class="username" placeholder="昵称" autocomplete="off"/>
             </div>
             <div class="input_box">
-                <p>请输入手机号码</p>
                 <input type="number" name="mobile" class="phone_number" placeholder="输入手机号码" autocomplete="off" id="number"/>
             </div>
             <div class="input_box " id="captcha-container">  
-                <p>请输入右侧验证码</p>
                 <div class="input-code">
                     <input name="verify" class="captcha-text" placeholder="验证码"  id="j_verify" type="text">                  
                     <img alt="图形验证码" src="{:U('Home/Login/verify_c',array())}" title="点击刷新">  
                 </div>
             </div>  
             <div class="input_box">
-                <p>请输入手机验证码</p>
                 <div class="phone-code">
                     <input type="number" id="code" name="code" class="code" placeholder="手机验证码" oncontextmenu="return false" onpaste="return false" />
                     <a href="javascript:void(0)" id="mycode">获取手机验证码</a>
                 </div>
             </div>
             <div class="input_box">
-                <p>请输入登录密码</p>
                 <input type="password" name="login_pwd" class="password" placeholder="输入登录密码" oncontextmenu="return false" onpaste="return false" />
             </div>
             <div class="input_box">
-                <p>请再次输入登录密码</p>
                 <input type="password" name="relogin_pwd" class="confirm_password" placeholder="再次输入密码" oncontextmenu="return false" onpaste="return false" />
             </div>
             <div class="input_box">
-                <p>请输入推荐人手机号</p>
                 <input type="text" name="pid" placeholder="推荐人手机号码" value="{$mobile}">
             </div>
             <div class="input_box">
-                <p>请输入您的交易密码</p>
                 <input type="password" name="safety_pwd" class="safety_pwd" placeholder="交易密码" oncontextmenu="return false" onpaste="return false" />
             </div>
             <div  class="inde-btn">
