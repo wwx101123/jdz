@@ -174,7 +174,7 @@ body{ text-align: left;}
 .mlr_pm{margin-right:4.35%;}
 
 /*转入*/
-.bg_blue{background: #48b1a4;}
+.bg_blue{background: #ffb900;}
 .qrCodeGro{     width: 84%; padding: 8% 8%;margin-top: 20px; background: #fff; border-radius: 10px;}
 .qrCodeGro img{ width: 90%; margin: 10px auto ; display: block;}
 .qrCodeGro p{ font-size: 15px; color: #000; line-height: 40px; text-align: center;}
