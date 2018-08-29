@@ -2,6 +2,7 @@ body{ text-align: left; }
 .big_width100{
     background-color: #FBF8EF;
     margin-top: 46px;
+    overflow: hidden;
 }
 .clear { clear: both }
 
@@ -370,7 +371,7 @@ body{ text-align: left; }
 
           margin:0 auto;}
 
-.buy_Wpayzu{ width: 100%;padding: 15px 0; background: #48b1a4; position: relative;}
+.buy_Wpayzu{ width: 100%;padding: 15px 0; background: #ffb900; position: relative;}
 
 .buy_Wpayzu .buy_Wpayzu_l{ float: left; width: 50%; font-size: 16px; text-align: center; line-height: 30px;}
 
@@ -402,7 +403,7 @@ body{ text-align: left; }
 
 
 
-.buy_quexiant{ width: 100%; border-top: 1px solid #48b1a4; border-bottom: 1px solid #48b1a4; background-color: #fff; margin-top: 10px;}
+.buy_quexiant{ width: 100%; border-top: 1px solid #ffb900; border-bottom: 1px solid #ffb900; background-color: #fff; margin-top: 10px;}
 
 .buy_quexiant li{ width: 33.3%; float: left; text-align: center; color: #48b1a4; line-height: 30px; padding: 2px 0; font-size: 14px; position: relative;}
 
@@ -410,13 +411,13 @@ body{ text-align: left; }
 
 .buy_quexiant li.lizuih{ width: 33.4%;}
 
-.buy_quexiant li.yon{ background-color: #48b1a4; color: #fff;}
+.buy_quexiant li.yon{ background-color: #ffb900; color: #fff;}
 
 
 
 .investment_f{ width:100%;}
 
-.investment_f .investment_title{ width: 80%; border-radius: 34px; margin: 15px auto; border: 1px solid #ff2929; overflow:hidden}
+.investment_f .investment_title{ width: 80%; border-radius: 34px; margin: 15px auto; border: 1px solid #ffb900; overflow:hidden}
 
 .investment_title div{ width:50%; height:34px; float:left;  display:inline; font-size:14px; font-weight:bold; text-align:center; line-height:36px; color:#ff2929; background-color: #fff; /*cursor:pointer;*/}
 
@@ -424,7 +425,7 @@ body{ text-align: left; }
 
 .investment_title div.on a,.investment_title div.on a:link,.investment_title div.on a:visited,.investment_title div.on a:hover{ color:#fff}
 
-.investment_title div.on{background-color: #ff2929; color: #fff;}
+.investment_title div.on{background-color: #ffb900; color: #fff;}
 
 .investment_con{ clear:both; }
 
