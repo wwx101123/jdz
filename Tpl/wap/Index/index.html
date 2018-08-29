@@ -265,8 +265,9 @@
 
 <script type="text/javascript">
       function scan(){
+          window.postMessage('saoyisao://pay');
   		  window.location.href="saoyisao://abcd";
-    }
+	  }
     $("#hide").click(function(){
         var yue = Number($('.yue').text());
         var jifen = Number($('.jifen').text());
