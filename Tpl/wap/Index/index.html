@@ -106,7 +106,7 @@
 			</div>
 			<div class="herder_bot_Balance">
 				<div class="shaomZ">
-						<h1 class="title mid-fontSize">总资产(元):</h1>
+						<h1 class="title mid-fontSize">余额(元):</h1>
 						<p class="money mid-fontSize">{$moneyinfo['cangku_num']|Showtwo}</p>
 				</div>
 				<p class="Balance mid-fontSize">积分：{$moneyinfo['fengmi_num']|Showtwo}</p>
@@ -163,49 +163,62 @@
  	 			<p>{$Think.lang.sellout}</p>
  	 		</a>
  	 	</li>
-
- 	 	<li>
-			<a href="###"   class="xianzjiaoy"> 
-				   <a href="{:U('Turntable/index')}">
-						<i class="iconfont icon"  style="color:#55a892;">&#xe728;</i>
-					    <p>{$Think.lang.digitalassets}</p>
-				  </a>
-			  </li>
-
-
-		<li>
+			<!-- 需要输出文字和链接 -->
+		  	<li>
+				<a href="">
+					<i class="iconfont icon" style="color:#55a892;">&#xe68e;</i>
+					<p>金点子</p>
+				</a>
+			</li>
+			
+			<li>
 				<a href="{:U('Shop/home/index')}">
 					<i class="iconfont icon"  style="color:#e69d43;">&#xe7a8;</i>
 					<p>{$Think.lang.shoppingmall}</p>
 				</a>
-		  </li>
-		  <li>
-				<a href="###"   class="xianzjiaoy">
+			</li>
+			<li>
+					<a href="{:U('Turntable/index')}">
+							<i class="iconfont icon"  style="color:#df6452;">&#xe728;</i>
+							<p>{$Think.lang.digitalassets}</p>
+					</a>
+			</li>
+
+			<!-- 需要输出文字和链接 -->
+			<li>
+					<a href="">
+						<i class="iconfont icon"  style="color:#478fdb;">&#xe62a;</i>
+						<p>体育赛事</p>
+					</a>
+			</li>
+			<li>
+					<a href="{:U('Index/exehange')}">
+						<i class="iconfont icon"  style="color:#478fdb;">&#xe607;</i>
+						<p>{$Think.lang.exchange}</p>
+					</a>
+			</li>
+		    <li>
 					<a href="{:U('User/Sharecode')}">
 						<i class="iconfont icon"  style="color:#df6452;">&#xe634;</i>
 						<p>{$Think.lang.share}</p>
 					</a>
 			</li>
-		  
-		 <li>
-			 <a href="###"   class="xianzjiaoy">
-				 <a href="{:U('Index/exehange')}">
-					<i class="iconfont icon"  style="color:#478fdb;">&#xe607;</i>
-					 <p>{$Think.lang.exchange}</p>
-				 </a>
-		 </li>
-
-		 
-
-
-		 <!-- <li>
-			 <a href="###"   class="xianzjiaoy">
-				 <a href="{:U('User/Teamdets')}">
-					<i class="iconfont icon">&#xe61b;</i>
-					 <p>{$Think.lang.team}</p>
-				 </a>
-		 </li> -->
-
+			<li>
+					<a href="{:U('User/Teamdets')}">
+						<i class="iconfont icon" style="color:#e69d43;">&#xe62f;</i>
+						<p>{$Think.lang.team}</p>
+					</a>
+			 </li>
+			 <!-- 需要输出文字和链接 -->
+			<li>
+					<a href="{:U('User/Loginout')}">
+						<i class="iconfont icon"  style="color:#55a892;">&#xe634;</i>
+						<p>退出</p>
+					</a>
+			</li>
+		
+			
+			
  	 </ul>
  </div>
 </div>
