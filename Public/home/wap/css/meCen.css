@@ -33,14 +33,14 @@ body{ text-align: left;}
 /* .balance{ color: #fff;} */
 .cen_icon{ width: 100%; margin-top: 10px; overflow: hidden; }
 .cen_icon ul{ width: 100%;display: flex;justify-content: flex-start;align-items: center;flex-wrap: wrap;}
-.cen_icon ul li{border-right: 1px solid #d6e8fb;border-bottom: 1px solid #d6e8fb;width: 24.5%;padding: 10px 0;}
+.cen_icon ul li{border-right: 1px solid #d6e8fb;border-bottom: 1px solid #d6e8fb;width: 24.5%;padding: 15px 0;}
 .cen_icon ul li:nth-child(4n){
     border-right: none;
 }
 .cen_icon ul li a{width: 100%; display: block;text-align: center;}
 .cen_icon ul li .icon{ display: block;padding: 5px 0;}
 .cen_icon ul li img{ width: 40%; display: block; margin: 0px auto}
-.cen_icon ul li p{ color: #000; text-align: center; font-size: 14px;padding: 5px 0; }
+.cen_icon ul li p{ color: #000; text-align: center; font-size: 14px; }
 
 /*转出*/
 

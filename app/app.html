@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
     <title>app下载页</title>
     <style>
         *{
             padding: 0;
             margin: 0;
         }
-        .wrap{
+        /* .wrap{
             position: fixed;
             top: 0;
             left: 0;
@@ -19,7 +19,18 @@
             width: 100%;
             height: 100%;
             background-size: 100%; 
-        }
+        } */
+        .wrap:before {
+            content: ' ';
+            position: fixed;
+            z-index: -1;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: url('./img/bg.jpg') center 0 no-repeat;
+            background-size: cover;
+        } 
         .header{
             margin-top: 10%;
             color: #cacaca;
@@ -42,7 +53,7 @@
             color: white;
         }
         .btn{
-            margin-top: 90%;
+            margin-top: 140%;
         }
         .ios{
             width: 60%;
@@ -59,16 +70,45 @@
             text-decoration: none;
             color: red;
         }
+         .and:before {
+            content: ' ';
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: url('./img/and.png') center 0 no-repeat;
+            background-size: cover;
+        } 
+        .toios:before {
+            content: ' ';
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: url('./img/ios.png') center 0 no-repeat;
+            background-size: cover;
+        } 
+        .layer{
+            display: none;
+            background-color: rgba(0,0,0,0.5);
+            height: 100%;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
     </style>
 </head>
 <body>
+    <div class="layer"  id="layer">
+
+    </div>
+
     <div class="wrap">
-        <div class="header">
-            <div class="logo">
-                <img src="./img/logo.png" alt="">
-            </div>
-            <p class="subTitle">金点子</p>
-        </div>
         <div class="btn">
             <!-- <div class="android"><span class="icon"></span>立即下载</div> -->
             <div class="ios"><a href="" id="links">立即下载</a></div>
@@ -159,9 +199,18 @@
             /* 安卓链接 */
             document.getElementById("links").href="jdz.apk";
             
-        }else if(device.isIOS() && !platform.isMiBrowser()){
+        }else if(device.isIOS() && (!platform.isMiBrowser())){
             /* 苹果链接 */
             document.getElementById("links").href="jdz.ipws";
+        }
+        
+        if(platform.isWeixin()&&device.isAndroid()){
+            $('#layer').addClass('and');
+            document.getElementById('layer').style.display = 'block';
+        }
+        if(platform.isWeixin() && device.isIOS() && (!platform.isMiBrowser())){
+            $('#layer').addClass('toios');
+            document.getElementById('layer').style.display = 'block';
         }
     </script>
 </body>
