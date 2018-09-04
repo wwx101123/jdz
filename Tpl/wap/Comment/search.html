@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="__WCSS__/base.css">
+    <link rel="stylesheet" type="text/less" href="__WCSS__/comment/search.less">
+    <script type="text/javascript" src="__WJS__/reset.js"></script>
+    <script src="https://cdn.bootcss.com/less.js/3.0.4/less.min.js"></script>
+    <script src="https://cdn.bootcss.com/vue/2.2.2/vue.min.js"></script>
+    <title>提问</title>
+    <style>
+    @font-face {
+        font-family: 'iconfont';  /* project id 803693 */
+        src: url('//at.alicdn.com/t/font_803693_utrulktu2oa.eot');
+        src: url('//at.alicdn.com/t/font_803693_utrulktu2oa.eot?#iefix') format('embedded-opentype'),
+        url('//at.alicdn.com/t/font_803693_utrulktu2oa.woff') format('woff'),
+        url('//at.alicdn.com/t/font_803693_utrulktu2oa.ttf') format('truetype'),
+        url('//at.alicdn.com/t/font_803693_utrulktu2oa.svg#iconfont') format('svg');
+    }
+    .iconfont {
+        font-family:"iconfont" !important;
+        font-style:normal;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+</style>
+</head>
+<body>
+    <div class="wrap" id="app">
+        <!-- 头部搜索 -->
+        <div class="header">
+            <div class="search-wrap">
+                <i class="iconfont back" @click="handelBack">&#xe682;</i>
+                <input @input="handelInput" class="input" type="text" placeholder="搜索问答内容">
+            </div>
+        </div>
+        <!-- 内容 -->
+        <div class="main">
+            <!-- 默认热门列表 -->
+            <div class="default-con" v-if="showDefault">
+                <h3 class="title">热搜</h3>
+                <ul class="default-list">
+                    <li class="item" v-for="(item,index) in defaultList">
+                        <div class="left-index" :class="{dot:index<3}">{{index+1}}</div>
+                        <div class="right-con">
+                            <h4 class="item-tit">{{item.title}}</h4>
+                            <p class="item-mesg">{{item.mesg}}</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <!-- 搜索列表 -->
+            <div class="search-con" v-if="!showDefault">
+                <ul class="search-list">
+                    <li class="item" v-for="(item,index) in searchList">
+                        <i class="iconfont icon">&#xe609;</i>
+                        <p class="title">{{item.title}}</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script>
+            var vm = new Vue({
+                 el: '#app',
+                 data: {
+                     /* 是否显示热门搜索 */
+                     showDefault:false,
+                     /* 默认热门搜索列表 */
+                     defaultList: [
+                         {
+                             id:0,
+                             title:'咪蒙离婚?',
+                             mesg: '御夫之道宣告失败,有什么事必须知道的事',
+                         },{
+                             id:0,
+                             title:'咪蒙离婚?',
+                             mesg: '御夫之道宣告失败,有什么事必须知道的事',
+                         },{
+                             id:0,
+                             title:'咪蒙离婚?',
+                             mesg: '御夫之道宣告失败,有什么事必须知道的事',
+                         },{
+                             id:0,
+                             title:'咪蒙离婚?',
+                             mesg: '御夫之道宣告失败,有什么事必须知道的事',
+                         }
+                     ],
+                    /* 搜索列表 */
+                    searchList: [
+                        {
+                            id: 0,
+                            title: '咪蒙离婚咪蒙离婚咪蒙离婚咪蒙离婚咪蒙离婚咪蒙离婚',
+                        },{
+                            id: 0,
+                            title: '咪蒙离婚咪蒙离婚咪蒙离婚咪蒙离婚咪蒙离婚咪蒙离婚',
+                        },{
+                            id: 0,
+                            title: '咪蒙离婚咪蒙离婚咪蒙离婚咪蒙离婚咪蒙离婚咪蒙离婚',
+                        },{
+                            id: 0,
+                            title: '咪蒙离婚咪蒙离婚咪蒙离婚咪蒙离婚咪蒙离婚咪蒙离婚',
+                        },{
+                            id: 0,
+                            title: '咪蒙离婚咪蒙离婚咪蒙离婚咪蒙离婚咪蒙离婚咪蒙离婚',
+                        },
+                    ]         
+                },
+                 methods: {
+                    handelInput(e){
+                        console.log(e);
+                    },
+                    /* 返回 */
+                    handelBack(e){
+                        history.go(-1);
+                    }
+                 }
+             })
+         </script>
+</body>
+</html>

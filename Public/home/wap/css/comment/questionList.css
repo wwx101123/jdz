@@ -1,0 +1,123 @@
+.wrap{
+    width: 100%;
+}
+.wrap .header{
+    height: 1.16rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: .15rem;
+    position: fixed;
+    z-index: 99;
+    top: 0;
+    left: 0;
+    background-color: white;
+}
+.search-wrap{
+    width: 7.18rem;
+    border-radius: 5px;
+    background-color: #ebebeb;
+    display: flex;
+    padding: 0.18rem 0;
+    font-size: .32rem;
+    color: #525252;
+}
+.header .left-input{
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+    align-items: baseline;
+    border-right: 1px solid #b5b5b5;
+    margin-top: .1rem;
+}
+.header .left-input i{
+    margin: 0 .35rem;
+    width: .4rem;
+    font-size: .4rem;
+    font-weight: bold;
+}
+.header .right-question{
+    flex-basis: 1.86rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: baseline;
+    margin-top: .1rem;
+}
+.header .right-question i{
+    margin: 0 .25rem;
+    width: .4rem;
+    font-size: .4rem
+}
+
+/* main */
+.main{
+    width: 100%;
+    margin-top: 1.45rem;
+    height: 13rem;
+    overflow: hidden;
+}
+.main .item{
+    padding: .3rem;
+    border-top: .15rem solid #ebebeb;
+}
+.main .item .item-title{
+    font-weight: bold;
+    width: 100%;
+    text-align: left;
+    font-size: .36rem;
+    color: #070707;
+    text-overflow:ellipsis;  
+    white-space: normal;  
+    display:-webkit-box;  
+    -webkit-box-orient:vertical;  
+    -webkit-line-clamp:2;/*规定最多显示两行*/  
+    overflow: hidden;
+    padding: .1rem 0;
+}
+.main .item .item-con{
+    margin-top: .2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.main .item-con p{
+    text-align: left;
+    flex: 1;
+    font-size: .3rem;
+    line-height: .45rem;
+    text-overflow:ellipsis;  
+    white-space: normal;  
+    display:-webkit-box;  
+    -webkit-box-orient:vertical;  
+    -webkit-line-clamp:3;/*规定最多显示两行*/  
+    overflow: hidden;
+}
+.main .item-con img{
+    height: 1.6rem;
+    width: 2.4rem;
+    border-radius: 5px; 
+    margin-left: .1rem;
+    
+}
+.main .item-agree{
+    font-size: .3rem;
+    margin-top: .25rem;
+    color: #8a8a8a;
+    text-align: left;
+}
+
+/* 个人中心 */
+.center{
+    position: fixed;
+    bottom: 1rem;
+    right: .5rem;
+    width: 1rem;
+    height: 1rem;
+    background-color: #2088db;
+    color: white;
+    font-size: .3rem;
+    text-align: center;
+    line-height: 1rem;
+    z-index: 99;
+    border-radius: 50%;
+}
