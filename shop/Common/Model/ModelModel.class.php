@@ -10,9 +10,11 @@ namespace Common\Model;
 
 /**
  * 公共模型
- * @author jry <598821125@qq.com>
+ * @author
  */
 class ModelModel extends \Think\Model
 {
+    protected $tableName;
+
 
 }
