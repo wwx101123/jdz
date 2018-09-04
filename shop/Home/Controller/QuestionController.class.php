@@ -79,4 +79,23 @@ class QuestionController  extends CommonController{
             //默认四条热点
         }
     }
+
+    /**
+     * 问题页
+     */
+    public function question()
+    {
+        $this->display();
+    }
+
+    /* 问题列表 */
+    public function questionlist()
+    {
+        $this->display();
+    }
+    /* 搜索 */
+    public function search()
+    {
+        $this->display();
+    }
 }
