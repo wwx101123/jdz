@@ -49,12 +49,7 @@ class QuestionController  extends CommonController{
                 ->where("a.uid=b.userid")
                 ->field("a.*,b.username,b.img_head")
                 ->order("a.is_it_best,a.praise,a.id desc")->select();
-            $i=0;
-            foreach ($qusetionArr as $key){
-                $qusetionArr[$i]['content']=html_entity_decode($qusetionArr[$i]['content']);
-                $i++;
-            }
-           echo json_encode($qusetionArr);
+           echo $this->htmlDecode($qusetionArr);
            }
      }
     }
@@ -109,7 +104,14 @@ class QuestionController  extends CommonController{
             echo is_numeric($id) ?  json_encode($this->getQuestion()->where(['id'=>$id])->select()) : null;
         }
     }
-
+    public function htmlDecode($qusetionArr){
+        $i=0;
+        foreach ($qusetionArr as $key){
+            $qusetionArr[$i]['content']=html_entity_decode($qusetionArr[$i]['content']);
+            $i++;
+        }
+        return json_encode($qusetionArr);
+    }
     /* 问题列表 */
     public function questionlist()
     {
@@ -121,6 +123,18 @@ class QuestionController  extends CommonController{
                 $questionId=I("post.questionId");
                 //下拉刷新
                 $questionList=$this->getQuestion()->where("id",">",$questionId)->limit(10)->order("id desc")->select();
+                /*
+                 $this->getQuestion()
+                    ->alias("a")
+                    ->join("ysk_answer b")
+                    ->field("a.*,b.content mesg")
+                    ->where("a.id=b.question_id")
+                    ->where("a.id",">",$questionId)
+                    ->limit(10)
+                    ->order("a.id,b.is_it_best desc")
+                    ->group("a.id")
+                    ->select();
+                 * */
             }else{
                 //上拉加载
                 $page=I("post.page");
@@ -128,7 +142,7 @@ class QuestionController  extends CommonController{
                 $questionList= $this->getQuestion()->limit($page*$limit,$limit)->order("id desc")->select();
 
             }
-            echo json_encode($questionList);
+            echo $this->htmlDecode($questionList);
         }
     }
     /* 搜索 */
