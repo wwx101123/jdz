@@ -32,7 +32,7 @@ class QuestionController  extends CommonController{
             return $this->display();
         }elseif(IS_POST){//对问题进行回答
            $questionId=I("post.questionId");
-         echo is_numeric($questionId) ?    json_encode($this->getAnswer()->where(["question_id"=>$questionId])->order("is_it_best,praise,id")->select()) ? null;
+         echo is_numeric($questionId) ?    json_encode($this->getAnswer()->where(["question_id"=>$questionId])->order("is_it_best,praise,id")->select()) : null;
         }
     }
 
