@@ -85,7 +85,7 @@
                     /* 内容数据 标题变量为 this.title */ 
                         this.content = $(".article-content").html();
 
-                        this.$http.post('./getRichmsg',{title:this.title,content:this.content},{emulateJSON : true}).then((response)=>{
+                        this.$http.post('',{title:this.title,content:this.content},{emulateJSON : true}).then((response)=>{
                             console.log(response.data);
                             /* 成功跳转到question页面显示 */
                         })
