@@ -123,8 +123,9 @@ class QuestionController  extends CommonController{
                 $questionList=$this->getQuestion()->where("id",">",$questionId)->limit(10)->order("id desc")->select();
             }else{
                 //上拉加载
-                $page=I("post.page")+1;
-                $questionList= $this->getQuestion()->limit($page,$page*10)->order("id desc")->select();
+                $page=I("post.page");
+                $limit=10;
+                $questionList= $this->getQuestion()->limit($page*$limit,$limit)->order("id desc")->select();
 
             }
             echo json_encode($questionList);
