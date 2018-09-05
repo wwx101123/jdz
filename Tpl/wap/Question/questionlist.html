@@ -45,6 +45,29 @@
         </div>
         <!-- 内容列表 -->
         <div class="main wrapper" ref="wrapper" :style="{ height: scrollHeight +'px'}">
+            <volist name="questionArr" id="vo">
+                <ul class="list" >
+                    <li class="item"  @click="handelToQuestion">
+                        <h3 class="item-title">{$vo.title}</h3>
+                        <div class="item-con">
+                            <p class="mesg">{$vo.title}{$vo.title}{$vo.title}</p>
+                            <img src="{$vo.thumbnail}" alt="">
+                        </div>
+                        <p class="item-agree">{$vo.pv}赞同</p>
+                    </li>
+                </ul>
+
+            </volist>
+            <ul class="list" >
+                <li class="item" v-for="item in questionList" @click="handelToQuestion">
+                    <h3 class="item-title">{{item.title}}</h3>
+                    <div class="item-con">
+                        <p class="mesg">{{item.mesg}}</p>
+                        <img v-if="item.imgSrc" :src="item.imgSrc" alt="">
+                    </div>
+                    <p class="item-agree">{{item.agreeNum}}赞同</p>
+                </li>
+            </ul>
             <ul class="list" >
                 <li class="item" v-for="item in questionList" @click="handelToQuestion">
                     <h3 class="item-title">{{item.title}}</h3>

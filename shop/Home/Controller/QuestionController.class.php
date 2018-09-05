@@ -86,6 +86,7 @@ class QuestionController  extends CommonController{
     public function questionlist()
     {
         if(IS_GET) {
+            $this->assign("questionArr",$this->getQuestion()->limit(10)->order("id desc")->select());
             $this->display();
         }else{
 
