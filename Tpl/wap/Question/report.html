@@ -7,8 +7,11 @@
     <link rel="stylesheet" type="text/css" href="__WCSS__/base.css">
     <link rel="stylesheet" type="text/less" href="__WCSS__/comment/report.less">
     <script type="text/javascript" src="__WJS__/reset.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdn.bootcss.com/vue/2.2.2/vue.min.js"></script>
     <script src="https://cdn.bootcss.com/less.js/3.0.4/less.min.js"></script>
+    <script type="text/javascript" src="__WJS__/comment/editor.js"></script>
+    <script type="text/javascript" src="__WJS__/comment/vue-resource.js"></script>
     <title>提问</title>
     <style>
     @font-face {
@@ -29,34 +32,113 @@
 </head>
 <body>
     <div class="wrap" id="app">
-        <div class="header">
+        <div class="header" ref="header">
             <i class="iconfont icon" @click="handelBack">&#xe602;</i>
             <p class="title">提问</p>
-            <div class="next">下一步</div>
+            <div class="next" @click="handelSubmit">下一步</div>
         </div>
-        <div class="main">
-            <div class="input-wrap">
-                <input type="text" placeholder="请输入标题">
-            </div>
-            <div>
 
+        
+        <div class="main" :style="{ height: scrollHeight +'px'}">
+            <div class="input-wrap">
+                <input v-model="title" type="text" placeholder="请输入标题">
+            </div>
+            <!-- 文本编辑 -->
+            <div class="content">
+                <div class="article-content">
+                </div>
+            </div>
+        </div>
+
+
+        <div class="footer">
+            <div class="tool">
+                <p>添加图片</p>
+                <i class="iconfont icon">&#xe632;</i>
+                <input class="input-file"  type="file" name="fileInput" accept="image/*" style="position:absolute;left:0;opacity:0;width:100%;">
             </div>
         </div>
     </div>
+
     <script>
-        
          var vm = new Vue({
             el:"#app",
             data: {
-
+                scrollHeight:0,
+                /* 提问标题 */
+                title:"",
+                content: "",
+            },
+            computed:{
             },
             methods:{
                 handelBack(e){
                     history.go(-1);
+                },
+                /*  */
+                handelSubmit(){
+                    if(!this.title){
+                        alert("请输入标题");
+                    }else{
+                        console.log("提交");
+                        this.$http.post('./getRichmsg',{public_value:this.public_value},{emulateJSON : true}).then((response)=>{
+                            console.log(response.data);
+                        })
+                        this.content = $(".article-content").html();
+                        console.log(this.content);
+                    }
+                },
+                /* 设置滚动内容高度函数 */
+                scrollHeights(){
+                    let _this = this;
+                    setTimeout(function(){
+                        let header = $(".header").height();
+                        let footer = $(".footer").height();
+                        let con = $(window).height();
+                        let l = con - header - footer -5;
+                        _this.scrollHeight = l;
+                    })
+                   
                 }
+
+            },
+            mounted(){
+                /* 设置高度 */
+                this.scrollHeights();
+                /* 富文本 */
+                $('.article-content').artEditor({
+                    imgTar: '.input-file',
+                    limitSize: 5,   // 兆
+                    showServer: false,
+                    uploadUrl: '',
+                    data: {},
+                    uploadField: 'image',
+                    placeholader: '<p>请输入文章正文内容</p>',
+                    validHtml: ["br"],
+                beforeUpload: function(imgBase64) {
+                    // 处理完之后，必须return图片数据   
+                    return imgBase64         
+                },
+                uploadSuccess: function(res) {
+                            // 这里是处理返回数据业务逻辑的地方
+                            // `res`为服务器返回`status==200`的`response`
+                            // 如果这里`return <path>`将会以`<img src='path'>`的形式插入到页面
+                            // 如果发现`res`不符合业务逻辑
+                            // 比如后台告诉你这张图片不对劲
+                            // 麻烦返回 `false`
+                            // 当然如果`showServer==false`
+                            // 无所谓咯
+                            console.log(res);
+                        // return res.path;
+                },
+                uploadError: function(res) {
+                        //这里做上传失败的操作
+                        //也就是http返回码非200的时候
+                        console.log(res);
+                    }
+                });
             }
         })
     </script>
-   
 </body>
 </html>

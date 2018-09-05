@@ -7,6 +7,7 @@
     <link rel="stylesheet" type="text/css" href="__WCSS__/base.css">
     <link rel="stylesheet" type="text/css" href="__WCSS__/comment/questionList.css">
     <script type="text/javascript" src="__WJS__/reset.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdn.bootcss.com/vue/2.2.2/vue.min.js"></script>
     <script type="text/javascript" src="__WJS__/comment/bscroll.min.js"></script>
     <title>问题列表</title>
@@ -30,7 +31,7 @@
 <body>
     <div class="wrap"  id="app">
         <!-- 头部 -->
-        <div class="header">
+        <div class="header" ref="header">
             <div class="search-wrap">
                 <div class="left-input" @click="handelToSearch">
                     <i class="iconfont">&#xe609;</i>
@@ -43,9 +44,9 @@
             </div>
         </div>
         <!-- 内容列表 -->
-        <div class="main wrapper">
+        <div class="main wrapper" ref="wrapper" :style="{ height: scrollHeight +'px'}">
             <ul class="list" >
-                <li class="item" v-for="item in questionList">
+                <li class="item" v-for="item in questionList" @click="handelToQuestion">
                     <h3 class="item-title">{{item.title}}</h3>
                     <div class="item-con">
                         <p class="mesg">{{item.mesg}}</p>
@@ -57,11 +58,9 @@
         </div>
 
         <!-- 个人中心 -->
-        <div class="center">我的</div>
+        <div class="center" @click="handelToCenter">我的</div>
     </div>
     <script>
-        var wrapper = document.querySelector('.wrapper');
-        var scroll = new BScroll(wrapper);
        var vm = new Vue({
             el: '#app',
             data: {
@@ -96,10 +95,62 @@
                         mesg: '有什么是你去北京必须知道的事,有什么是你去北京必须知道的事,有什么是你去北京必须知道的事',
                         // imgSrc:'http://f.hiphotos.baidu.com/image/pic/item/fc1f4134970a304e48f0a9dfdcc8a786c8175cc0.jpg',
                         agreeNum: 1222,
+                    },{
+                        id:1,
+                        title:'有什么是你去北京必须知道的事?',
+                        mesg: '有什么是你去北京必须知道的事,有什么是你去北京必须知道的事,有什么是你去北京必须知道的事',
+                        // imgSrc:'http://f.hiphotos.baidu.com/image/pic/item/fc1f4134970a304e48f0a9dfdcc8a786c8175cc0.jpg',
+                        agreeNum: 1222,
+                    },{
+                        id:1,
+                        title:'有什么是你去北京必须知道的事?',
+                        mesg: '有什么是你去北京必须知道的事,有什么是你去北京必须知道的事,有什么是你去北京必须知道的事',
+                        // imgSrc:'http://f.hiphotos.baidu.com/image/pic/item/fc1f4134970a304e48f0a9dfdcc8a786c8175cc0.jpg',
+                        agreeNum: 1222,
                     }
-                ]
+                ],
+            },
+            computed:{
+                scrollHeight:function(){
+                    let header = $(".header").height();
+                    let con = $(window).height();
+                    let l = con - header;
+                    return l;
+                }
+            },
+            mounted(){
+                   this.loadData();
             },
             methods: {
+                loadData() {
+                    // requestData().then((res) => {
+                    // this.data = res.data.concat(this.data)
+                    this.$nextTick(() => {
+                        if (!this.scroll) {
+                            this.scroll = new BScroll(this.$refs.wrapper, {
+                                click:true,
+                                // scrollY: true,
+                                /* 上拉加载 */
+                                pullUpLoad: {
+                                    threshold: -30 
+                                },
+                                pullDownRefresh: {
+                                    threshold: 30, // 下拉距离超过30px触发pullingDown事件
+                                } 
+                            })
+                            /* 上拉加载 */
+                            this.scroll.on('pullingUp', (e) => {
+                                console.log("上拉加载");
+                                this.scroll.finishPullUp();
+                            })
+                            this.scroll.on('pullingDown', (e) => {
+                                console.log("下拉刷新");
+                                this.scroll.finishPullDown()
+                            })
+                        }
+                    })
+                    // })
+                },
                 /* 搜索 */
                 handelToSearch(e){
                     location.href = "./search.html";
@@ -108,24 +159,14 @@
                 handelToReport(e){
                     location.href = "./report.html";
                 },
-                loadData() {
-                    requestData().then((res) => {
-                    this.data = res.data.concat(this.data)
-                    this.$nextTick(() => {
-                        if (!this.scroll) {
-                        this.scroll = new Bscroll(this.$refs.wrapper, {})
-                        this.scroll.on('touchend', (pos) => {
-                            // 下拉动作
-                            if (pos.y > 50) {
-                            this.loadData()
-                            }
-                        })
-                        } else {
-                        this.scroll.refresh()
-                        }
-                    })
-                    })
-                }
+                /* 到详情页 */
+                handelToQuestion(){
+                    location.href = "./question.html";
+                },
+                /* 到个人中心 */
+                handelToCenter(){
+                    location.href = "./center.html";
+                }   
             }
         })
     </script>
