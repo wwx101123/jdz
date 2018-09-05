@@ -74,7 +74,12 @@ class QuestionController  extends CommonController{
      */
     public function question()
     {
-        $this->display();
+        if(IS_GET) {
+            $this->display();
+        }elseif(IS_POST){
+            $id=I("post.id");
+            echo json_encode($this->getQuestion()->findById($id));
+        }
     }
 
     /* 问题列表 */
