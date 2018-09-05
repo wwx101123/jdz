@@ -98,7 +98,7 @@
                         this.$http.post('',{amount:this.amount,title:this.title,content:this.content},{emulateJSON : true}).then((response)=>{
                             console.log(response.data);
                             /* 成功跳转到question页面显示 */
-                            location.href = "./question.html?id="+response.data;
+                            location.href = "./question.html?id="+response.data
                         })
                         
                         
