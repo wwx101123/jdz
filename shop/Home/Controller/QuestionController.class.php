@@ -1,15 +1,14 @@
 <?php
 namespace Home\Controller;
 
-use Common\Model\Question;
 use Think\Controller;
 /*
  * 问答区
  * */
 class QuestionController  extends CommonController{
 
-    private function getQustion(){
-        return new Question();
+    private function getQuestion(){
+        return M("Question");
     }
 
     /*
@@ -101,24 +100,29 @@ class QuestionController  extends CommonController{
             return $this->display();
         }elseif(IS_POST){
            $questionArr=I("post.");
-          $this->getImgPath($questionArr['content']);
+
+          if(!empty($questionArr['title'])){
+              $data=[
+                  "title"=>$questionArr['title'],
+                  "content"=>$questionArr['content'],
+                  'amount'=>$questionArr['amount']?$questionArr['amount'] : 0,
+                  'uid'=>session('userid'),
+                  'start_time'=>time(),
+                  'thumbnail'=>str_replace("&quot;","",$this->getThumbanail($questionArr['content'])),
+              ];
+             echo $this->getQuestion()->add($data);
+          }
         }
     }
 
     /*
-     * 匹配Img标签并替换标签路径内容
+     * 匹配内容中的预览图多图返回第一张
+     * return imgPath string  预览图路径
      * */
-    public function getImgPath($str){
-        $imgpreg = 'src="(.*?)">';
-        preg_match($imgpreg,$str,$img);
-        var_dump($img);
-        $mycount=count($img)-1;
-        $imgval = $img[$mycount];
-        if(!empty($imgval)){
-            echo $imgval;
-        }else{
-            echo 'no';
-        }
+    public function getThumbanail($content){
+       $prc='/(href|src)=([\"|\']?)([^\"\'>]+.(jpg|JPG|jpeg|JPEG|gif|GIF|png|PNG))/i';
+        preg_match_all($prc, $content, $out);
+        return !empty($out[3][0]) ? $out[3][0] : "" ;//返回第一张正确图片地址
     }
 
     /*
@@ -126,22 +130,22 @@ class QuestionController  extends CommonController{
      * return imgPath 图片保存路径
      * */
     public function base64ToImg($base64){
-  
+
         if(stripos($base64,"data:image/png;base64,")>-1){
             $str="data:image/png;base64,";
             $ext="png";
-        }elseif(stripos($base64,"data:image/jpg;base64,")>-1||stripos($base64,"data:image/jpeg;base64,")>-1){
-            $str="data:image/jpg;base64,";
+        }elseif(stripos($base64,"data:image/jpeg;base64,")>-1){
+            $str="data:image/jpeg;base64,";
             $ext="jpg";
         }elseif(stripos($base64,"data:image/gif;base64,")>-1){
             $str="data:image/gif;base64,";
             $ext="gif";
         }
         $imgStr=base64_decode(str_replace($str,"",$base64));//解码图片为二进制流
-        $filePath="/question/".date("Y-m-d",time());//文件保存目录
-        $fileName=md5(time()+rand(1,100000));//md5随机加密
+        $filePath="./Public/question/".date("Y-m-d",time());//文件保存目录
+        if (!is_dir($filePath)) mkdir($filePath);//文件夹不存在则创建
+        $fileName=md5(time()+mt_rand(1,100));//md5随机加密
         $imgPath=$filePath."/$fileName.".$ext;//完整图片路径
-        file_put_contents($imgPath,$imgStr);//写入文件
-        echo json_encode($imgPath);
+        echo file_put_contents($imgPath,$imgStr) ? json_encode(str_replace("./P","/P",$imgPath)) : null;//写入文件并返回数据
     }
 }

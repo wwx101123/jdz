@@ -3,7 +3,9 @@
  * 问题模型
  */
 
-namespace Common\Model;
+namespace Home\Model;
+
+use Common\Model\BaseModel;
 
 class Question extends BaseModel
 {
