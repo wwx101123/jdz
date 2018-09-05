@@ -116,8 +116,18 @@ class QuestionController  extends CommonController{
         if(IS_GET) {
             $this->assign("questionArr",$this->getQuestion()->limit(10)->order("id desc")->select());
             $this->display();
-        }else{
+        }elseif(IS_POST){
+            if(I("post.model")==1){
+                $questionId=I("post.questionId");
+                //下拉刷新
+                $questionList=$this->getQuestion()->where("id",">",$questionId)->limit(10)->order("id desc")->select();
+            }else{
+                //上拉加载
+                $page=I("post.page")+1;
+                $questionList= $this->getQuestion()->limit($page,$page*10)->order("id desc")->select();
 
+            }
+            echo json_encode($questionList);
         }
     }
     /* 搜索 */
