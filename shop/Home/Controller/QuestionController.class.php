@@ -31,8 +31,9 @@ class QuestionController  extends CommonController{
             $answerArr=I("post.");
             if(is_array($answerArr)) {
                 $data = [
+                    "id"=>"",
                     'question_id' => $answerArr['questionId'],
-                    'uid' => session("uid"),
+                    'uid' => session("userid"),
                     'content' => $answerArr['content'],
                     'answer_time'=>time()
                 ];
