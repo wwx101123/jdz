@@ -130,7 +130,7 @@ class QuestionController  extends CommonController{
         if(strpos($base64,"data:image/png;base64,")>-1){
             $str="data:image/png;base64,";
             $ext="png";
-        }elseif(strpos($base64,"data:image/jpg;base64,")>-1){
+        }elseif(strpos($base64,"data:image/jpg;base64,")>-1||strpos($base64,"data:image/jpeg;base64,")>-1){
             $str="data:image/jpg;base64,";
             $ext="jpg";
         }elseif(strpos($base64,"data:image/gif;base64,")>-1){
@@ -142,6 +142,6 @@ class QuestionController  extends CommonController{
         $fileName=md5(time()+rand(1,100000));//md5随机加密
         $imgPath=$filePath."/$fileName.".$ext;//完整图片路径
         file_put_contents($imgPath,$imgStr);//写入文件
-        return $imgPath;
+        echo json_encode($imgPath);
     }
 }
