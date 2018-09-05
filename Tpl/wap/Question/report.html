@@ -110,6 +110,7 @@
             mounted(){
                 /* 设置高度 */
                 this.scrollHeights();
+                let _this = this;
                 /* 富文本 */
                 $('.article-content').artEditor({
                     imgTar: '.input-file',
@@ -118,11 +119,16 @@
                     uploadUrl: '',
                     data: {},
                     uploadField: 'image',
-                    placeholader: '<p>请输入文章正文内容</p>',
+                    placeholader: '请输入文章正文内容',
                     validHtml: ["br"],
-                beforeUpload: function(imgBase64) {
-                    // 处理完之后，必须return图片数据   
-                    return imgBase64         
+                 beforeUpload: function(imgBase64) {
+                    // 处理完之后，必须return图片数据 
+                    $.ajaxSettings.async = false;
+                    let s = null;
+                     $.post("{:U('question/base64ToImg')}",{base64:imgBase64},(response)=>{
+                        s = JSON.parse(response);
+                    })
+                    return s;
                 },
                 uploadSuccess: function(res) {
                             // 这里是处理返回数据业务逻辑的地方
