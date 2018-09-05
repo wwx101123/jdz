@@ -126,14 +126,14 @@ class QuestionController  extends CommonController{
      * return imgPath 图片保存路径
      * */
     public function base64ToImg($base64){
-
-        if(strpos($base64,"data:image/png;base64,")>-1){
+  
+        if(stripos($base64,"data:image/png;base64,")>-1){
             $str="data:image/png;base64,";
             $ext="png";
-        }elseif(strpos($base64,"data:image/jpg;base64,")>-1||strpos($base64,"data:image/jpeg;base64,")>-1){
+        }elseif(stripos($base64,"data:image/jpg;base64,")>-1||stripos($base64,"data:image/jpeg;base64,")>-1){
             $str="data:image/jpg;base64,";
             $ext="jpg";
-        }elseif(strpos($base64,"data:image/gif;base64,")>-1){
+        }elseif(stripos($base64,"data:image/gif;base64,")>-1){
             $str="data:image/gif;base64,";
             $ext="gif";
         }
