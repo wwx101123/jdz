@@ -120,29 +120,12 @@ class QuestionController  extends CommonController{
             if(I("post.model")==1){
                 $questionId=I("post.questionId");
                 //下拉刷新
-                $questionList=$this->getQuestion()
-                    ->alias("a")
-                    ->join("ysk_answer b")
-                    ->field("a.*,b.content mesg")
-                    ->where("a.id=b.question_id")
-                    ->where("a.id",">",$questionId)
-                    ->limit(10)
-                    ->order("a.id,b.is_it_best desc")
-                    ->group("a.id")
-                    ->select();
+                $questionList=$this->getQuestion()->where("id",">",$questionId)->limit(10)->order("id desc")->select();
             }else{
                 //上拉加载
                 $page=I("post.page");
                 $limit=10;
-                $questionList= $this->getQuestion()
-                    ->alias("a")
-                    ->join("ysk_answer b")
-                    ->field("a.*,b.content mesg")
-                    ->where("a.id=b.question_id")
-                    ->limit($page*$limit,$limit)
-                    ->order("a.id,b.is_it_best desc")
-                    ->group("a.id")
-                    ->select();
+                $questionList= $this->getQuestion()->limit($page*$limit,$limit)->order("id desc")->select();
 
             }
             echo json_encode($questionList);
