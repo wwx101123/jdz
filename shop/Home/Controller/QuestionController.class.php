@@ -29,7 +29,7 @@ class QuestionController  extends CommonController{
     public function questionDetail(){
         if(IS_POST){
             $answerArr=I("post.");
-            if(is_array($answerArr)) {
+            if(is_array($answerArr)) {//对问题进行回答
                 $data = [
                     "id"=>"",
                     'question_id' => $answerArr['questionId'],
@@ -39,10 +39,24 @@ class QuestionController  extends CommonController{
                 ];
                echo $this->getAnswer()->add($data) ? 1 : 0;
             }
-        }elseif(IS_GET){//对问题进行回答
+        }elseif(IS_GET){
            $questionId=I("get.questionId");
-         echo is_numeric($questionId) ?    json_encode($this->getAnswer()->where(["question_id"=>$questionId])->order("is_it_best,praise,id")->select()) : null;
-        }
+           if(is_numeric($questionId)){
+            $qusetionArr=$this->getAnswer()
+                ->alias("a")
+                ->join("ysk_user b")
+                ->where(["a.question_id"=>$questionId])
+                ->where("a.uid=b.userid")
+                ->field("a.*,b.username,b.img_head")
+                ->order("a.is_it_best,a.praise,a.id desc")->select();
+            $i=0;
+            foreach ($qusetionArr as $key){
+                $qusetionArr[$i]['content']=htmlentities($key['content']);
+                $i++;
+            }
+            echo json_encode($qusetionArr);
+           }
+     }
     }
 
     /*
