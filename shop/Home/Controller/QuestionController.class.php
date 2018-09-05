@@ -51,10 +51,10 @@ class QuestionController  extends CommonController{
                 ->order("a.is_it_best,a.praise,a.id desc")->select();
             $i=0;
             foreach ($qusetionArr as $key){
-                $qusetionArr[$i]['content']=htmlentities($key['content']);
+                $qusetionArr[$i]['content']=html_entity_decode($qusetionArr[$i]['content']);
                 $i++;
             }
-            echo json_encode($qusetionArr);
+           echo json_encode($qusetionArr);
            }
      }
     }
