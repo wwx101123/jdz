@@ -75,17 +75,22 @@
                 handelBack(e){
                     history.go(-1);
                 },
-                /*  */
+                /* 输入标题提交数据方法 */
                 handelSubmit(){
                     if(!this.title){
                         alert("请输入标题");
                     }else{
-                        console.log("提交");
-                        this.$http.post('./getRichmsg',{public_value:this.public_value},{emulateJSON : true}).then((response)=>{
-                            console.log(response.data);
-                        })
+                    /* 此处发请求提交数据 */
+
+                    /* 内容数据 标题变量为 this.title */ 
                         this.content = $(".article-content").html();
-                        console.log(this.content);
+
+                        this.$http.post('./getRichmsg',{title:this.title,content:this.content},{emulateJSON : true}).then((response)=>{
+                            console.log(response.data);
+                            /* 成功跳转到question页面显示 */
+                        })
+                        
+                        
                     }
                 },
                 /* 设置滚动内容高度函数 */
