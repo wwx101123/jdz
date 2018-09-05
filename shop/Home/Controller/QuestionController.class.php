@@ -27,11 +27,19 @@ class QuestionController  extends CommonController{
      * @param $questionId int 问题Id
      * */
     public function questionDetail(){
-        if(IS_GET){
-            $questionId=I("questionId");
-            return $this->display();
-        }elseif(IS_POST){//对问题进行回答
-           $questionId=I("post.questionId");
+        if(IS_POST){
+            $answerArr=I("post.");
+            if(is_array($answerArr)) {
+                $data = [
+                    'question_id' => $answerArr['questionId'],
+                    'uid' => session("uid"),
+                    'content' => $answerArr['content'],
+                    'answer_time'=>time()
+                ];
+               echo $this->getAnswer()->add($data) ? 1 : 0;
+            }
+        }elseif(IS_GET){//对问题进行回答
+           $questionId=I("get.questionId");
          echo is_numeric($questionId) ?    json_encode($this->getAnswer()->where(["question_id"=>$questionId])->order("is_it_best,praise,id")->select()) : null;
         }
     }
