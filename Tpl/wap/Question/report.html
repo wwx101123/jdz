@@ -43,6 +43,9 @@
             <div class="input-wrap">
                 <input v-model="title" type="text" placeholder="请输入标题">
             </div>
+            <div class="input-wrap">
+                <input v-model="amount" type="number" placeholder="请输入悬赏积分">
+            </div>
             <!-- 文本编辑 -->
             <div class="content">
                 <div class="article-content">
@@ -61,6 +64,7 @@
     </div>
 
     <script>
+        Vue.config.devtools = true;
          var vm = new Vue({
             el:"#app",
             data: {
@@ -68,6 +72,8 @@
                 /* 提问标题 */
                 title:"",
                 content: "",
+                /* 悬赏积分 */
+                amount: "",
             },
             computed:{
             },
@@ -79,15 +85,20 @@
                 handelSubmit(){
                     if(!this.title){
                         alert("请输入标题");
+                        return 
+                    }else if(parseInt(this.amount) < 0 || this.amount == ""){
+                        alert("请输入正确的悬赏积分");
+                        return ;
                     }else{
                     /* 此处发请求提交数据 */
 
                     /* 内容数据 标题变量为 this.title */ 
                         this.content = $(".article-content").html();
 
-                        this.$http.post('',{title:this.title,content:this.content},{emulateJSON : true}).then((response)=>{
+                        this.$http.post('',{amount:this.amount,title:this.title,content:this.content},{emulateJSON : true}).then((response)=>{
                             console.log(response.data);
                             /* 成功跳转到question页面显示 */
+                            location.href = "./question.html?id="+response.data;
                         })
                         
                         

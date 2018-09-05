@@ -9,6 +9,7 @@
     <script type="text/javascript" src="__WJS__/reset.js"></script>
     <script src="https://cdn.bootcss.com/vue/2.2.2/vue.min.js"></script>
     <script src="https://cdn.bootcss.com/less.js/3.0.4/less.min.js"></script>
+    <script type="text/javascript" src="__WJS__/comment/vue-resource.js"></script>
     <title>问题内容</title>
     <style>
     @font-face {
@@ -115,6 +116,17 @@
             data: {
 
             },
+            mounted(){
+                let id = this.getQueryString("id");
+                if(!!id){
+                    this.$http.post('',{id:id},{emulateJSON : true}).then((response)=>{
+                        console.log(response.data);
+                        /* 成功跳转到question页面显示 */
+                    })
+                }else{
+                    console.log("参数错误");
+                }
+            },
             methods: {
                 /* 跳转到搜索 */
                 handelToSearch(){
@@ -126,6 +138,16 @@
                 },
                 handelToAnswer(){
                     location.href = './answer.html';
+                },
+                /* 获取参数 */
+                getQueryString(name) {
+                    var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i');
+                    var r = window.location.search.substr(1).match(reg);  //这里返回找到正则的匹配
+                    if (r != null) {
+                        return unescape(r[2]);    //这里返回对应的值
+
+                    }
+                    return null;
                 }
             }
         })
