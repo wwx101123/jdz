@@ -78,7 +78,7 @@ class QuestionController  extends CommonController{
             $this->display();
         }elseif(IS_POST){
             $id=I("post.id");
-            echo json_encode($this->getQuestion()->findById($id));
+            echo json_encode($this->getQuestion()->where(['id',$id])->select());
         }
     }
 
