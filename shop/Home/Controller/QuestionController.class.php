@@ -11,6 +11,10 @@ class QuestionController  extends CommonController{
         return M("Question");
     }
 
+    private function getAnswer(){
+        return M("Answer");
+    }
+
     /*
      * 我的所有问答
      * */
@@ -19,7 +23,7 @@ class QuestionController  extends CommonController{
     }
 
     /*
-     * 问答内容详情
+     * 内容跟帖
      * @param $questionId int 问题Id
      * */
     public function questionDetail(){
@@ -27,7 +31,8 @@ class QuestionController  extends CommonController{
             $questionId=I("questionId");
             return $this->display();
         }elseif(IS_POST){//对问题进行回答
-
+           $questionId=I("post.questionId");
+         echo is_numeric($questionId) ?    json_encode($this->getAnswer()->where(["question_id"=>$questionId])->order("is_it_best,praise,id")->select()) ? null;
         }
     }
 
