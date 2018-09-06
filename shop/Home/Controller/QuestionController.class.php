@@ -156,6 +156,15 @@ class QuestionController  extends CommonController{
     public function search()
     {
         if(IS_GET) {
+            $this->display();
+        }elseif(IS_POST){
+        }
+    }
+    /* 搜索 */
+    public function searchTitle()
+    {
+        if(IS_GET) {
+            $this->display();
             $searchValue=I("get.search");
             $qusetionList=$this->getQuestion()->limit(8)->field("id,title")->where("title like '%$searchValue%'")->order("id desc");
             echo $this->htmlDecode($qusetionList);
@@ -167,6 +176,7 @@ class QuestionController  extends CommonController{
             echo $this->htmlDecode($qusetionList);
         }
     }
+
 
     /*
      * 提问
