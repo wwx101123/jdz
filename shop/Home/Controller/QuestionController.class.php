@@ -241,7 +241,21 @@ class QuestionController  extends CommonController{
      * */
     public function getUserInfo(){
         if(IS_POST){
-            return json_encode(M("User")->UserInfo(['userid'=>session("userid")],'userid,username,img_head'));
+            echo json_encode(M("User")->where(['userid'=>session("userid")])->field("userid,username,img_head")->select());
+        }
+    }
+
+    /*
+     * 获取用户参与跟提问的总数
+     * */
+    public function userQA(){
+        if(IS_POST){
+            $uid=session("userid");
+            $userQ=$this->getQuestion()->where("uid=$uid")->count();//发起的提问
+            $userA=$this->getAnswer()->where("uid=$uid")->count();//参与的回答
+            return json_encode(['userQ'=>$userQ,'userA'=>$userA]);//返回数据
+        }elseif(IS_GET){
+
         }
     }
 
