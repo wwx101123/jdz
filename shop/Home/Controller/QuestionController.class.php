@@ -102,7 +102,13 @@ class QuestionController  extends CommonController{
             $this->display();
         }elseif(IS_POST){
             $id=I("post.id");
-            echo is_numeric($id) ?  json_encode($this->getQuestion()->where(['id'=>$id])->select()) : null;
+            if(is_numeric($id)){
+                $this->getQuestion()->where(['id'=>$id])->setInc("pv");//该问题pv访问+1
+              echo  json_encode($this->getQuestion()->where(['id'=>$id])->select()) ;
+            }else{
+                echo null;
+            }
+
         }
     }
     public function htmlDecode($qusetionArr){
