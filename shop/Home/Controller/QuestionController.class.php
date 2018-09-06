@@ -1,6 +1,7 @@
 <?php
 namespace Home\Controller;
 
+use Faker\Calculator\Iban;
 use Think\Controller;
 /*
  * 问答区
@@ -148,7 +149,17 @@ class QuestionController  extends CommonController{
     /* 搜索 */
     public function search()
     {
-        $this->display();
+        if(IS_GET) {
+            $searchValue=I("get.search");
+            $qusetionList=$this->getQuestion()->limit(8)->field("id,title")->where("title like '%$searchValue%'")->order("id desc");
+            echo $this->htmlDecode($qusetionList);
+        }elseif(IS_POST){
+            $searchValue=I("post.search");
+            $page=I("post.page");
+            $limit=10;
+            $qusetionList=$this->getQuestion()->limit($page*$limit,$limit)->where("title like '%$searchValue%'")->order("id desc");
+            echo $this->htmlDecode($qusetionList);
+        }
     }
 
     /*
