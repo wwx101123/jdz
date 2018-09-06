@@ -123,7 +123,7 @@ class QuestionController  extends CommonController{
             if(I("post.model")==1){
                 $questionId=I("post.questionId");
                 //下拉刷新
-                $questionList=$this->getQuestion()->where("id",">",$questionId)->limit(10)->order("id desc")->select();
+                $questionList=$this->getQuestion()->where("id>$questionId")->limit(10)->order("id desc")->select();
                 /*
                  $this->getQuestion()
                     ->alias("a")
