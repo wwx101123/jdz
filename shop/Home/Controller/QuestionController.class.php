@@ -249,13 +249,20 @@ class QuestionController  extends CommonController{
      * 获取用户参与跟提问的总数
      * */
     public function userQA(){
+        $uid=session("userid");
         if(IS_POST){
-            $uid=session("userid");
+
             $userQ=$this->getQuestion()->where("uid=$uid")->count();//发起的提问
             $userA=$this->getAnswer()->where("uid=$uid")->count();//参与的回答
             return json_encode(['userQ'=>$userQ,'userA'=>$userA]);//返回数据
         }elseif(IS_GET){
-
+            $page=I("post.page");
+            $limit=10;
+            $qusetionList=$this->getQuestion()->limit($page*$limit,$limit)
+                ->where(['uid'=>$uid])->order("start_time desc")->select();
+            $answerList=$this->getAnswer()->limit($page*$limit,$limit)
+                ->where(['uid'=>$uid])->order("answer_time desc")->select();
+            return ["qArr"=>$this->htmlDecode($qusetionList),'aArr'=>$this->htmlDecode("$answerList")];
         }
     }
 
