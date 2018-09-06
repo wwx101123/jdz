@@ -234,4 +234,15 @@ class QuestionController  extends CommonController{
         $imgPath=$filePath."/$fileName.".$ext;//完整图片路径
         echo file_put_contents($imgPath,$imgStr) ? json_encode(str_replace("./P","/P",$imgPath)) : null;//写入文件并返回数据
     }
+
+    /*
+     * 获取用户基本信息
+     * 头像昵称id
+     * */
+    public function getUserInfo(){
+        if(IS_POST){
+            return json_encode(M("User")->UserInfo(['userid'=>session("userid")],'userid,username,img_head'));
+        }
+    }
+
 }
