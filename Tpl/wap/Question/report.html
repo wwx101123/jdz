@@ -94,7 +94,9 @@
 
                     /* 内容数据 标题变量为 this.title */ 
                         this.content = $(".article-content").html();
-
+                        if(this.content.indexOf("请输入文章正文内容") != -1){
+                            this.content = "";
+                        }
                         this.$http.post('',{amount:this.amount,title:this.title,content:this.content},{emulateJSON : true}).then((response)=>{
                             console.log(response.data);
                             /* 成功跳转到question页面显示 */

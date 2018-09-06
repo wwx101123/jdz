@@ -5,11 +5,13 @@
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" href="__WCSS__/base.css">
-    <link rel="stylesheet" type="text/css" href="__WCSS__/comment/questionList.css">
+    <link rel="stylesheet" type="text/less" href="__WCSS__/comment/questionList.less">
     <script type="text/javascript" src="__WJS__/reset.js"></script>
     <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdn.bootcss.com/vue/2.2.2/vue.min.js"></script>
+    <script src="https://cdn.bootcss.com/less.js/3.0.4/less.min.js"></script>
     <script type="text/javascript" src="__WJS__/comment/bscroll.min.js"></script>
+    <script type="text/javascript" src="__WJS__/comment/vue-resource.js"></script>
     <title>问题列表</title>
     <style>
     @font-face {
@@ -45,41 +47,19 @@
         </div>
         <!-- 内容列表 -->
         <div class="main wrapper" ref="wrapper" :style="{ height: scrollHeight +'px'}">
-            <volist name="questionArr" id="vo">
-                <ul class="list" >
-                    <li class="item"  @click="handelToQuestion">
-                        <h3 class="item-title">{$vo.title}</h3>
-                        <div class="item-con">
-                            <p class="mesg">{$vo.title}{$vo.title}{$vo.title}</p>
-                            <img src="{$vo.thumbnail}" alt="">
-                        </div>
-                        <p class="item-agree">{$vo.pv}赞同</p>
-                    </li>
-                </ul>
-
-            </volist>
             <ul class="list" >
-                <li class="item" v-for="item in questionList" @click="handelToQuestion">
-                    <h3 class="item-title">{{item.title}}</h3>
+                <li class="item" v-for="item in questionList" @click="handelToQuestion(item.id)" data-id="item.id">
+                    <!-- <h3 class="item-title">{{item.title}}</h3> -->
                     <div class="item-con">
-                        <p class="mesg">{{item.mesg}}</p>
-                        <img v-if="item.imgSrc" :src="item.imgSrc" alt="">
+                        <p class="mesg">{{item.title}}</p>
+                        <img v-if="item.thumbnail" :src="item.thumbnail" alt="">
                     </div>
-                    <p class="item-agree">{{item.agreeNum}}赞同</p>
+                    <p class="item-agree">1234热度</p>
                 </li>
+                <div v-if="!moreLoadData" class="nomoredata">没有更多数据了...</div>
             </ul>
-            <ul class="list" >
-                <li class="item" v-for="item in questionList" @click="handelToQuestion">
-                    <h3 class="item-title">{{item.title}}</h3>
-                    <div class="item-con">
-                        <p class="mesg">{{item.mesg}}</p>
-                        <img v-if="item.imgSrc" :src="item.imgSrc" alt="">
-                    </div>
-                    <p class="item-agree">{{item.agreeNum}}赞同</p>
-                </li>
-            </ul>
+            
         </div>
-
         <!-- 个人中心 -->
         <div class="center" @click="handelToCenter">我的</div>
     </div>
@@ -88,66 +68,29 @@
             el: '#app',
             data: {
                 questionList:[
-                    {
-                        id:0,
-                        title:'有什么是你去北京必须知道的事?',
-                        mesg: '有什么是你去北京必须知道的事,有什么是你去北京必须知道的事,有什么是你去北京必须知道的事',
-                        imgSrc:'http://f.hiphotos.baidu.com/image/pic/item/fc1f4134970a304e48f0a9dfdcc8a786c8175cc0.jpg',
-                        agreeNum: 1222
-                    },{
-                        id:1,
-                        title:'有什么是你去北京必须知道的事?',
-                        mesg: '有什么是你去北京必须知道的事,有什么是你去北京必须知道的事,有什么是你去北京必须知道的事',
-                        // imgSrc:'http://f.hiphotos.baidu.com/image/pic/item/fc1f4134970a304e48f0a9dfdcc8a786c8175cc0.jpg',
-                        agreeNum: 1222,
-                    },{
-                        id:1,
-                        title:'有什么是你去北京必须知道的事?',
-                        mesg: '有什么是你去北京必须知道的事,有什么是你去北京必须知道的事,有什么是你去北京必须知道的事,有什么是你去北京必须知道的事',
-                        imgSrc:'http://f.hiphotos.baidu.com/image/pic/item/fc1f4134970a304e48f0a9dfdcc8a786c8175cc0.jpg',
-                        agreeNum: 1222,
-                    },{
-                        id:1,
-                        title:'有什么是你去北京必须知道的事?',
-                        mesg: '有什么是你去北京必须知道的事,有什么是你去北京必须知道的事,有什么是你去北京必须知道的事',
-                        // imgSrc:'http://f.hiphotos.baidu.com/image/pic/item/fc1f4134970a304e48f0a9dfdcc8a786c8175cc0.jpg',
-                        agreeNum: 1222,
-                    },{
-                        id:1,
-                        title:'有什么是你去北京必须知道的事?',
-                        mesg: '有什么是你去北京必须知道的事,有什么是你去北京必须知道的事,有什么是你去北京必须知道的事',
-                        // imgSrc:'http://f.hiphotos.baidu.com/image/pic/item/fc1f4134970a304e48f0a9dfdcc8a786c8175cc0.jpg',
-                        agreeNum: 1222,
-                    },{
-                        id:1,
-                        title:'有什么是你去北京必须知道的事?',
-                        mesg: '有什么是你去北京必须知道的事,有什么是你去北京必须知道的事,有什么是你去北京必须知道的事',
-                        // imgSrc:'http://f.hiphotos.baidu.com/image/pic/item/fc1f4134970a304e48f0a9dfdcc8a786c8175cc0.jpg',
-                        agreeNum: 1222,
-                    },{
-                        id:1,
-                        title:'有什么是你去北京必须知道的事?',
-                        mesg: '有什么是你去北京必须知道的事,有什么是你去北京必须知道的事,有什么是你去北京必须知道的事',
-                        // imgSrc:'http://f.hiphotos.baidu.com/image/pic/item/fc1f4134970a304e48f0a9dfdcc8a786c8175cc0.jpg',
-                        agreeNum: 1222,
-                    }
+                    
                 ],
-            },
-            computed:{
-                scrollHeight:function(){
-                    let header = $(".header").height();
-                    let con = $(window).height();
-                    let l = con - header;
-                    return l;
-                }
+                page:0,
+                /* 上拉是否有更多数据 */
+                moreLoadData:true,
+                /* 滚动高度 */
+                scrollHeight:0,
             },
             mounted(){
-                   this.loadData();
+                this.scrollHeights();
+                /* 初始化数据 */
+                this.initData();
+                
             },
             methods: {
-                loadData() {
-                    // requestData().then((res) => {
-                    // this.data = res.data.concat(this.data)
+                /* 初始化数据 */
+                initData(){
+                    this.$http.post('',{page:this.page},{emulateJSON : true}).then((response)=>{
+                        if(response.data.length>0){
+                            this.page++;
+                            this.questionList = response.data;
+                        }
+                    })
                     this.$nextTick(() => {
                         if (!this.scroll) {
                             this.scroll = new BScroll(this.$refs.wrapper, {
@@ -155,24 +98,50 @@
                                 // scrollY: true,
                                 /* 上拉加载 */
                                 pullUpLoad: {
-                                    threshold: -30 
+                                    threshold: -40,
                                 },
                                 pullDownRefresh: {
                                     threshold: 30, // 下拉距离超过30px触发pullingDown事件
                                 } 
                             })
-                            /* 上拉加载 */
+                           /* 上拉加载 */
                             this.scroll.on('pullingUp', (e) => {
                                 console.log("上拉加载");
+                                this.loadData();
                                 this.scroll.finishPullUp();
                             })
                             this.scroll.on('pullingDown', (e) => {
                                 console.log("下拉刷新");
+                                this.pullDown();
                                 this.scroll.finishPullDown()
                             })
                         }
                     })
-                    // })
+                },
+                /* 上拉加载 */
+                loadData() {
+                    this.$http.post('',{page:this.page},{emulateJSON : true}).then((response)=>{
+                        console.log(response.data);
+                        if(response.data.length>0){
+                            this.moreLoadData = true;
+                            this.page++;
+                            this.questionList = this.questionList.concat(response.data);
+                        }else{
+                            this.moreLoadData = false;
+                        }
+                    })
+                    this.scroll.refresh();
+                },
+                /* 下拉刷新更多数据 */
+                pullDown(){
+                    this.$http.post('',{model:1,questionId:this.questionList[0].id},{emulateJSON : true}).then((response)=>{
+                        console.log(response.data);
+                        // if(response.data.length>0){
+                        //     this.questionList = response.data.concat(this.questionList);
+                        // }else{
+                        // }
+                    })
+                    this.scroll.refresh();
                 },
                 /* 搜索 */
                 handelToSearch(e){
@@ -183,13 +152,24 @@
                     location.href = "./report.html";
                 },
                 /* 到详情页 */
-                handelToQuestion(){
-                    location.href = "./question.html";
+                handelToQuestion(id){
+                    location.href = "./question.html?id="+id;
                 },
                 /* 到个人中心 */
                 handelToCenter(){
                     location.href = "./center.html";
-                }   
+                },   
+                /* 设置滚动内容高度函数 */
+                scrollHeights(){
+                    let _this = this;
+                    setTimeout(function(){
+                        let header = $(".header").height();
+                        let con = $(window).height();
+                        let l = con - header  -5;
+                        _this.scrollHeight = l;
+                    })
+                   
+                },
             }
         })
     </script>

@@ -41,9 +41,10 @@
         <div class="main">
             <!-- 标题 -->
             <div class="question-wrap">
-                <div class="title">{{questiondetail[0].title}}</div>
+                <div v-for="item in questiondetail">
+                    <div class="title">{{item.title}}</div>
+                </div>
                 <div class="content" v-html="content">
-
                 </div>
                 <div class="answer-btn" @click="handelToAnswer">
                     <i class="iconfont">&#xe603;</i>
@@ -53,59 +54,16 @@
 
             <!-- 回答列表 -->
             <div class="answer-list">
-                <div class="item">
+                <div class="item" v-for="(item,index) in answerlist">
                     <div class="userInfo">
-                        <img class="head-img" src="http://cdn.duitang.com/uploads/item/201508/30/20150830175812_sYikS.jpeg" alt="">
-                        <p class="username"> 用户昵称</p>
+                        <img class="head-img" :src="'/Public/home/wap/heads/'+item.img_head" alt="">
+                        <p class="username">{{item.username}}</p>
                     </div>
                     <!-- 回答内容 -->
-                    <div class="content">
-                        <p>我把我的答案和老师的对照一下，发现我有个地方错了。
-                                我把我的答案和老师的对照一下，发现我有个地方错了。
-                                我把我的答案和老师的对照一下，发现我有个地方错了。
-                                我把我的答案和老师的对照一下，发现我有个地方错了。
-                                我把我的答案和老师的对照一下，发现我有个地方错了。
-                                我把我的答案和老师的对照一下，发现我有个地方错了。
-                                我把我的答案和老师的对照一下，发现我有个地方错了。
-                        </p>
+                    <div class="content" v-html="item.content">
+                        
                     </div>
                     <!-- 赞同按钮 -->
-
-                </div>
-                <div class="item">
-                        <div class="userInfo">
-                            <img class="head-img" src="http://cdn.duitang.com/uploads/item/201508/30/20150830175812_sYikS.jpeg" alt="">
-                            <p class="username">用户昵称</p>
-                        </div>
-                        <!-- 回答内容 -->
-                        <div class="content">
-                            <p>我把我的答案和老师的对照一下，发现我有个地方错了。
-                                    我把我的答案和老师的对照一下，发现我有个地方错了。
-                                    我把我的答案和老师的对照一下，发现我有个地方错了。
-                                    我把我的答案和老师的对照一下，发现我有个地方错了。
-                                    我把我的答案和老师的对照一下，发现我有个地方错了。
-                                    我把我的答案和老师的对照一下，发现我有个地方错了。
-                                    我把我的答案和老师的对照一下，发现我有个地方错了。
-                            </p>
-                        </div>
-                </div>
-                <div class="item">
-                        <div class="userInfo">
-                            <img class="head-img" src="http://cdn.duitang.com/uploads/item/201508/30/20150830175812_sYikS.jpeg" alt="">
-                            <p class="username">用户昵称</p>
-                        </div>
-                        <!-- 回答内容 -->
-                        <div class="content">
-                            <p>我把我的答案和老师的对照一下，发现我有个地方错了。
-                                    我把我的答案和老师的对照一下，发现我有个地方错了。
-                                    我把我的答案和老师的对照一下，发现我有个地方错了。
-                                    我把我的答案和老师的对照一下，发现我有个地方错了。
-                                    我把我的答案和老师的对照一下，发现我有个地方错了。
-                                    我把我的答案和老师的对照一下，发现我有个地方错了。
-                                    我把我的答案和老师的对照一下，发现我有个地方错了。
-                            </p>
-                        </div>
-
                 </div>
             </div>
 
@@ -121,7 +79,9 @@
                 /* 问题id */
                 id:'',
                 questiondetail:[],
-                content:""
+                content:"",
+                /* 回复列表 */
+                answerlist:[],
             },
             created(){
                 let id = this.getQueryString("id");
@@ -133,10 +93,10 @@
                         _this.questiondetail = response.data;
                         this.content =  _this.escape2Html(response.data[0].content);
                     })
-                    this.$http.get("./questionDetail",{id:id},{emulateJSON : true}).then((response)=>{
+                    this.$http.get("./questionDetail?questionId="+this.id,{emulateJSON : true}).then((response)=>{
                         console.log(response.data);
+                        this.answerlist = response.data;
                     })
-
                 }else{
                     console.log("参数错误");
                 }
@@ -148,7 +108,7 @@
                 },
                 /* 返回 */
                 handelBack(){
-                    history.go(-1);
+                    location.href = "./questionlist.html";
                 },
                 handelToAnswer(){
                     location.href = './answer.html?id='+this.id;

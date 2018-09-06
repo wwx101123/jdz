@@ -121,7 +121,11 @@
                     }
                     this.$http.post('../question/questionDetail',{questionId:_this.id,content:_this.content},{emulateJSON : true}).then((response)=>{
                         console.log(response.data);
-                        // _this.questiondetail = response.data;
+                        if(response.data == 1){
+                            location.href = './question.html?id='+this.id;
+                        }else{
+                            console.log("回复出错");
+                        }
                     })
                 },
                 handelBack(e){
