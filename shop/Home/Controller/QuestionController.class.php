@@ -258,7 +258,7 @@ class QuestionController  extends CommonController{
 
         }elseif(IS_POST){
             $page=I("post.page");
-            $mode=I("post.mode");//1参与 2提问
+            $mode=I("post.model");//1参与 2提问
             $limit=10;
             if($mode==1){
 
