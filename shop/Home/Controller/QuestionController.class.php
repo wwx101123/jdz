@@ -218,7 +218,7 @@ class QuestionController  extends CommonController{
               $fengmiNum=M("Store")->where(["uid"=>session("userid")])->find()['fengmi_num'];
               $amount=$questionArr['amount']?$questionArr['amount'] : 0;//提问积分
               if($fengmiNum<$amount){
-                  echo ['msg'=>'可用积分不足'];
+                  return ['msg'=>'可用积分不足'];
               }
               $data=[
                   "title"=>$questionArr['title'],
