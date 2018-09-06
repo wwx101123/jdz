@@ -16,6 +16,10 @@ class QuestionController  extends CommonController{
         return M("Answer");
     }
 
+    private function getStore(){
+        return M("Store");
+    }
+
     /*
      * 我的所有问答
      * */
@@ -59,7 +63,29 @@ class QuestionController  extends CommonController{
      * 采纳回答
      * */
     public function adoptQuestion(){
-
+        if(IS_POST){
+            $questionId=I("post.questionId");
+            $answerId=I("post.answerId");
+            if(is_numeric($questionId)&&is_numeric($answerId)) {
+                //判断问题是否已结束
+                $questionInfo=$this->getQuestion()->where(['id'=>$questionId])->field("amount,status")->find();
+                if ($questionInfo['status']==2) {
+                    $answerUserId =$this->getAnswer()->where(['answerId'=>$answerId])->find()['uid'];//获取回答用户id
+                    $answerUserId = $answerUserId ?  $answerUserId : 0;
+                    //执行积分奖励
+                     if($this->getStore()->where(['uid'=>$answerUserId])->setInc("fengmi_num",$questionInfo['amount'])){
+                         //更新问题状态
+                         $this->getQuestion()->where(['id'=>$questionId])->update(['status'=>1]);//标记问题已结束
+                         $this->getAnswer()->where(['id'=>$answerId])->update(['is_it_best'=>1]);//标记回答被采纳
+                        return 1;
+                     }else{
+                         return ['msg'=>'增加积分出错请联系管理员'];
+                     }
+                }else{
+                  return ['msg'=>'该问题已经结束'];
+                }
+            }
+        }
     }
 
     /*
@@ -188,6 +214,12 @@ class QuestionController  extends CommonController{
            $questionArr=I("post.");
 
           if(!empty($questionArr['title'])){
+              //判断用户积分是否充足
+              $fengmiNum=M("Store")->where(["uid"=>session("userid")])->find()['fengmi_num'];
+              $amount=$questionArr['amount']?$questionArr['amount'] : 0;//提问积分
+              if($fengmiNum<$amount){
+                  echo ['msg'=>'可用积分不足'];
+              }
               $data=[
                   "title"=>$questionArr['title'],
                   "content"=>$questionArr['content'],
@@ -196,7 +228,11 @@ class QuestionController  extends CommonController{
                   'start_time'=>time(),
                   'thumbnail'=>str_replace("&quot;","",$this->getThumbanail($questionArr['content'])),
               ];
-             echo $this->getQuestion()->add($data);
+              //扣除对应积分并返回添加的问题ID
+             if(M("Store")->where(["uid"=>session("userid")])->setDec("fengmi_num",$amount)) {
+                 echo $this->getQuestion()->add($data);
+             }
+
           }
         }
     }
