@@ -262,8 +262,13 @@ class QuestionController  extends CommonController{
             $limit=10;
             if($mode==1){
 
-                $qusetionList=$this->getAnswer()->limit($page*$limit,$limit)
-                    ->where(['uid'=>$uid])->order("answer_time desc")->select();
+                $qusetionList=$this->getAnswer()
+                    ->alias("a")
+                    ->join("ysk_question b")
+                    ->field("a.*,b.title,b.id")
+                    ->limit($page*$limit,$limit)
+                    ->where("a.question_id=b.id")
+                    ->where(['b.uid'=>$uid])->order("a.answer_time desc")->select();
             }else{
                 $qusetionList=$this->getQuestion()->limit($page*$limit,$limit)
                     ->where(['uid'=>$uid])->order("start_time desc")->select();
