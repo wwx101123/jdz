@@ -14,10 +14,16 @@
     width: 100%;
 }
 .wrap .header{
+    height: 1.16rem;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: .15rem;
+    position: fixed;
+    z-index: 99;
+    top: 0;
+    left: 0;
+    background-color: white;
     border-bottom: 1px solid #c4c4c4;
     box-shadow: 0 2px 20px -5px #b3b3b3;
 }
@@ -51,10 +57,12 @@
 }
 /* 内容 默认 */
 .main{
-    margin-top: .2rem;
+    margin-top: 1.16rem;
+    overflow: hidden;
 }
 .main .default-con{
     padding: 0 .3rem;
+    margin-top: .3rem;
     .title{
         font-size: .35rem;
         font-weight: bold;
@@ -66,7 +74,7 @@
         width: 100%;
         display: flex;
         justify-content: space-between;
-        align-items: center;
+        align-items: flex-start;
         flex-wrap: wrap;
         .item{
             padding: .2rem 0;
@@ -91,7 +99,7 @@
                     white-space: normal;  
                     display:-webkit-box;  
                     -webkit-box-orient:vertical;  
-                    -webkit-line-clamp:1;/*规定最多显示两行*/  
+                    -webkit-line-clamp:2;/*规定最多显示两行*/  
                     overflow: hidden;
                     color: #292929;
                     font-size: .3rem;
@@ -138,8 +146,16 @@
                 white-space: normal;  
                 .ellipsis-mult(1);
                 text-align: left;
-                line-height: .4rem;
+                line-height: .5rem;
+                font-size: .35rem;
             }
         }
+    }
+    .nomoredata{
+        line-height: 1rem;
+        color: #ddd;
+        text-align: center;
+        font-size: .3rem;
+        height: 1rem;
     }
 }
