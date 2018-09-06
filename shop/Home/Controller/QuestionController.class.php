@@ -75,8 +75,8 @@ class QuestionController  extends CommonController{
                     //执行积分奖励
                      if($this->getStore()->where(['uid'=>$answerUserId])->setInc("fengmi_num",$questionInfo['amount'])){
                          //更新问题状态
-                         $this->getQuestion()->where(['id'=>$questionId])->update(['status'=>1]);//标记问题已结束
-                         $this->getAnswer()->where(['id'=>$answerId])->update(['is_it_best'=>1]);//标记回答被采纳
+                         $this->getQuestion()->where(['id'=>$questionId])->save(['status'=>1]);//标记问题已结束
+                         $this->getAnswer()->where(['id'=>$answerId])->save(['is_it_best'=>1]);//标记回答被采纳
                         echo 1;
                      }else{
                          echo  json_encode(['msg'=>'增加积分出错请联系管理员']);
