@@ -663,6 +663,8 @@ background:url(img/.png) no-repeat;
     top: 0;
     width: 100%;
     opacity: 1;
+    background-color: rgba(0,0,0,.5);
+    height: 100%;
     
 }
 .qindHB_nb{
@@ -671,18 +673,29 @@ background:url(img/.png) no-repeat;
 }
 
 .qindHB_nb a {
-    width: 100%; display: block; margin-top: 20px;
+    width: 100%; display: block; margin-top: -20px;
 }
 .qindHB_nb a img{
    z-index: 104;
    width: 100%;
 }
 
-.qinb_imga{  height: 20rem;margin: 0 auto; display: block;  margin-top: 5rem; }
+.qinb_imga{
+    margin: 0 auto;
+    display: block;
+    margin-top: 5rem;
+    width: 100%; 
+}
 
-.qiandHB_wz{ position:absolute; top:7rem; width: 50%; left: 25%; text-align: center; }
-.qiandHB_wz h3{ font-size: 1.8rem; padding-bottom: 1rem; border-bottom: 1px dotted rgba(217, 45, 45, 0.4); color: #d92d2d; line-height: 1.8rem; font-weight: 900;}
-.qiandHB_wz p{ font-size: 1rem; color: #d92d2d; line-height: 2.4rem; font-weight: 900;}
+.qiandHB_wz{
+    position: absolute;
+    top: 38%;
+    width: 50%;
+    left: 25%;
+    text-align: center;
+}
+.qiandHB_wz h3{ font-size: 1.5rem; padding-bottom: .5rem; color: #d92d2d; line-height: 1.8rem; font-weight: 900;}
+.qiandHB_wz p{ font-size: .4rem; color: #d92d2d; line-height: 2.4rem; font-weight: 900;}
 
 /*订单未选择打款人*/
 .accordion-handle { position:relative; margin-bottom:10px; background-color:#fff; text-decoration:none; color:#808080; cursor:pointer; transition:all 0.4s ease 0s; padding: 7px 0; }

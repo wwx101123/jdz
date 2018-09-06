@@ -108,7 +108,7 @@
                 },
                 /* 返回 */
                 handelBack(){
-                    location.href = "./questionlist.html";
+                    history.go(-1);
                 },
                 handelToAnswer(){
                     location.href = './answer.html?id='+this.id;
