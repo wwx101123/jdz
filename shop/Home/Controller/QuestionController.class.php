@@ -219,20 +219,20 @@ class QuestionController  extends CommonController{
               $amount=$questionArr['amount']?$questionArr['amount'] : 0;//提问积分
               if($fengmiNum<$amount){
                   echo json_encode(['msg'=>'可用积分不足']);
+              }else {
+                  $data = [
+                      "title" => $questionArr['title'],
+                      "content" => $questionArr['content'],
+                      'amount' => $questionArr['amount'] ? $questionArr['amount'] : 0,
+                      'uid' => session('userid'),
+                      'start_time' => time(),
+                      'thumbnail' => str_replace("&quot;", "", $this->getThumbanail($questionArr['content'])),
+                  ];
+                  //扣除对应积分并返回添加的问题ID
+                  if (M("Store")->where(["uid" => session("userid")])->setDec("fengmi_num", $amount)) {
+                      echo $this->getQuestion()->add($data);
+                  }
               }
-              $data=[
-                  "title"=>$questionArr['title'],
-                  "content"=>$questionArr['content'],
-                  'amount'=>$questionArr['amount']?$questionArr['amount'] : 0,
-                  'uid'=>session('userid'),
-                  'start_time'=>time(),
-                  'thumbnail'=>str_replace("&quot;","",$this->getThumbanail($questionArr['content'])),
-              ];
-              //扣除对应积分并返回添加的问题ID
-             if(M("Store")->where(["uid"=>session("userid")])->setDec("fengmi_num",$amount)) {
-                 echo $this->getQuestion()->add($data);
-             }
-
           }
         }
     }
