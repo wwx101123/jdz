@@ -77,12 +77,12 @@ class QuestionController  extends CommonController{
                          //更新问题状态
                          $this->getQuestion()->where(['id'=>$questionId])->update(['status'=>1]);//标记问题已结束
                          $this->getAnswer()->where(['id'=>$answerId])->update(['is_it_best'=>1]);//标记回答被采纳
-                        return 1;
+                        echo 1;
                      }else{
-                         return ['msg'=>'增加积分出错请联系管理员'];
+                         echo  json_encode(['msg'=>'增加积分出错请联系管理员']);
                      }
                 }else{
-                  return ['msg'=>'该问题已经结束'];
+                  echo  json_encode(['msg'=>'该问题已经结束']);
                 }
             }
         }
