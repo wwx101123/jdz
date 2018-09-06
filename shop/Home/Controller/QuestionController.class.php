@@ -258,12 +258,18 @@ class QuestionController  extends CommonController{
 
         }elseif(IS_POST){
             $page=I("post.page");
+            $mode=I("post.mode");//1参与 2提问
             $limit=10;
-            $qusetionList=$this->getQuestion()->limit($page*$limit,$limit)
-                ->where(['uid'=>$uid])->order("start_time desc")->select();
-            $answerList=$this->getAnswer()->limit($page*$limit,$limit)
-                ->where(['uid'=>$uid])->order("answer_time desc")->select();
-            echo  json_encode(["qArr"=>$this->htmlDecode($qusetionList),'aArr'=>$this->htmlDecode("$answerList")]);
+            if($mode==1){
+
+                $qusetionList=$this->getAnswer()->limit($page*$limit,$limit)
+                    ->where(['uid'=>$uid])->order("answer_time desc")->select();
+            }else{
+                $qusetionList=$this->getQuestion()->limit($page*$limit,$limit)
+                    ->where(['uid'=>$uid])->order("start_time desc")->select();
+            }
+
+            echo  json_encode($qusetionList);
         }
     }
 
