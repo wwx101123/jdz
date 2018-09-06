@@ -240,8 +240,12 @@ class QuestionController  extends CommonController{
      * 头像昵称id
      * */
     public function getUserInfo(){
+        $uid=session("userid");
         if(IS_POST){
-            echo json_encode(M("User")->where(['userid'=>session("userid")])->field("userid,username,img_head")->select());
+              $userInfo=M("User")->where(['userid'=>session("userid")])->field("userid,username,img_head")->select();
+            $userQ=$this->getQuestion()->where("uid=$uid")->count();//发起的提问
+            $userA=$this->getAnswer()->where("uid=$uid")->count();//参与的回答
+            echo json_encode(['userInfo'=>$userInfo,'userQ'=>$userQ,'userA'=>$userA]);//返回数据
         }
     }
 
@@ -250,12 +254,9 @@ class QuestionController  extends CommonController{
      * */
     public function userQA(){
         $uid=session("userid");
-        if(IS_POST){
+        if(IS_GET){
 
-            $userQ=$this->getQuestion()->where("uid=$uid")->count();//发起的提问
-            $userA=$this->getAnswer()->where("uid=$uid")->count();//参与的回答
-            return json_encode(['userQ'=>$userQ,'userA'=>$userA]);//返回数据
-        }elseif(IS_GET){
+        }elseif(IS_POST){
             $page=I("post.page");
             $limit=10;
             $qusetionList=$this->getQuestion()->limit($page*$limit,$limit)
