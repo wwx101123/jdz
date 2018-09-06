@@ -263,7 +263,7 @@ class QuestionController  extends CommonController{
                 ->where(['uid'=>$uid])->order("start_time desc")->select();
             $answerList=$this->getAnswer()->limit($page*$limit,$limit)
                 ->where(['uid'=>$uid])->order("answer_time desc")->select();
-            return ["qArr"=>$this->htmlDecode($qusetionList),'aArr'=>$this->htmlDecode("$answerList")];
+            echo  json_encode(["qArr"=>$this->htmlDecode($qusetionList),'aArr'=>$this->htmlDecode("$answerList")]);
         }
     }
 
