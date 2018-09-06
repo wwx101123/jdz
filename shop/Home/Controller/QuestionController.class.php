@@ -87,10 +87,9 @@ class QuestionController  extends CommonController{
      * */
     public function hostQuestion(){
         if(IS_POST){
-            $qusetionList=$this->getQuestion()->limit(8)->field("id,title")->order("pv desc");
+            $qusetionList=$this->getQuestion()->limit(8)->field("id,title")->order("pv desc")->select();
             echo $this->htmlDecode($qusetionList);
         }else{
-            //默认四条热点
         }
     }
 
