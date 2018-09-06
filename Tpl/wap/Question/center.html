@@ -9,7 +9,8 @@
     <script type="text/javascript" src="__WJS__/reset.js"></script>
     <script src="https://cdn.bootcss.com/vue/2.2.2/vue.min.js"></script>
     <script src="https://cdn.bootcss.com/less.js/3.0.4/less.min.js"></script>
-    <title>提问</title>
+    <script type="text/javascript" src="__WJS__/comment/vue-resource.js"></script>
+    <title>个人中心</title>
     <style>
     @font-face {
         font-family: 'iconfont';  /* project id 803693 */
@@ -29,21 +30,25 @@
 </head>
 <body>
     <div class="wrap" id="app">
-        <div class="center">
-            <img class="userhead" src="http://cdn.duitang.com/uploads/item/201508/30/20150830175812_sYikS.jpeg" alt="">
-            <p class="username">用户昵称</p>
+        <div class="center" >
+            <div v-for="item in userInfo.userInfo">
+                <img class="userhead" :src="'/Public/home/wap/heads/'+item.img_head" alt="">
+                <p class="username">{{item.username}}</p>
+            </div>
         </div>
 
         <!-- 导航 -->
         <ul class="navlist">
             <li class="item" @click="handelToQuestionlist">
-                首页
+                问题大厅
             </li>
-            <li class="item">
-                我的问题
+            <li class="item" @click="handelToMyTask(2)">
+                <p class="title">我的问题</p>
+                <span class="num">{{userInfo.userQ}}</span>
             </li>
-            <li class="item">
-                我参与的
+            <li class="item" @click="handelToMyTask(1)">
+                <p class="title">我的参与</p>
+                <span class="num">{{userInfo.userA}}</span>
             </li>
         </ul>
     </div>
@@ -51,12 +56,37 @@
          var vm = new Vue({
             el:"#app",
             data: {
-
+                userInfo:{},
+            },
+            mounted(){
+                /* 获取用户信息 */
+                this.getUserInfo();
+            },
+            computed:{
+                userId:function(){
+                    if(!!(this.userInfo.userInfo.length >0)){
+                       return this.userInfo.userInfo[0].userid;
+                    }else{
+                        return ''
+                    }
+                }
             },
             methods:{
-                handelToQuestionlist(e){
+                handelToQuestionlist(){
                     location.href = './questionlist.html';
                 },
+                handelToMyTask(model){
+                    location.href = './mytask.html?model='+model;
+                },
+                /* 获取用户信息 */
+                getUserInfo(){
+                    this.$http.post('./getUserInfo',{},{emulateJSON:true}).then((response)=>{
+                        console.log(response.data);
+                        if(response.data){
+                            this.userInfo = response.data;
+                        }
+                    })
+                }
             }
         })
     </script>
