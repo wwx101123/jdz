@@ -166,13 +166,13 @@ class QuestionController  extends CommonController{
         if(IS_GET) {
             $this->display();
             $searchValue=I("get.search");
-            $qusetionList=$this->getQuestion()->limit(8)->field("id,title")->where("title like '%$searchValue%'")->order("id desc");
+            $qusetionList=$this->getQuestion()->limit(8)->field("id,title")->where("title like '%$searchValue%'")->order("id desc")->select();
             echo $this->htmlDecode($qusetionList);
         }elseif(IS_POST){
             $searchValue=I("post.search");
             $page=I("post.page");
             $limit=10;
-            $qusetionList=$this->getQuestion()->limit($page*$limit,$limit)->where("title like '%$searchValue%'")->order("id desc");
+            $qusetionList=$this->getQuestion()->limit($page*$limit,$limit)->where("title like '%$searchValue%'")->order("id desc")->select();
             echo $this->htmlDecode($qusetionList);
         }
     }
