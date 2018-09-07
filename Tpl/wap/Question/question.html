@@ -58,12 +58,16 @@
                     <div class="userInfo">
                         <img class="head-img" :src="'/Public/home/wap/heads/'+item.img_head" alt="">
                         <p class="username">{{item.username}}</p>
+                        <p class="getAnswer" v-if="item.is_it_best == 1">已采纳</p>
                     </div>
                     <!-- 回答内容 -->
                     <div class="content" v-html="item.content">
                         
                     </div>
                     <!-- 赞同按钮 -->
+                    <div class="agreeBtn">
+                        <div class="agree" @click="handelAdoptQuestion(item.id)">采纳回答</div>
+                    </div>
                 </div>
             </div>
 
@@ -127,8 +131,20 @@
                 escape2Html(str) {
                     var arrEntities={'lt':'<','gt':'>','nbsp':' ','amp':'&','quot':'"'};
                     return str.replace(/&(lt|gt|nbsp|amp|quot);/ig,function(all,t){return arrEntities[t];});
-                    }
+                },
+                 /* 采纳回答 */
+                 handelAdoptQuestion(id){
+                    console.log(id);
+                    this.$http.post('./adoptQuestion',{questionId:this.id,answerId:id},{emulateJSON : true}).then((response)=>{
+                        console.log(response.data);
+                        if(response.data == 1){
+                            alert("采纳成功，此问题已结束");
+                        }else{
+                            alert(response.data.msg);
+                        }
+                    })
                 }
+            }
         })
     </script>
 </body>
