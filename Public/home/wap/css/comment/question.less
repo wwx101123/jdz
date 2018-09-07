@@ -116,6 +116,7 @@
         border-top: .15rem solid #ebebeb;
         padding: 0 .3rem;
         padding-bottom: .2rem;
+        border-bottom: 1px solid #ddd;
         .userInfo{
             display: flex;
             justify-content: flex-start;
@@ -132,17 +133,43 @@
                 font-size: .35rem;
                 margin-left: .2rem;
             }
+            .getAnswer{
+                position: absolute;
+                right: 0.3rem;
+                color: #ffffff;
+                font-size: .3rem;
+                background-color: #f44336cc;
+                border-radius: 5px;
+                padding: 0.1rem;
+            }
         }
         /* content */
         .content{
-            margin-top: .2rem;
+            margin: .2rem 0;
             text-align: left;
             font-size: .3rem;
             line-height: .5rem;
+
             p{
                text-align: left;
                font-size: .3rem;
                line-height: .5rem;
+            }
+        }
+        /* 采纳问题 */
+        .agreeBtn{
+            padding: .2rem 0;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            .agree{
+                font-size: .3rem;
+                height: .4rem;
+                background-color:#03A9F4;
+                color: white;
+                border-radius: 5px; 
+                line-height: .4rem;
+                padding: .1rem .2rem;
             }
         }
     }
