@@ -309,7 +309,10 @@ class QuestionController  extends CommonController{
                     ->field("a.*,b.title,b.id")
                     ->limit($page*$limit,$limit)
                     ->where("a.question_id=b.id")
-                    ->where(['b.uid'=>$uid])->order("a.answer_time desc")->select();
+                    ->where(['b.uid'=>$uid])
+                    ->order("a.answer_time desc")
+                    ->group("b.id")
+                    ->select();
             }else{
                 $qusetionList=$this->getQuestion()->limit($page*$limit,$limit)
                     ->where(['uid'=>$uid])->order("start_time desc")->select();
