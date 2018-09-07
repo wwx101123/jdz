@@ -14,11 +14,11 @@
     <style>
     @font-face {
         font-family: 'iconfont';  /* project id 803693 */
-        src: url('//at.alicdn.com/t/font_803693_utrulktu2oa.eot');
-        src: url('//at.alicdn.com/t/font_803693_utrulktu2oa.eot?#iefix') format('embedded-opentype'),
-        url('//at.alicdn.com/t/font_803693_utrulktu2oa.woff') format('woff'),
-        url('//at.alicdn.com/t/font_803693_utrulktu2oa.ttf') format('truetype'),
-        url('//at.alicdn.com/t/font_803693_utrulktu2oa.svg#iconfont') format('svg');
+        src: url('//at.alicdn.com/t/font_803693_gblcvdhagfr.eot');
+        src: url('//at.alicdn.com/t/font_803693_gblcvdhagfr.eot?#iefix') format('embedded-opentype'),
+        url('//at.alicdn.com/t/font_803693_gblcvdhagfr.woff') format('woff'),
+        url('//at.alicdn.com/t/font_803693_gblcvdhagfr.ttf') format('truetype'),
+        url('//at.alicdn.com/t/font_803693_gblcvdhagfr.svg#iconfont') format('svg');
     }
     .iconfont {
         font-family:"iconfont" !important;
@@ -40,13 +40,16 @@
         <!-- 导航 -->
         <ul class="navlist">
             <li class="item" @click="handelToQuestionlist">
-                问题大厅
+                <i class="iconfont icon" style="color:#55a892">&#xe65d;</i>
+                <p class="title">问题大厅</p>
             </li>
             <li class="item" @click="handelToMyTask(2)">
+                <i class="iconfont icon" style="color:#e69d43">&#xe60a;</i>
                 <p class="title">我的问题</p>
                 <span class="num">{{userInfo.userQ}}</span>
             </li>
             <li class="item" @click="handelToMyTask(1)">
+                <i class="iconfont icon" style="color:#478fdb">&#xe6a0;</i>
                 <p class="title">我的参与</p>
                 <span class="num">{{userInfo.userA}}</span>
             </li>
