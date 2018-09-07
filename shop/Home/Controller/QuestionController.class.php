@@ -68,11 +68,16 @@ class QuestionController  extends CommonController{
             $answerId=I("post.answerId");
             if(is_numeric($questionId)&&is_numeric($answerId)) {
                 //判断问题是否已结束
-                $questionInfo=$this->getQuestion()->where(['id'=>$questionId])->field("amount,status")->find();
+                $questionInfo=$this->getQuestion()->where(['id'=>$questionId])->field("uid,amount,status")->find();
                 if ($questionInfo['status']==2) {
                     $answerUserId =$this->getAnswer()->where(['answerId'=>$answerId])->find()['uid'];//获取回答用户id
                     $answerUserId = $answerUserId ?  $answerUserId : 0;
-                    //执行积分奖励
+                    //不能采纳自己的答案
+                    if($answerUserId==$questionInfo['uid']){
+                        echo  json_encode(['msg'=>'不能标记本身为最佳答案']);
+                        exit();
+                    }
+                     //执行积分奖励
                      if($this->getStore()->where(['uid'=>$answerUserId])->setInc("fengmi_num",$questionInfo['amount'])){
                          //更新问题状态
                          $this->getQuestion()->where(['id'=>$questionId])->save(['status'=>1]);//标记问题已结束
