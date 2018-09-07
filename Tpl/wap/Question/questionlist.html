@@ -54,7 +54,10 @@
                         <p class="mesg">{{item.title}}</p>
                         <img v-if="item.thumbnail" :src="item.thumbnail" alt="">
                     </div>
-                    <p class="item-agree">{{item.pv}}热度</p>
+                    <div class="hot-score">
+                        <p class="item-agree">{{item.pv}}热度</p>
+                        <p class="item-score">奖励积分:{{item.amount}}</p>
+                    </div>
                 </li>
                 <div v-if="!moreLoadData" class="nomoredata">没有更多数据了...</div>
             </ul>
