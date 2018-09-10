@@ -274,7 +274,7 @@ class QuestionController  extends CommonController{
                   $data2=[
                       'pay_id'=>session("userid"),
                       'get_id'=>session("userid"),
-                      'get_nums'=>$amount,
+                      'get_nums'=>"-".$amount,
                       'get_time'=>time(),
                       'get_type'=>25,//问题奖励
                       'now_nums'=>$userAmount['fengmi_num'],
