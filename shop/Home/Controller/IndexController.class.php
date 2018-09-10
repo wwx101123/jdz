@@ -784,7 +784,7 @@ private function get_banner()
     {
         $uid = session('userid');
         $where['get_id|pay_id'] = $uid;
-        $where['get_type'] = array('in', '1,23,24');
+        $where['get_type'] = array('in', '1,23,24,25,26');
         // $where['get_type'] = 1;
         $traInfo = M('tranmoney');
         //分页
