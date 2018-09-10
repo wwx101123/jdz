@@ -35,6 +35,7 @@
         <!-- 头部 -->
         <div class="header" ref="header">
             <div class="search-wrap">
+                <i class="iconfont back" @click="handelBack">&#xe682;</i>
                 <div class="left-input" @click="handelToSearch">
                     <i class="iconfont">&#xe609;</i>
                     <p>搜索</p>
@@ -166,6 +167,10 @@
                 /* 提问 */
                 handelToReport(e){
                     location.href = "./report.html";
+                },
+                /* 退回金点子 */
+                handelBack(){
+                    location.href = "../Index/index.html";
                 },
                 /* 到详情页 */
                 handelToQuestion(id){
