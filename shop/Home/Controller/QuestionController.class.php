@@ -65,12 +65,12 @@ class QuestionController  extends CommonController{
     public function adoptQuestion(){
         if(IS_POST){
             $questionId=I("post.questionId");
-            $answerId=I("post.answerId");
+            $answerId=I("post.answerId");//
+            $answerUserId=I("post.answerUserId");//回答用户Id
             if(is_numeric($questionId)&&is_numeric($answerId)) {
                 //判断问题是否已结束
                 $questionInfo=$this->getQuestion()->where(['id'=>$questionId])->field("uid,amount,status")->find();
                 if ($questionInfo['status']==2) {
-                    $answerUserId =$this->getAnswer()->where(['answerId'=>$answerId])->find()['uid'];//获取回答用户id
                     $answerUserId = $answerUserId ?  $answerUserId : 0;
                     //不能采纳自己的答案
                     if($answerUserId==$questionInfo['uid']){
