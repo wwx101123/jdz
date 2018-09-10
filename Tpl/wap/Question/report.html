@@ -101,6 +101,7 @@
                             console.log(response.data);
                             if(response.data.msg){
                                 alert(response.data.msg);
+                                return 
                             }
                             /* 成功跳转到question页面显示 返回问题id*/
                             location.href = "./question.html?id="+response.data
