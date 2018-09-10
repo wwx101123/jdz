@@ -14,10 +14,10 @@
 .setlistbox ul li{width: 33.3%;text-align: center;}
 .setlistbox ul li:nth-child(2){border-left: 1px solid #7b9cc2;border-right: 1px solid #7b9cc2}
 .setlistbox ul li img{width: 1rem;}
-.setlistbox ul li a p{color: #000;font-size: .24rem;padding: .1rem 0;}
+.setlistbox ul li a p{color: #000;font-size: .24rem;margin: .15rem 0;}
 .setlistbox ul.twolist li{width: 50%;}
 .setlistbox ul.twolist li:nth-child(2){border-right: none;}
-.setlistbox ul.twolist li a{display: flex;align-items: center;margin-left: .6rem;}
+.setlistbox ul.twolist li a{display: block}
 .loginout{width: 100%;margin: .5rem 0 1.5rem 0;}
 .loginout a{font-size: .28rem; display: block; border-radius:.4rem;margin: 0 auto; width: 60%; padding: .2rem; text-align: center; background: #ffb900; color: #fff; -webkit-border-radius:.4rem; -moz-border-radius:.4rem; -ms-border-radius:.4rem; -o-border-radius:.4rem; }
 /* 底部 */
