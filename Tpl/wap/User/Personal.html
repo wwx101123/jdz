@@ -16,6 +16,20 @@
 <style>
 	.sett_xiug{display:none;}
 	.button,#clipBtn{width: 130px;font-size: 16px;}
+	.back{
+		position: absolute;
+		left: 50%;
+		margin-left: -40px;
+		right: 0;
+		width: 80px;
+		bottom: 0;
+		top: 0;
+		text-align: center;
+		height: 100%;
+		font-size: 16px;
+		background-color: #18b4ed;
+		color: white;
+	}
 </style>
 <body>
     <!-- <div class="header">
@@ -171,6 +185,7 @@
 							  <!--<input type="file" id="uploadphoto" name="uploadfile" value="请点击上传图片"  style="display:none;" />-->
 						  </form>
 					  </div>
+					  <button class="back" id="back">返回</button>
 					  <button id="clipBtn">{$Think.lang.intercept}</button>
 				  </div>
 				  <div id="view"></div>
@@ -545,6 +560,11 @@ $userid=session('userid');
 
 
 		$(function(){
+			/* 返回 */
+			$("#back").click(function(){
+				$(".htmleaf-container").hide();
+			})
+			/*  */
 			$("#logox").click(function(){
 				$(".htmleaf-container").show();
 			})
