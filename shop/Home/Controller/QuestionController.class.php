@@ -135,9 +135,14 @@ class QuestionController  extends CommonController{
             $id=I("post.id");
             if(is_numeric($id)){
                 $this->getQuestion()->where(['id'=>$id])->setInc("pv");//该问题pv访问+1
-                $questionInfo=$this->getQuestion()->where(['id'=>$id])->select();
+                $questionInfo= $this->getQuestion()
+                    ->alias("a")
+                    ->join("ysk_user b")
+                    ->field("a.*,b.username")
+                    ->where("a.uid=b.userid")
+                    ->where(['id'=>$id])->select();
                 $questionInfo[0]['is_show']=$questionInfo[0]['uid']==session("userid") ? 1 : 2;//是题主本人显示采纳回答
-              echo  json_encode($questionInfo) ;
+              echo  $this->htmlDecode($questionInfo) ;
             }else{
                 echo null;
             }
