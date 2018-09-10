@@ -326,12 +326,14 @@ class QuestionController  extends CommonController{
                     ->order("a.answer_time desc")
                     ->group("b.id")
                     ->select();
+                echo  json_encode($qusetionList,"answer_time");
             }else{
                 $qusetionList=$this->getQuestion()->limit($page*$limit,$limit)
                     ->where(['uid'=>$uid])->order("start_time desc")->select();
+                echo  json_encode($qusetionList);
             }
 
-            echo  json_encode($qusetionList);
+
         }
     }
 
