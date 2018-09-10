@@ -144,10 +144,11 @@ class QuestionController  extends CommonController{
 
         }
     }
-    public function htmlDecode($qusetionArr){
+    public function htmlDecode($qusetionArr,$time='start_time'){
         $i=0;
         foreach ($qusetionArr as $key){
             $qusetionArr[$i]['content']=html_entity_decode($qusetionArr[$i]['content']);
+            $qusetionArr[$i][$time]=date("Y-m-d H:i",$qusetionArr[$i][$time]);
             $i++;
         }
         return json_encode($qusetionArr);
@@ -162,7 +163,12 @@ class QuestionController  extends CommonController{
             if(I("post.model")==1){
                 $questionId=I("post.questionId");
                 //下拉刷新
-                $questionList=$this->getQuestion()->where("id>$questionId")->limit(10)->order("id desc")->select();
+                $questionList=$this->getQuestion()
+                    ->alias("a")
+                    ->join("ysk_user b")
+                    ->field("a.*,b.username")
+                    ->where("a.uid=b.userid")
+                    ->where("id>$questionId")->limit(10)->order("id desc")->select();
                 /*
                  $this->getQuestion()
                     ->alias("a")
@@ -179,7 +185,12 @@ class QuestionController  extends CommonController{
                 //上拉加载
                 $page=I("post.page");
                 $limit=10;
-                $questionList= $this->getQuestion()->limit($page*$limit,$limit)->order("id desc")->select();
+                $questionList= $this->getQuestion()
+                    ->alias("a")
+                    ->join("ysk_user b")
+                    ->field("a.*,b.username")
+                    ->where("a.uid=b.userid")
+                    ->limit($page*$limit,$limit)->order("id desc")->select();
 
             }
             echo $this->htmlDecode($questionList);
