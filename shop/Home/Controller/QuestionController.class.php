@@ -77,7 +77,7 @@ class QuestionController  extends CommonController{
                 $questionInfo=$this->getQuestion()->where(['id'=>$questionId])->field("uid,amount,status")->find();
                 if ($questionInfo['status']==2) {
                     $answerUserId = $answerUserId ?  $answerUserId : 0;
-                    $userAmount=$this->getUserStore()->CangkuNum(['uid'=>$answerUserId]);
+                    $userJiFen=$this->getUserStore()->jiFenNum(['uid'=>$answerUserId]);
                     //不能采纳自己的答案
                     if($answerUserId==$questionInfo['uid']){
                         echo  json_encode(['msg'=>'不能标记本身为最佳答案']);
@@ -89,8 +89,8 @@ class QuestionController  extends CommonController{
                         'get_nums'=>$questionInfo['amount'],
                         'get_time'=>time(),
                         'get_type'=>26,//采纳奖励
-                        'now_nums'=>$userAmount,
-                        'now_nums_get'=>$userAmount,
+                        'now_nums'=>$userJiFen,
+                        'now_nums_get'=>$userJiFen,
                         'is_release'=>1
                     ];
                      //执行积分奖励
@@ -277,8 +277,8 @@ class QuestionController  extends CommonController{
                       'get_nums'=>$amount,
                       'get_time'=>time(),
                       'get_type'=>25,//问题奖励
-                      'now_nums'=>$userAmount['cangku_num'],
-                      'now_nums_get'=>$userAmount['cangku_num'],
+                      'now_nums'=>$userAmount['fengmi_num'],
+                      'now_nums_get'=>$userAmount['fengmi_num'],
                       'is_release'=>1
                   ];
 

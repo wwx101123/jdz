@@ -18,6 +18,13 @@ class StoreModel extends ModelModel
         }
         return $this->where($where)->getField('cangku_num');
     }
+    public function jiFenNum($where){
+        if(empty($where)){
+            $userid=get_userid();
+            $where['uid']=$userid;
+        }
+        return $this->where($where)->getField('fengmi_num');
+    }
 
     //扣减仓库数量
     public function DesNum($num){
