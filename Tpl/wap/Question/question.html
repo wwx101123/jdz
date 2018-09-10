@@ -41,16 +41,27 @@
         <div class="main">
             <!-- 标题 -->
             <div class="question-wrap" v-for="item in questiondetail">
+                <div class="toptime">
+                        <div class="username">
+                            创建人:{{item.username}}
+                        </div>
+                        <div class="time">{{item.start_time}}</div> 
+                </div>
                 <div >
                     <div class="title">{{item.title}}</div>
                 </div>
                 <div class="content" v-html="content">
                 </div>
                 <div class="answer-btn" >
-                    <div class="answer" @click="handelToAnswer">
+                    <div class="answer" v-if="isShow == 1">
+                        <i class="iconfont">&#xe603;</i>
+                        <p>追加提问</p>
+                    </div>
+                    <div class="answer" @click="handelToAnswer" v-else>
                         <i class="iconfont">&#xe603;</i>
                         <p>写回答</p>
                     </div>
+                    
                     <p class="scroce">奖励积分:{{item.amount}}</p>
                 </div>
             </div>
@@ -68,9 +79,9 @@
                         
                     </div>
                     <!-- 赞同按钮 -->
-                    <div class="agreeBtn">
-                        <div class="agree" @click="handelAdoptQuestion(item.id,item.uid)">采纳回答</div>
-                    </div>
+                        <div class="agreeBtn" v-if="isShow == 1">
+                            <div class="agree" @click="handelAdoptQuestion(item.id,item.uid)">采纳回答</div>
+                        </div>
                 </div>
             </div>
 
@@ -89,6 +100,14 @@
                 content:"",
                 /* 回复列表 */
                 answerlist:[],
+            },
+            computed:{
+                isShow:function(){
+                    if(this.questiondetail.length>0){
+                        return this.questiondetail[0].is_show;
+                    }
+                    return 2;
+                }
             },
             created(){
                 let id = this.getQueryString("id");

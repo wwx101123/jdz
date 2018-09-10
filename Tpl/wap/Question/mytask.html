@@ -35,16 +35,18 @@
         <!-- 头部 -->
         <div class="header" ref="header">
             <i class="iconfont back" @click="handelToBack">&#xe682;</i>
-                <p v-if="model==1">我的参与</p>
-                <p v-else>我的提问</p>
+                <p v-if="model==1">我的点子</p>
+                <p v-else>我的问题</p>
         </div>
         <!-- 内容列表 -->
         <div class="main wrapper" ref="wrapper" :style="{ height: scrollHeight +'px'}">
-            <ul class="list" >
+            <ul class="list imgList" >
                 <li class="item" v-for="item in questionList" @click="handelToQuestion(item.id)">
                     <div class="item-con">
                         <p class="mesg">{{item.title}}</p>
-                        <img v-if="item.thumbnail" :src="item.thumbnail" alt="">
+                        <div>
+                            <img  v-if="item.thumbnail" :src="item.thumbnail" alt="">
+                        </div>
                     </div>
                     <p class="item-agree" v-if="item.pv">{{item.pv}}热度</p>
                 </li>
@@ -89,6 +91,10 @@
                         if(scroll > conHeight){
                             this.loadData();
                         }
+                        /* 设置图片 */
+                        this.$nextTick(()=>{
+                            this.getNaturalSize();
+                        })
                     })
                     this.$nextTick(() => {
                         if (!this.scroll) {
@@ -104,6 +110,7 @@
                             this.scroll.on('pullingUp', (e) => {
                                 this.loadData();
                                 this.scroll.finishPullUp();
+                                this.getNaturalSize();
                             })
                         }
                     })
@@ -156,6 +163,25 @@
                     }
                     return null;
                 },
+                /* 获取图片宽高 */
+                getNaturalSize() {
+                    let s = $(".imgList img");
+                    let length = $(".imgList img").length;
+                    for(let i = 0;i < length;i++){
+                        let src = s[i].src;
+                        var img=new Image();
+                        img.src = src;
+                        var realWidth = img.width;
+                        var realHeight = img.height;
+                        if(realWidth > realHeight){
+                            $(s[i]).addClass("imgWidth");
+                            $(s[i]).parent('div').addClass("widthWrap"); 
+                        }else{
+                            $(s[i]).addClass("imgHeight");  
+                            $(s[i]).parent('div').addClass("heightWrap");
+                        }
+                    }
+                }
             }
         })
     </script>

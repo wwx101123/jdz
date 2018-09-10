@@ -1,3 +1,14 @@
+.ellipsis-mult(@n: 3) {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: @n;
+    word-break: break-all;
+    -o-text-overflow: ellipsis;
+    -ms-text-overflow: ellipsis;
+    text-overflow:ellipsis;
+    overflow: hidden;
+    white-space: normal;  
+} 
 .wrap{
     width: 100%;
 }
@@ -118,7 +129,7 @@
     text-align: left;
     flex: 1;
     color: #070707;
-    font-size: .36rem;
+    font-size: .3rem;
     line-height: .5rem;
     text-overflow:ellipsis;  
     white-space: normal;  
@@ -127,13 +138,45 @@
     -webkit-line-clamp:3;/*规定最多显示两行*/  
     overflow: hidden;
 }
-.main .item-con img{
-    height: 1.6rem;
-    width: 2.4rem;
-    border-radius: 5px; 
-    margin-left: .15rem;
-    border: 1px solid #e1e1e1;
+.main{
+    .toptime{
+        display: flex;
+        justify-content: space-between;
+        font-size: .3rem;
+        align-items: center;
+        height: .5rem;
+        margin-top: .5rem;
+        color: #8a8a8a;
+        .username{
+            .ellipsis-mult(1);
+            width: 3rem;
+            text-align: left;
+        }
+    }
+    .item-con{
+        .widthWrap{
+            width: 2.6rem;
+            height: auto;
+        }
+        .heightWrap{
+            width: auto;
+            height: 1.6rem;
+        }
+        .imgWidth{
+            width: 100%;
+            border-radius: 5px; 
+            margin-left: .15rem;
+            border: 1px solid #e1e1e1;
+        }
+        .imgHeight{
+            height: 100%;
+            border-radius: 5px; 
+            margin-left: .15rem;
+            border: 1px solid #e1e1e1;
+        }
+    }
 }
+
 .main .item-agree{
     font-size: .3rem;
     margin-top: .25rem;

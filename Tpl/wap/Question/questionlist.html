@@ -12,7 +12,7 @@
     <script src="https://cdn.bootcss.com/less.js/3.0.4/less.min.js"></script>
     <script type="text/javascript" src="__WJS__/comment/bscroll.min.js"></script>
     <script type="text/javascript" src="__WJS__/comment/vue-resource.js"></script>
-    <title>问题列表</title>
+    <title>点子大厅</title>
     <style>
     @font-face {
         font-family: 'iconfont';  /* project id 803693 */
@@ -48,16 +48,24 @@
         </div>
         <!-- 内容列表 -->
         <div class="main wrapper" ref="wrapper" :style="{ height: scrollHeight +'px'}">
-            <ul class="list" >
+            <ul class="list imgList">
                 <li class="item" v-for="item in questionList" @click="handelToQuestion(item.id)" data-id="item.id">
-                    <!-- <h3 class="item-title">{{item.title}}</h3> -->
+                    
                     <div class="item-con">
                         <p class="mesg">{{item.title}}</p>
-                        <img v-if="item.thumbnail" :src="item.thumbnail" alt="">
+                        <div>
+                            <img  v-if="item.thumbnail" :src="item.thumbnail" alt="">
+                        </div>
                     </div>
                     <div class="hot-score">
                         <p class="item-agree">{{item.pv}}热度</p>
                         <p class="item-score">奖励积分:{{item.amount}}</p>
+                    </div>
+                    <div class="toptime">
+                            <div class="username">
+                                创建人:{{item.username}}
+                            </div>
+                            <div class="time">{{item.start_time}}</div> 
                     </div>
                 </li>
                 <div v-if="!moreLoadData" class="nomoredata">没有更多数据了...</div>
@@ -86,7 +94,6 @@
                 this.scrollHeights();
                 /* 初始化数据 */
                 this.initData();
-                
             },
             methods: {
                 /* 初始化数据 */
@@ -101,9 +108,14 @@
                         if(scroll > conHeight){
                             this.loadData();
                         }
+                        /* 设置图片 */
+                        this.$nextTick(()=>{
+                            this.getNaturalSize();
+                        })
                     })
                     this.$nextTick(() => {
                         if (!this.scroll) {
+                           
                             this.scroll = new BScroll(this.$refs.wrapper, {
                                 click:true,
                                 // scrollY: true,
@@ -119,10 +131,12 @@
                             this.scroll.on('pullingUp', (e) => {
                                 this.loadData();
                                 this.scroll.finishPullUp();
+                                this.getNaturalSize();
                             })
                             this.scroll.on('pullingDown', (e) => {
                                 this.pullDown();
-                                this.scroll.finishPullDown()
+                                this.scroll.finishPullDown();
+                                this.getNaturalSize();
                             })
                         }
                     })
@@ -191,6 +205,25 @@
                     })
                    
                 },
+                /* 获取图片宽高 */
+                getNaturalSize() {
+                    let s = $(".imgList img");
+                    let length = $(".imgList img").length;
+                    for(let i = 0;i < length;i++){
+                        let src = s[i].src;
+                        var img=new Image();
+                        img.src = src;
+                        var realWidth = img.width;
+                        var realHeight = img.height;
+                        if(realWidth > realHeight){
+                            $(s[i]).addClass("imgWidth");
+                            $(s[i]).parent('div').addClass("widthWrap"); 
+                        }else{
+                            $(s[i]).addClass("imgHeight");  
+                            $(s[i]).parent('div').addClass("heightWrap");
+                        }
+                    }
+                }
             }
         })
     </script>
