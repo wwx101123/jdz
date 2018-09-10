@@ -78,18 +78,27 @@
     }
     .answer-btn{
         display: flex;
-        width: 1.6rem;
-        justify-content: space-around;
+        justify-content: flex-start;
         align-items: center;
         height: .68rem;
         font-size: .35rem;
         margin-top: .1rem;
-        background-color: #f7f7f7;
         border-radius: 5px;
         color: #0874fe;
-        i{
-            margin-top: .2rem;
-            font-size: .4rem;
+        position: relative;
+        .answer{
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            i{
+                margin-top: .2rem;
+                font-size: .4rem;
+            }
+        }
+       
+        .scroce{
+            position: absolute;
+            right: 0;
         }
     }
     .content{

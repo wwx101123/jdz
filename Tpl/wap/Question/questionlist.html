@@ -35,6 +35,7 @@
         <!-- 头部 -->
         <div class="header" ref="header">
             <div class="search-wrap">
+                <i class="iconfont back" @click="handelBack">&#xe682;</i>
                 <div class="left-input" @click="handelToSearch">
                     <i class="iconfont">&#xe609;</i>
                     <p>搜索</p>
@@ -54,7 +55,10 @@
                         <p class="mesg">{{item.title}}</p>
                         <img v-if="item.thumbnail" :src="item.thumbnail" alt="">
                     </div>
-                    <p class="item-agree">{{item.pv}}热度</p>
+                    <div class="hot-score">
+                        <p class="item-agree">{{item.pv}}热度</p>
+                        <p class="item-score">奖励积分:{{item.amount}}</p>
+                    </div>
                 </li>
                 <div v-if="!moreLoadData" class="nomoredata">没有更多数据了...</div>
             </ul>
@@ -163,6 +167,10 @@
                 /* 提问 */
                 handelToReport(e){
                     location.href = "./report.html";
+                },
+                /* 退回金点子 */
+                handelBack(){
+                    location.href = "../Index/index.html";
                 },
                 /* 到详情页 */
                 handelToQuestion(id){

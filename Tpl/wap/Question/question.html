@@ -40,15 +40,18 @@
         <!-- 内容 -->
         <div class="main">
             <!-- 标题 -->
-            <div class="question-wrap">
-                <div v-for="item in questiondetail">
+            <div class="question-wrap" v-for="item in questiondetail">
+                <div >
                     <div class="title">{{item.title}}</div>
                 </div>
                 <div class="content" v-html="content">
                 </div>
-                <div class="answer-btn" @click="handelToAnswer">
-                    <i class="iconfont">&#xe603;</i>
-                    <p>写回答</p>
+                <div class="answer-btn" >
+                    <div class="answer" @click="handelToAnswer">
+                        <i class="iconfont">&#xe603;</i>
+                        <p>写回答</p>
+                    </div>
+                    <p class="scroce">奖励积分:{{item.amount}}</p>
                 </div>
             </div>
 
