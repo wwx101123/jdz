@@ -1,8 +1,6 @@
 <?php
 namespace Home\Controller;
 
-use Faker\Calculator\Iban;
-use Think\Controller;
 /*
  * 问答区
  * */
@@ -18,6 +16,13 @@ class QuestionController  extends CommonController{
 
     private function getStore(){
         return M("Store");
+    }
+
+    private function getTranMoney(){
+        return M('tranmoney');
+    }
+    private function getUserStore(){
+        return new \Home\Model\StoreModel();
     }
 
     /*
@@ -72,13 +77,26 @@ class QuestionController  extends CommonController{
                 $questionInfo=$this->getQuestion()->where(['id'=>$questionId])->field("uid,amount,status")->find();
                 if ($questionInfo['status']==2) {
                     $answerUserId = $answerUserId ?  $answerUserId : 0;
+                    $userAmount=$this->getUserStore()->CangkuNum(['uid'=>$answerUserId]);
                     //不能采纳自己的答案
                     if($answerUserId==$questionInfo['uid']){
                         echo  json_encode(['msg'=>'不能标记本身为最佳答案']);
                         exit();
                     }
+                    $data2=[
+                        'pay_id'=>$answerUserId,
+                        'get_id'=>$answerUserId,
+                        'get_nums'=>$questionInfo['amount'],
+                        'get_time'=>time(),
+                        'get_type'=>26,//采纳奖励
+                        'now_nums'=>$userAmount,
+                        'now_nums_get'=>$userAmount,
+                        'is_release'=>1
+                    ];
                      //执行积分奖励
                      if($this->getStore()->where(['uid'=>$answerUserId])->setInc("fengmi_num",$questionInfo['amount'])){
+                         //增加明细
+                         $this->getTranMoney()->add($data2);
                          //更新问题状态
                          $this->getQuestion()->where(['id'=>$questionId])->save(['status'=>1]);//标记问题已结束
                          $this->getAnswer()->where(['id'=>$answerId])->save(['is_it_best'=>1]);//标记回答被采纳
@@ -238,21 +256,36 @@ class QuestionController  extends CommonController{
 
           if(!empty($questionArr['title'])){
               //判断用户积分是否充足
-              $fengmiNum=M("Store")->where(["uid"=>session("userid")])->find()['fengmi_num'];
+              $userAmount=M("Store")->where(["uid"=>session("userid")])->field("fengmi_num,cangku_num")->find();
+              $fengmiNum=$userAmount['fengmi_num'];
               $amount=$questionArr['amount']?$questionArr['amount'] : 0;//提问积分
               if($fengmiNum<$amount){
                   echo json_encode(['msg'=>'可用积分不足']);
               }else {
+                  $amount=$questionArr['amount'] ? $questionArr['amount'] : 0;
                   $data = [
                       "title" => $questionArr['title'],
                       "content" => $questionArr['content'],
-                      'amount' => $questionArr['amount'] ? $questionArr['amount'] : 0,
+                      'amount' => $amount,
                       'uid' => session('userid'),
                       'start_time' => time(),
                       'thumbnail' => str_replace("&quot;", "", $this->getThumbanail($questionArr['content'])),
                   ];
+                  $data2=[
+                      'pay_id'=>session("userid"),
+                      'get_id'=>session("userid"),
+                      'get_nums'=>$amount,
+                      'get_time'=>time(),
+                      'get_type'=>25,//问题奖励
+                      'now_nums'=>$userAmount['cangku_num'],
+                      'now_nums_get'=>$userAmount['cangku_num'],
+                      'is_release'=>1
+                  ];
+
                   //扣除对应积分并返回添加的问题ID
                   if (M("Store")->where(["uid" => session("userid")])->setDec("fengmi_num", $amount)) {
+                      //写明细进积分记录
+                       $this->getTranMoney()->add($data2);
                       echo $this->getQuestion()->add($data);
                   }
               }

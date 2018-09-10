@@ -103,6 +103,30 @@
                             <p class="p24">{$v['get_timeymd']}</br>{$v['get_timedate']}</p>
                         </li>
                     </if>
+                    <if condition= "$v['get_type'] eq 25">
+                        <li>
+                            <p>提问悬赏</p>
+                            <p>+{$v['get_nums']}</p>
+
+                            <p class="p23">
+                                <eq name="v['trtype']" value="1">{$v['now_nums']}<else/>{$v['now_nums_get']}</eq>
+
+                            </p>
+                            <p class="p24">{$v['get_timeymd']}</br>{$v['get_timedate']}</p>
+                        </li>
+                    </if>
+                    <if condition= "$v['get_type'] eq 26">
+                        <li>
+                            <p>回答奖励</p>
+                            <p>+{$v['get_nums']}</p>
+
+                            <p class="p23">
+                                <eq name="v['trtype']" value="1">{$v['now_nums']}<else/>{$v['now_nums_get']}</eq>
+
+                            </p>
+                            <p class="p24">{$v['get_timeymd']}</br>{$v['get_timedate']}</p>
+                        </li>
+                    </if>
 
 
 
