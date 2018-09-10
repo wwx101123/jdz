@@ -106,7 +106,7 @@
                     <if condition= "$v['get_type'] eq 25">
                         <li>
                             <p>提问悬赏</p>
-                            <p>+{$v['get_nums']}</p>
+                            <p><?php echo $v['get_nums']>0 ? '+' : ''; ?>{$v['get_nums']}</p>
 
                             <p class="p23">
                                 <eq name="v['trtype']" value="1">{$v['now_nums']}<else/>{$v['now_nums_get']}</eq>
