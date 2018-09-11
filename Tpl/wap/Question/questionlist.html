@@ -55,6 +55,7 @@
                         <p class="mesg">{{item.title}}</p>
                         <div class="baseClass">
                             <img class="baseImg"  v-if="item.thumbnail" :src="item.thumbnail" alt="">
+                            <img class="baseImg" v-else src="__WIMG__/default.jpg" alt="">
                         </div>
                     </div>
                     <div class="hot-score">
@@ -99,18 +100,21 @@
                 /* 初始化数据 */
                 initData(){
                     this.$http.post('',{page:this.page},{emulateJSON : true}).then((response)=>{
+                        console.log(response.data);
                         if(response.data.length>0){
                             this.page++;
                             this.questionList = response.data;
                         }
-                        let conHeight = $(".list").height();
-                        let scroll = $(".main").height();
-                        if(scroll > conHeight){
-                            this.loadData();
-                        }
-                        console.log($(".imgList img"))
-                        /* 设置图片 */
-                        this.getNaturalSize();
+                        this.$nextTick(()=>{
+                            /* 设置图片 */
+                            this.getNaturalSize();
+                            let conHeight = $(".list").height();
+                            let scroll = $(".main").height();
+                            console.log(scroll+':'+conHeight);
+                            if(scroll > conHeight){
+                                this.loadData();
+                            }
+                        })
                     })
                     this.$nextTick(() => {
                         if (!this.scroll) {
