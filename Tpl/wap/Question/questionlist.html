@@ -94,15 +94,23 @@
                 lock:false,
                 errorImg01:"this.src='__WIMG__/default.jpg'"
             },
+
             computed:{
                 
             },
             mounted(){
+                if (window.history && window.history.pushState) {
+                    history.pushState(null, null, document.URL);
+                    window.addEventListener('popstate', this.goBack, false);
+                }
                 this.scrollHeights();
                 /* 初始化数据 */
                 this.initData();
             },
             methods: {
+                goBack(){
+                    location.href = "../Index/index.html";
+                },
                 /* 初始化数据 */
                 initData(){
                     this.$http.post('',{page:this.page},{emulateJSON : true}).then((response)=>{
