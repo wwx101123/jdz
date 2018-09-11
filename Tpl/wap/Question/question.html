@@ -80,9 +80,12 @@
                     </div>
                     <div class="time">{{item.answer_time}}</div>
                     <!-- 赞同按钮 -->
-                        <div class="agreeBtn" v-if="isShow == 1">
-                            <div class="agree" @click="handelAdoptQuestion(item.id,item.uid)">采纳回答</div>
-                        </div>
+                    <div v-if="!item.is_it_best == 1">
+                            <div class="agreeBtn" v-if="isShow == 1">
+                                    <div class="agree" @click="handelAdoptQuestion(item.id,item.uid)">采纳回答</div>
+                                </div>
+                    </div>
+                        
                 </div>
             </div>
 
