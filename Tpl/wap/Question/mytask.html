@@ -50,7 +50,7 @@
                     <div class="item-con">
                         <p class="mesg">{{item.title}}</p>
                     </div>
-                    <p class="item-agree">
+                    <p class="item-agree" v-if="item.pv">
                             <i class="iconfont" style="color:#FF5722">&#xe630;</i>
                              <span>{{item.pv}}</span>
                     </p>
