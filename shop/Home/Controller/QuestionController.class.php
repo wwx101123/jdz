@@ -59,7 +59,7 @@ class QuestionController  extends CommonController{
                 ->where("a.uid=b.userid")
                 ->field("a.*,b.username,b.img_head")
                 ->order("a.is_it_best,a.praise,a.id desc")->select();
-           echo $this->htmlDecode($qusetionArr);
+           echo $this->htmlDecode($qusetionArr,"answer_time");
            }
      }
     }
