@@ -13,7 +13,16 @@
         <a href="javascript:history.go(-1)"><img src="__WIMG__/jiant.png" alt=""></a>
     </div>
     <div class="header_c"><h2>{$Think.lang.salescenter}</h2></div>
-    <!--<div class="header_r"><a href="{:U('Growth/Buyrecords')}">记录</a></div>-->
+    <div class="header_r"><a href="javascript:void(0)" id="hide"><img src="__WIMG__/moer_icon.png" alt=""></a>
+        <div id="p1">
+            <div class="down"></div>
+            <ul>
+                <li><a href="{:U('Trading/Nofinsh')}">{$Think.lang.wwcdd}</a></li>
+                <li><a href="{:U('Trading/Dofinsh')}">{$Think.lang.ywcdd}</a></li>
+                <li><a href="{:U('Trading/Sellerrecords')}">{$Think.lang.sellerrecords}</a></li>
+            </ul>
+        </div>
+    </div>
 </div>
 
 <div class="big_width100">
@@ -75,7 +84,15 @@
     </div>
     <div class="hbbj"></div>
 </div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#hide").click(function () {
+            $("#p1").toggle(); //toggle() 方法切换元素的可见状态。 如果被选元素可见,则隐藏这些元素,如果被选元素隐藏,则显示这些元素。
+        });
 
+    });
+
+</script>
 <script type="text/javascript">
 
     $(function () {
