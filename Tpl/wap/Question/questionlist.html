@@ -53,8 +53,8 @@
                     
                     <div class="item-con">
                         <p class="mesg">{{item.title}}</p>
-                        <div>
-                            <img  v-if="item.thumbnail" :src="item.thumbnail" alt="">
+                        <div class="baseClass">
+                            <img class="baseImg"  v-if="item.thumbnail" :src="item.thumbnail" alt="">
                         </div>
                     </div>
                     <div class="hot-score">
@@ -108,10 +108,9 @@
                         if(scroll > conHeight){
                             this.loadData();
                         }
+                        console.log($(".imgList img"))
                         /* 设置图片 */
-                        setTimeout(()=>{
-                            this.getNaturalSize();
-                        })
+                        this.getNaturalSize();
                     })
                     this.$nextTick(() => {
                         if (!this.scroll) {
@@ -131,12 +130,11 @@
                             this.scroll.on('pullingUp', (e) => {
                                 this.loadData();
                                 this.scroll.finishPullUp();
-                                this.getNaturalSize();
                             })
                             this.scroll.on('pullingDown', (e) => {
                                 this.pullDown();
                                 this.scroll.finishPullDown();
-                                this.getNaturalSize();
+                               
                             })
                         }
                     })
@@ -157,6 +155,7 @@
                             this.moreLoadData = false;
                         }
                         this.lock = false;
+                        this.getNaturalSize();
                     })
                     this.scroll.refresh();
                 },
@@ -171,6 +170,7 @@
                             this.questionList = response.data.concat(this.questionList);
                         }
                         this.lock = false;
+                        this.getNaturalSize();
                     })
                     this.scroll.refresh();
                 },

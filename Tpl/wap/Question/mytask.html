@@ -97,9 +97,7 @@
                             this.loadData();
                         }
                          /* 设置图片 */
-                         setTimeout(()=>{
-                            this.getNaturalSize();
-                        })
+                        this.getNaturalSize();
                     })
                     this.$nextTick(() => {
                         if (!this.scroll) {
@@ -115,7 +113,6 @@
                             this.scroll.on('pullingUp', (e) => {
                                 this.loadData();
                                 this.scroll.finishPullUp();
-                                this.getNaturalSize();
                             })
                         }
                     })
@@ -136,6 +133,7 @@
                             this.moreLoadData = false;
                         }
                         this.lock = false;
+                        this.getNaturalSize();
                     })
                     this.scroll.refresh();
                 },

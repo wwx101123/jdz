@@ -155,16 +155,28 @@
             height: 1.6rem;
         }
         .imgWidth{
-            width: 100%;
+            display: block !important;
+            height: auto !important;
+            width: 100% !important;
             border-radius: 5px; 
             margin-left: .15rem;
             border: 1px solid #e1e1e1;
         }
         .imgHeight{
-            height: 100%;
+            display: block !important;
+            width: auto !important;
+            height: 100% !important;
             border-radius: 5px; 
             margin-left: .15rem;
             border: 1px solid #e1e1e1;
+        }
+        .baseClass{
+            max-width: 2.4rem;
+            max-height: 1.6rem;
+            overflow: hidden;
+        }
+        .baseImg{
+            display: none;
         }
     }
 }
