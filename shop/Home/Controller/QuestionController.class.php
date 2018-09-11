@@ -361,13 +361,13 @@ class QuestionController  extends CommonController{
                     ->limit($page*$limit,$limit)
                     ->where("a.question_id=b.id")
                     ->where(['a.uid'=>$uid])
-                    ->order("a.answer_time desc")
+                    ->order("a.is_it_best asc,a.answer_time desc")
                     ->group("b.id")
                     ->select();
                 echo  $this->htmlDecode($qusetionList,"answer_time");
             }else{
                 $qusetionList=$this->getQuestion()->limit($page*$limit,$limit)
-                    ->where(['uid'=>$uid])->order("start_time desc")->select();
+                    ->where(['uid'=>$uid])->order("status asc,start_time desc")->select();
                 echo  $this->htmlDecode($qusetionList);
             }
 
