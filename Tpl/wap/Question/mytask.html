@@ -42,6 +42,11 @@
         <div class="main wrapper" ref="wrapper" :style="{ height: scrollHeight +'px'}">
             <ul class="list imgList" >
                 <li class="item" v-for="item in questionList" @click="handelToQuestion(item.id)">
+                    <!-- 是否结束 -->
+                    <div class="getAnswer-wrap">
+                        <p class="getAnswer" v-if="item.is_it_best == 1 || item.status == 1">已采纳</p>
+                    </div>
+
                     <div class="item-con">
                         <p class="mesg">{{item.title}}</p>
                         <div>
