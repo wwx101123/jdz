@@ -102,6 +102,12 @@
                 /* 回复列表 */
                 answerlist:[],
             },
+            mounted(){
+                if (window.history && window.history.pushState) {
+                    history.pushState(null, null, document.URL);
+                    window.addEventListener('popstate', this.goBack, false);
+                }
+            },
             computed:{
                 isShow:function(){
                     if(this.questiondetail.length>0){
@@ -129,6 +135,9 @@
                 }
             },
             methods: {
+                goBack(){
+                    location.href = "./questionlist.html";
+                },
                 /* 跳转到搜索 */
                 handelToSearch(){
                     location.href = './search.html';
