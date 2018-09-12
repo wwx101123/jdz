@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" href="__WCSS__/base.css">
-    <link rel="stylesheet" type="text/less" href="__WCSS__/comment/question.less?112121">
+    <link rel="stylesheet" type="text/less" href="__WCSS__/comment/question.less?1121213">
     <script type="text/javascript" src="__WJS__/reset.js"></script>
     <script src="https://cdn.bootcss.com/vue/2.2.2/vue.min.js"></script>
     <script src="https://cdn.bootcss.com/less.js/3.0.4/less.min.js"></script>
@@ -80,10 +80,10 @@
                     </div>
                     <div class="time">{{item.answer_time}}</div>
                     <!-- 赞同按钮 -->
-                    <div v-if="!item.is_it_best == 1">
+                    <div v-if="status == 2">
                             <div class="agreeBtn" v-if="isShow == 1">
                                     <div class="agree" @click="handelAdoptQuestion(item.id,item.uid)">采纳回答</div>
-                                </div>
+                            </div>
                     </div>
                         
                 </div>
@@ -115,6 +115,12 @@
                 isShow:function(){
                     if(this.questiondetail.length>0){
                         return this.questiondetail[0].is_show;
+                    }
+                    return 2;
+                },
+                status:function(){
+                    if(this.questiondetail.length>0){
+                        return this.questiondetail[0].status;
                     }
                     return 2;
                 }
