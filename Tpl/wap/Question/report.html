@@ -44,7 +44,7 @@
                 <input v-model="title" type="text" placeholder="请输入标题">
             </div>
             <div class="input-wrap">
-                <input v-model="amount" type="number" @input="handleInput" placeholder="请输入悬赏积分">
+                <input v-model="amount"  type="text" @input="handleInput" placeholder="请输入悬赏积分">
             </div>
             <!-- 文本编辑 -->
             <div class="content">
@@ -81,9 +81,7 @@
             },
             methods:{
                 handleInput(e){
-                    // this.amount=e.target.value.replace(/[^0-9]\d*$/,'');
-                    this.amount=e.target.value.replace(/[^\.\d]/g,'');
-                    this.amount=e.target.value.replace('.','');
+                    this.amount=e.target.value.replace(/\D/g,'');
                 },
                 handelBack(e){
                     history.go(-1);
