@@ -719,8 +719,8 @@ private function get_banner()
             //if ($dhnums < 100) {
               //  $this->ajaxReturn('最少兑换数量为100哦~', 0);
             //}
-            if ($dhnums % 100 != 0) {
-                $this->ajaxReturn('兑换数量必须为100的倍数哦~', 0);
+            if ($dhnums % 1 != 0) {
+                $this->ajaxReturn('兑换数量必须为1的倍数哦~', 0);
             }
             if ($dhnums > $minems['cangku_num']) {
                 $this->ajaxReturn('您账户暂时没有这么多金积分', 0);
@@ -772,7 +772,7 @@ private function get_banner()
                 //判断用户等级
                 $uChanlev = D('Home/index');
                 $uChanlev->Checklevel($uid);
-                ajaxReturn('金积分兑换银积分成功', 1, '/Index/exehange');
+                ajaxReturn('余额兑换积分成功', 1, '/Index/exehange');
             }
         }
         $this->assign('minems', $minems);
