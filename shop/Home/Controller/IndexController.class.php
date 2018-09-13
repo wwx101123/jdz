@@ -157,7 +157,7 @@ class IndexController extends CommonController
                     $res_pay = M('user')->where(array('userid' => $userid))->save($dataper);//每日银积分释放金积分
                     if ($res_pay) {
                         $isgetnums = showtwo($getnums);
-                        $res = $isgetnums . '银积分释放到金积分成功';
+                        $res = $isgetnums . '积分释放到余额成功';
                         ajaxReturn($res, 1, '/Index/index');
                     }
             }
@@ -236,13 +236,12 @@ private function get_banner()
         $traInfo = M('tranmoney');
         $uid = session('userid');
         $where['pay_id|get_id'] = $uid;
-        $where['get_type'] = array('not in', '1,11,12,22,23');
+        $where['get_type'] = array('not in', '1,11,12,22,23,25,26');
         //分页
         $p = getpage($traInfo, $where, 50);
         $page = $p->show();
         $Chan_info = $traInfo->where($where)->order('id desc')->select();
 
-        
         foreach ($Chan_info as $k => $v) {
 
 
