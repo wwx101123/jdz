@@ -89,8 +89,8 @@ class QuestionController  extends CommonController{
                         'get_nums'=>$questionInfo['amount'],
                         'get_time'=>time(),
                         'get_type'=>26,//采纳奖励
-                        'now_nums'=>$userJiFen,
-                        'now_nums_get'=>$userJiFen,
+                        'now_nums'=>$userJiFen+$questionInfo['amount'],
+                        'now_nums_get'=>$userJiFen+$questionInfo['amount'],
                         'is_release'=>1
                     ];
                      //执行积分奖励
