@@ -157,7 +157,7 @@ class IndexController extends CommonController
                     $res_pay = M('user')->where(array('userid' => $userid))->save($dataper);//每日银积分释放金积分
                     if ($res_pay) {
                         $isgetnums = showtwo($getnums);
-                        $res = $isgetnums . '银积分释放到金积分成功';
+                        $res = $isgetnums . '积分释放到余额成功';
                         ajaxReturn($res, 1, '/Index/index');
                     }
             }
