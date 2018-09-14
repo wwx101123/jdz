@@ -277,8 +277,8 @@ class QuestionController  extends CommonController{
                       'get_nums'=>"-".$amount,
                       'get_time'=>time(),
                       'get_type'=>25,//问题奖励
-                      'now_nums'=>$userAmount['fengmi_num'],
-                      'now_nums_get'=>$userAmount['fengmi_num'],
+                      'now_nums'=>$userAmount['fengmi_num']-$amount,
+                      'now_nums_get'=>$userAmount['fengmi_num']-$amount,
                       'is_release'=>1
                   ];
 
