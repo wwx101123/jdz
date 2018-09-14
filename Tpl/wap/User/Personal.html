@@ -18,10 +18,9 @@
 	.button,#clipBtn{width: 130px;font-size: 16px;}
 	.back{
 		position: absolute;
-		left: 50%;
-		margin-left: -40px;
+		left: 33%;
 		right: 0;
-		width: 80px;
+		width: 33%;
 		bottom: 0;
 		top: 0;
 		text-align: center;
@@ -177,16 +176,16 @@
 			  <article class="htmleaf-container">
 				  <div id="clipArea"></div>
 				  <div class="foot-use">
-					  <div class="uploader1 blue">
-						  <input type="button" name="file" class="button" value="打开"/>
+					  <div class="uploader1 blue" style="width:33% !important;">
+						  <input style="width:100% !important;" type="button" name="file" class="button" value="打开"/>
 
 						  <form id='myupload' action="{:U('User/Imgup')}" method='post' enctype='multipart/form-data'>
-							  <input id="file" type="file"  name="uploadfile" onchange="javascript:setImagePreview();" accept="image/*" multiple  />
+							  <input style="width:100% !important;" id="file" type="file"  name="uploadfile" onchange="javascript:setImagePreview();" accept="image/*" multiple  />
 							  <!--<input type="file" id="uploadphoto" name="uploadfile" value="请点击上传图片"  style="display:none;" />-->
 						  </form>
 					  </div>
 					  <button class="back" id="back">返回</button>
-					  <button id="clipBtn">{$Think.lang.intercept}</button>
+					  <button style="width:34% !important" id="clipBtn">{$Think.lang.intercept}</button>
 				  </div>
 				  <div id="view"></div>
 			  </article>
