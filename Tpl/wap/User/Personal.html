@@ -42,7 +42,7 @@
     <div class="user-top">
        <div class="user-head" id="logox"><img id="bgl" src="__IMGHEAD__/{$uinfo['img_head']}"/></div>
        <ul class="user-top-msg">
-           <li>等级:<if condition="$uinfo['vip_grade'] eq 0 ">普通用户
+           <li>等级:<if condition="$uinfo['jifenNum'] lt 1000000 ">普通用户
 			<else /> VIP
 			</if></li>
            <li>UID:{$uinfo['userid']}</li>

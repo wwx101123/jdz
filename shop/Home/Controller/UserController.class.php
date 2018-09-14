@@ -3,11 +3,12 @@ namespace Home\Controller;
 use Think\Controller;
 class UserController extends CommonController
 {
+
    public function Personal()
     {
         $uid = session('userid');
         $uinfo = M('user')->where(array('userid' => $uid))->field('username,is_dailishang,userid,img_head,use_grade,user_credit,vip_grade')->find();
-
+        $moneyinfo = M('store')->where(array('uid' => $uid))->field('cangku_num,fengmi_num')->find();
 
         //判断当前语言
         $lang = LANG_SET;
@@ -19,6 +20,7 @@ class UserController extends CommonController
         $this->assign('uid', $uid);
         $this->assign('uinfo', $uinfo);
         $this->assign('lantype', $lantype);
+        $this->assign("jifenNum",$moneyinfo['fengmi_num']);
         $this->display();
     }
 
