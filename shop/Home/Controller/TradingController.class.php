@@ -14,83 +14,96 @@ class TradingController extends CommonController {
     public function SellCentr(){
        
  	//ajaxReturn('该功能暂未开启',0);
-
-        //是否有设置默认银行卡
         $uid = session('userid');
-        $cid = trim(I('cid'));
-        if(empty($cid)){
-            $mapcas['user_id&is_default'] =array($uid,1,'_multi'=>true);
-            $carinfo = M('ubanks')->where($mapcas)->count(1);
-            if($carinfo < 1){
-                $morecars = M('ubanks as u')->join('RIGHT JOIN ysk_bank_name as banks ON u.card_id = banks.pid' )->where(array('u.user_id'=>$uid))->limit(1)->field('u.hold_name,u.id,u.card_number,u.user_id,banks.banq_genre')->find();
-            }else{
-                $morecars = M('ubanks as u')->join('RIGHT JOIN ysk_bank_name as banks ON u.card_id = banks.pid' )->where(array('u.user_id'=>$uid,'is_default'=>1))->limit(1)->field('u.hold_name,u.id,u.card_number,u.user_id,banks.banq_genre')->find();
-            }
-        }else{
-            $morecars = M('ubanks as u')->join('RIGHT JOIN ysk_bank_name as banks ON u.card_id = banks.pid' )->where(array('u.id'=>$cid))->limit(1)->field('u.hold_name,u.id,u.card_number,u.user_id,banks.banq_genre')->find();
-        }
+      if(IS_GET) {
+          //是否有设置默认银行卡
 
-        //生成出售订单
-        if(IS_AJAX){
-            $pwd = trim(I('pwd'));
-            $sellnums = trim(I('sellnums'));//出售数量
-            $cardid = trim(I('cardid'));//银行卡id
-            $sellAll = array(500,1000,3000,5000,10000,30000);
-            if (!in_array($sellnums, $sellAll)) {
-                ajaxReturn('您选择买入的金额不正确',0);
-            }
+          $cid = trim(I('cid'));
+          if (empty($cid)) {
+              $mapcas['user_id&is_default'] = array($uid, 1, '_multi' => true);
+              $carinfo = M('ubanks')->where($mapcas)->count(1);
+              if ($carinfo < 1) {
+                  $morecars = M('ubanks as u')->join('RIGHT JOIN ysk_bank_name as banks ON u.card_id = banks.pid')->where(array('u.user_id' => $uid))->limit(1)->field('u.hold_name,u.id,u.card_number,u.user_id,banks.banq_genre')->find();
+              } else {
+                  $morecars = M('ubanks as u')->join('RIGHT JOIN ysk_bank_name as banks ON u.card_id = banks.pid')->where(array('u.user_id' => $uid, 'is_default' => 1))->limit(1)->field('u.hold_name,u.id,u.card_number,u.user_id,banks.banq_genre')->find();
+              }
+          } else {
+              $morecars = M('ubanks as u')->join('RIGHT JOIN ysk_bank_name as banks ON u.card_id = banks.pid')->where(array('u.id' => $cid))->limit(1)->field('u.hold_name,u.id,u.card_number,u.user_id,banks.banq_genre')->find();
+          }
+          $this->assign('morecars',$morecars);
+          $this->display();
+      }else if(IS_POST) {
+          //生成出售订单
+              $pwd = trim(I('pwd'));
+              $sellnums = trim(I('sellnums'));//出售数量
+              $cardid = trim(I('cardid'));//银行卡id
+              $sellAll = array(500, 1000, 3000, 5000, 10000, 30000);
+              if (!in_array($sellnums, $sellAll)) {
+                  ajaxReturn('您选择买入的金额不正确', 0);
+              }
 
-            //自己是否有足够余额
-            $is_enough = M('store')->where(array('uid'=>$uid))->getField('cangku_num');
-            if($sellnums + 100 > $is_enough){
-                ajaxReturn('您当前账户暂无这么多余额~',0);
-            }
-            //验证银行卡是否是自己
-            $id_Uid = M('ubanks')->where(array('id'=>$cardid))->getField('user_id');
-            if($id_Uid != $uid){
-                ajaxReturn('对不起,该张银行卡不是您的哦~',0);
-            }
-            //验证交易密码
-            $minepwd = M('user')->where(array('userid'=>$uid))->Field('account,mobile,safety_pwd,safety_salt')->find();
-            $user_object = D('Home/User');
-            $user_info = $user_object->Trans($minepwd['account'], $pwd);
-            //生成订单
-            $data['pay_no'] = build_order_no();
-            $data['payout_id'] = $uid;
-            $data['card_id'] = $cardid;
-            $data['pay_nums'] = $sellnums;
-            $data['fee_nums'] = 100;
-            $data['pay_time'] = time();
-            $res_Add = M('trans')->add($data);
+              //自己是否有足够余额
+              $is_enough = M('store')->where(array('uid' => $uid))->getField('cangku_num');
+              if ($sellnums + 100 > $is_enough) {
+                  ajaxReturn('您当前账户暂无这么多余额~', 0);
+              }
+              //验证银行卡是否是自己
+              $id_Uid = M('ubanks')->where(array('id' => $cardid))->getField('user_id');
+              if ($id_Uid != $uid) {
+                  ajaxReturn('对不起,该张银行卡不是您的哦~', 0);
+              }
+              //验证交易密码
+              $minepwd = M('user')->where(array('userid' => $uid))->Field('account,mobile,safety_pwd,safety_salt')->find();
+              $user_object = D('Home/User');
+              $user_info = $user_object->Trans($minepwd['account'], $pwd);
+              //生成订单
+              $data['pay_no'] = build_order_no();
+              $data['payout_id'] = $uid;
+              $data['card_id'] = $cardid;
+              $data['pay_nums'] = $sellnums;
+              $data['fee_nums'] = 100;
+              $data['pay_time'] = time();
+              $res_Add = M('trans')->add($data);
 
-            //添加卖出余额记录 扣余额及100手续费
+              //添加卖出余额记录 扣余额及100手续费
 
-                $jifen_nums = $sellnums+100;
-
-               
-            //给自己减少这么多余额
-            if($res_Add){
-                $sellnums = $sellnums + 100;
-                $doDec = M('store')->where(array('uid'=>$uid))->setDec('cangku_num',$sellnums);
+              $jifen_nums = $sellnums + 100;
 
 
-                $pay_n = M('store')->where(array('uid' => $uid))->getfield('cangku_num');
-                $jifen_dochange['now_nums'] = $pay_n;
-                $jifen_dochange['now_nums_get'] = $pay_n;
-                $jifen_dochange['is_release'] = 1;
-                $jifen_dochange['pay_id'] = $uid;
-                $jifen_dochange['get_id'] = 0;
-                $jifen_dochange['get_nums'] = $jifen_nums;
-                $jifen_dochange['get_time'] = time();
-                $jifen_dochange['get_type'] = 9;
-                $res_addres = M('tranmoney')->add($jifen_dochange);
+              //给自己减少这么多余额
+              if ($res_Add) {
+                  $sellnums = $sellnums + 100;
+                  $doDec = M('store')->where(array('uid' => $uid))->setDec('cangku_num', $sellnums);
 
 
-                ajaxReturn('订单创建成功',1);
-            }
-        }
-        $this->assign('morecars',$morecars);
-        $this->display();
+                  $pay_n = M('store')->where(array('uid' => $uid))->getfield('cangku_num');
+                  $jifen_dochange['now_nums'] = $pay_n;
+                  $jifen_dochange['now_nums_get'] = $pay_n;
+                  $jifen_dochange['is_release'] = 1;
+                  $jifen_dochange['pay_id'] = $uid;
+                  $jifen_dochange['get_id'] = 0;
+                  $jifen_dochange['get_nums'] = $jifen_nums;
+                  $jifen_dochange['get_time'] = time();
+                  $jifen_dochange['get_type'] = 9;
+                  $res_addres = M('tranmoney')->add($jifen_dochange);
+
+                  //写入明细保证金100
+                  $data2=[
+                      'pay_id'=>session("userid"),
+                      'get_id'=>session("userid"),
+                      'get_nums'=>"-100",
+                      'get_time'=>time(),
+                      'get_type'=>27,//卖出保证金
+                      'now_nums'=>$is_enough-$sellnums,
+                      'now_nums_get'=>$is_enough-$sellnums,
+                      'is_release'=>1
+                  ];
+                  M('tranmoney')->add($data2);//写入明细
+                  ajaxReturn('订单创建成功', 1);
+              }
+
+      }
+
     }
 
     //未完成订单

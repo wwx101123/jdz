@@ -113,9 +113,9 @@
                 msg_alert('兑换金额不足');
                 return;
             }else{
-            	var yuee = dhnums % 100;
+            	var yuee = dhnums % 1;
             	if(yuee!=0){
-                    msg_alert('兑换金额不是100的倍数');
+                    msg_alert('兑换金额不是1的倍数');
                     return;
                 }
             }

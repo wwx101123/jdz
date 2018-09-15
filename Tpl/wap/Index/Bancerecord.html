@@ -85,7 +85,11 @@
                                     <p>+{$v['get_nums']}</p>
                                     <elseif condition="$v['get_type'] eq 13"/>
                                     <p>兑换积分</p>
-                                    <p>-{$v['get_nums']}</p></if>
+                                    <p>-{$v['get_nums']}</p>
+                                    <elseif condition="$v['get_type'] eq 27"/>
+                                    <p>卖出保证金</p>
+                                    <p>{$v['get_nums']}</p>
+                                </if>
                             </eq>
                             <p class="p23">
                                 <if condition="$v['is_release'] eq 0 && $v['now_nums'] eq 0 && $v['now_nums_get'] eq 0">
