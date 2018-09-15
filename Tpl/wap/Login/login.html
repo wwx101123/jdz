@@ -4,7 +4,9 @@
 <title>  {$Think.lang.login}</title>
 <link rel="stylesheet" href="__WCSS__/login.css?111">
 <link rel="stylesheet" href="__WCSS__/normalize.css">
+<script src="__WJS__/jquery1.11.1.min.js"></script>
 <script src="__WJS__/rem.js"></script>
+<script src="__WJS__/cookie.js"></script>
 <body class="bgf5">
 <style>
 
@@ -25,10 +27,10 @@
 		</div>
 		<form name="formlogin" id="loginForm" class="formlogin" method="post" action="{:U('Login/checkLogin')}">
 			<div class="input_box">
-				<input type="text" name="account" class="username" placeholder="{$Think.lang.mobile}/UID" autocomplete="off"/>
+				<input type="text" id="phone" name="account" class="username" placeholder="{$Think.lang.mobile}/UID" autocomplete="off"/>
 			</div>
 			<div class="input_box">
-				<input type="password" name="password" class="password" placeholder="{$Think.lang.loginpwd}" oncontextmenu="return false" onpaste="return false" />
+				<input type="password" id="password" name="password" class="password" placeholder="{$Think.lang.loginpwd}" oncontextmenu="return false" onpaste="return false" />
 			</div>
 			<div  class="inde-btn">
 				<button id="submit" type="button" onclick="login()">{$Think.lang.login1}</button>
@@ -43,7 +45,25 @@
 		</form>
 	</div>
 </div>
-
+<script>
+	let userInfo = getCookie('userInfo');
+	if(userInfo){
+		let getValue = JSON.parse(userInfo);
+		$("#phone").val(getValue.phone);
+		$('#password').val(getValue.password);
+	}
+	/* 登陆时设置cookie */
+	$("#submit").click(()=>{
+		let phone = $("#phone").val();
+		let password = $('#password').val();
+		let user = {
+			phone:phone,
+			password:password
+		}
+		let saveValue = JSON.stringify(user);
+		setCookie('userInfo',saveValue,7);
+	})
+</script>
 </body>
 <script>
 function gradeChange(ss){
@@ -52,7 +72,7 @@ function gradeChange(ss){
        }
 
 </script>
-<script src="__WJS__/jquery1.11.1.min.js"></script>
+
 <!--<script src="__WJS__/common.js"></script>-->
 
 <!--表单验证-->

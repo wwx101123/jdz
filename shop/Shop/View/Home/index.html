@@ -10,7 +10,7 @@
 
   <title>{$config['SITE_TITLE']}</title>
 
-  <link rel="stylesheet" href="__CSS__/style1.css">
+  <link rel="stylesheet" href="__CSS__/style1.css?11">
 
   <link rel="stylesheet" href="__ICON__/iconfont.css">
 
@@ -104,11 +104,11 @@
 
                 <ul>
 
-                    <li><span class="img_3"><img src="__IMG__/banner.png"></span></li>
+                    <li><span class="img_3"><img src="__IMG__/banners1.jpg"></span></li>
 
-                    <li><span class="img_4"><img src="__IMG__/bannerone.png"></span></li>
+                    <li><span class="img_4"><img src="__IMG__/banners1.jpg"></span></li>
 
-                   <li><span class="img_1"><img src="__IMG__/bannertwo.png"></span></li>
+                   <li><span class="img_1"><img src="__IMG__/banners1.jpg"></span></li>
 
                     <!--  <li><span class="img_5"><img src="__IMG__/bannerthree.png"></span></li> -->
 
@@ -177,22 +177,20 @@
     <div class="type">
 
       <ul>
-
+            <li>
+                <a href="{:U('shop/Home/mend',array('sta'=>4))}">
+        
+                    <span><img src="/Public/Public/Uploads/image/touxiang/2017-12-26/all.png"></span>
+        
+                    <p>全部商品</p>
+                </a>
+            </li>
+            
         <li>
-
-          <a href="{:U('dianpu/businesslist')}">
-
-            <span><img src="/Public/Public/Uploads/image/touxiang/2017-12-26/5a41e7bd36a2f.png"></span>
-
-            <p>入驻商家</p>
-
-          </a>
-
-        </li><li>
 
           <a href="{:U('shop/Home/mend',array('sta'=>1))}">
 
-            <span><img src="/Public/Public/Uploads/image/touxiang/2017-12-26/5a41e7d381d77.png"></span>
+            <span><img src="/Public/Public/Uploads/image/touxiang/2017-12-26/hot.png"></span>
 
             <p>热门商品</p>
 
@@ -202,13 +200,23 @@
 
           <a href="{:U('shop/Home/mend',array('sta'=>2))}">
 
-            <span><img src="/Public/Public/Uploads/image/touxiang/2017-12-26/5a41e7e305882.png"></span>
+            <span><img src="/Public/Public/Uploads/image/touxiang/2017-12-26/new.png"></span>
 
             <p>最新商品</p>
 
           </a>
 
-        </li><li>
+        </li>
+        <li>
+                <a href="{:U('dianpu/businesslist')}">
+    
+                    <span><img src="/Public/Public/Uploads/image/touxiang/2017-12-26/home.png"></span>
+    
+                    <p>入驻商家</p>
+    
+                </a>
+                </li>
+        <!-- <li>
 
           <a href="{:U('shop/Home/mend',array('sta'=>3))}">
 
@@ -218,17 +226,8 @@
 
           </a>
 
-        </li><li>
-
-          <a href="{:U('shop/Home/mend',array('sta'=>4))}">
-
-            <span><img src="/Public/Public/Uploads/image/touxiang/2017-12-26/5a41e81283eb5.png"></span>
-
-            <p>全部商品</p>
-
-          </a>
-
-        </li><!-- <li>
+        </li> -->
+        <!-- <li>
 
           <a href="{:U('shop/Home/balance')}">
 
@@ -238,11 +237,12 @@
 
           </a>
 
-        </li> --><li>
+        </li> -->
+        <li>
 
           <a href="{:U('/Shop/member/mine')}">
 
-            <span><img src="/Public/Public/Uploads/image/touxiang/2017-12-26/5a41e84cb975b.png"></span>
+            <span><img src="/Public/Public/Uploads/image/touxiang/2017-12-26/hy.png"></span>
 
             <p>会员中心</p>
 
@@ -262,13 +262,14 @@
 
           <a href="{:U('/Shop/Home/jieshao',array('ids'=>3))}">
 
-            <span><img src="/Public/Public/Uploads/image/touxiang/2017-12-26/5a41e87cdc0d0.png"></span>
+            <span><img src="/Public/Public/Uploads/image/touxiang/2017-12-26/help.png"></span>
 
             <p>帮助中心</p>
 
           </a>
 
-        </li><li>
+        </li>
+        <!-- <li>
 
           <a href="{:U('/Shop/Home/jieshao',array('ids'=>4))}">
 
@@ -278,7 +279,8 @@
 
           </a>
 
-        </li>      </ul>
+        </li> -->
+          </ul>
 
     </div>
 
@@ -304,108 +306,7 @@
 
     <!-- 最新动态 公告 -->
 
-    <div class="notice">
-
-      <div class="notice_left"><img src="__IMG__/gg.jpg"></div>
-
-      <div class="notice_right">
-
-                <ul>
-
-  <foreach name="notice" item="v">
-
-   <!--   <p><a href="#"><span>最新</span>会员<i>sience</i>成为商城会员</a></p>
-
-      <p>会员<i>张伟大</i>条件满足获得在线出售产品全线<a href="#"><span>更多</span></a></p> -->
-
-      <!-- <li>{$v.notice_content}</li> -->
-
-  <!--   <p><a href="#"><span>最新</span>会员<i>sience</i>成为商城会员</a></p>
-
-      <p>会员<i>张伟大</i>条件满足获得在线出售产品全线<a href="#"><span>更多</span></a></p> -->
-
-      <!--   <p><a href="#"><span>最新</span>会员<i>sience</i>成为商城会员</a></p>
-
-      <p>会员<i>张伟大</i>条件满足获得在线出售产品全线<a href="#"><span>更多</span></a></p> -->
-
-      <!--   <p><a href="#"><span>最新</span>会员<i>sience</i>成为商城会员</a></p>
-
-      <p>会员<i>张伟大</i>条件满足获得在线出售产品全线<a href="#"><span>更多</span></a></p> -->
-
-      <!--   <p><a href="#"><span>最新</span>会员<i>sience</i>成为商城会员</a></p>
-
-      <p>会员<i>张伟大</i>条件满足获得在线出售产品全线<a href="#"><span>更多</span></a></p> -->
-
-                      <li>商品价格绝不允许高于市场价!</li><li>消费产品由商家赠送Upay积分宝!</li><li>现金支付者免费赠送Upay资产钱包!</li><li>本商城所有商品接受Upay支付!</li></ul>
-
-     </foreach>
-
-                </ul> 
-
-      
-
-
-
-      </div>
-
-
-
-      <script type="text/javascript"> 
-
-
-
-      function autoScroll(obj){  
-
-
-
-            $(obj).find("ul").animate({  
-
-
-
-                marginTop : "-39px"  
-
-
-
-            },700,function(){  
-
-
-
-                $(this).css({marginTop : "0px"}).find("li:first").appendTo(this);  
-
-
-
-            })  
-
-
-
-        }  
-
-
-
-        $(function(){  
-
-
-
-            setInterval('autoScroll(".maquee")',5);
-
-
-
-            setInterval('autoScroll(".notice_right")',2000);
-
-
-
-              
-
-
-
-        })        
-
-
-
-</script> 
-
-    </div>
-
+    
 
 
 
