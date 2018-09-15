@@ -111,7 +111,6 @@ class TradingModel extends ModelModel
         }
     }
 
-
     public function cancelTrade($old_status,$new_status,$where=null){
 
         $id=I('post.id',0,'intval');
