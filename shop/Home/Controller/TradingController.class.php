@@ -492,6 +492,18 @@ class TradingController extends CommonController {
                 //记录买入会员
                 $res_Buy = M('trans')->where(array('id'=>$trid))->setField(array('payout_id'=>$uid,'pay_state'=>1,'card_id'=>$id_setcards['id'],'fee_nums'=>100));
                 if($res_Buy){
+                    //退回保证金
+                    $data2=[
+                        'pay_id'=>session("userid"),
+                        'get_id'=>session("userid"),
+                        'get_nums'=>"+100",
+                        'get_time'=>time(),
+                        'get_type'=>27,//卖出保证金
+                        'now_nums'=>$is_enough-$sellnums,
+                        'now_nums_get'=>$is_enough-$sellnums,
+                        'is_release'=>1
+                    ];
+                    M('tranmoney')->add($data2);//写入明细
                     ajaxReturn('卖出成功',1);
                 }
         }
