@@ -77,8 +77,8 @@ class TradingController extends CommonController {
 
 
                   $pay_n = M('store')->where(array('uid' => $uid))->getfield('cangku_num');
-                  $jifen_dochange['now_nums'] = $pay_n;
-                  $jifen_dochange['now_nums_get'] = $pay_n;
+                  $jifen_dochange['now_nums'] = $pay_n+100;
+                  $jifen_dochange['now_nums_get'] = $pay_n+100;
                   $jifen_dochange['is_release'] = 1;
                   $jifen_dochange['pay_id'] = $uid;
                   $jifen_dochange['get_id'] = 0;
@@ -401,8 +401,8 @@ class TradingController extends CommonController {
             'get_nums'=>"+100",
             'get_time'=>time(),
             'get_type'=>28,//保证金退回
-            'now_nums'=>$is_enough+$backnums,
-            'now_nums_get'=>$is_enough+$backnums,
+            'now_nums'=>$is_enough,
+            'now_nums_get'=>$is_enough,
             'is_release'=>1
         ];
         M('tranmoney')->add($data2);//写入明细
@@ -506,18 +506,6 @@ class TradingController extends CommonController {
                 //记录买入会员
                 $res_Buy = M('trans')->where(array('id'=>$trid))->setField(array('payout_id'=>$uid,'pay_state'=>1,'card_id'=>$id_setcards['id'],'fee_nums'=>100));
                 if($res_Buy){
-                    //退回保证金
-                    $data2=[
-                        'pay_id'=>session("userid"),
-                        'get_id'=>session("userid"),
-                        'get_nums'=>"+100",
-                        'get_time'=>time(),
-                        'get_type'=>28,//保证金退回
-                        'now_nums'=>$is_enough+100,
-                        'now_nums_get'=>$is_enough+100,
-                        'is_release'=>1
-                    ];
-                    M('tranmoney')->add($data2);//写入明细
                     ajaxReturn('卖出成功',1);
                 }
         }
