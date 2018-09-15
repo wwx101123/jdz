@@ -6,10 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" href="__WCSS__/base.css">
     <link rel="stylesheet" type="text/less" href="__WCSS__/comment/question.less?1121213">
+    <script src="__WJS__/jquery1.11.1.min.js"></script>
     <script type="text/javascript" src="__WJS__/reset.js"></script>
     <script src="https://cdn.bootcss.com/vue/2.2.2/vue.min.js"></script>
     <script src="https://cdn.bootcss.com/less.js/3.0.4/less.min.js"></script>
     <script type="text/javascript" src="__WJS__/comment/vue-resource.js"></script>
+    <script src="__WJS__/layer.js"></script>
     <title>问题内容</title>
     <style>
     @font-face {
@@ -179,14 +181,24 @@
                     this.$http.post('./adoptQuestion',{questionId:this.id,answerUserId:uid,answerId:id},{emulateJSON : true}).then((response)=>{
                         console.log(response.data);
                         if(response.data == 1){
-                            alert("采纳成功，此问题已结束");
+                            openLayer("采纳成功，此问题已结束");
+                            setTimeout(()=>{
+                                location.reload();
+                            },1000);
                         }else{
-                            alert(response.data.msg);
+                            openLayer(response.data.msg);
                         }
                     })
                 }
             }
         })
+    </script>
+    <!-- 弹窗提示框 -->
+<script>
+        function openLayer(str){
+            console.log(str);
+            new layer(str).append();
+        }
     </script>
 </body>
 </html>

@@ -12,6 +12,7 @@
     <script src="https://cdn.bootcss.com/less.js/3.0.4/less.min.js"></script>
     <script type="text/javascript" src="__WJS__/comment/editor.js"></script>
     <script type="text/javascript" src="__WJS__/comment/vue-resource.js"></script>
+    <script src="__WJS__/layer.js"></script>
     <title>提问</title>
     <style>
     @font-face {
@@ -116,7 +117,7 @@
                     let _this = this;
                     this.content = $(".article-content").html();
                     if(this.content.indexOf("请输入回复内容")!= -1 ||this.content == ""){
-                        alert("请输入回复内容");
+                        openLayer("请输入回复内容");
                         return
                     }
                     this.$http.post('../question/questionDetail',{questionId:_this.id,content:_this.content},{emulateJSON : true}).then((response)=>{
@@ -156,6 +157,11 @@
             }
         })
     </script>
-   
+   <script>
+        function openLayer(str){
+            console.log(str);
+            new layer(str).append();
+        }
+    </script>
 </body>
 </html>
