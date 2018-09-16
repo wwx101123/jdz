@@ -35,7 +35,7 @@
     function checkfrom(){
         var pwd=$('input[name=password_two]').val();
         if(pwd=='' || pwd==null){
-            alert('请输入交易密码');
+            msg_alert('请输入交易密码');
             $('input[name=password_two]').focus();
             return false
         }
