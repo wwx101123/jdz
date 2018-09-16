@@ -12,6 +12,8 @@
     <script src="https://cdn.bootcss.com/less.js/3.0.4/less.min.js"></script>
     <script type="text/javascript" src="__WJS__/comment/editor.js"></script>
     <script type="text/javascript" src="__WJS__/comment/vue-resource.js"></script>
+    <script type="text/javascript" src="__COM__/layer/layer.js"></script>
+    <script type="text/javascript" src="__COM__/js/index.js"></script>
     <title>提问</title>
     <style>
     @font-face {
@@ -89,10 +91,10 @@
                 /* 输入标题提交数据方法 */
                 handelSubmit(){
                     if(!this.title){
-                        alert("请输入标题");
+                        msg_alert("请输入标题");
                         return 
                     }else if(parseInt(this.amount) < 0 || this.amount == ""){
-                        alert("请输入正确的悬赏积分");
+                        msg_alert("请输入正确的悬赏积分");
                         return ;
                     }else{
                     /* 此处发请求提交数据 */
@@ -105,7 +107,7 @@
                         this.$http.post('',{amount:this.amount,title:this.title,content:this.content},{emulateJSON : true}).then((response)=>{
                             console.log(response.data);
                             if(response.data.msg){
-                                alert(response.data.msg);
+                                msg_alert(response.data.msg);
                                 return 
                             }
                             /* 成功跳转到question页面显示 返回问题id*/
