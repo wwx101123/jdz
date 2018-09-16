@@ -226,13 +226,13 @@ function success_alert($mes,$url=''){
         echo "<meta name=\"viewport\" content=\"width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no\"/>";
         echo "<script type=\"text/javascript\" src=\"/Public/home/common/layer/layer.js\"></script>";
         echo "<script type=\"text/javascript\" src=\"/Public/home/common/js/index.js\"></script>";
-        echo "<script type=\"text/javascript\">setTimeout(()=>{msg_alert('".$mes."'); setTimeout(function(){location.href='" . $url . "'},2000)});</script>";
+        echo "<script type=\"text/javascript\">setTimeout(()=>{msg_alert('".$mes."'); setTimeout(function(){location.href='" . $url . "'},1000)});</script>";
     }else{
         echo "<meta charset=\"utf-8\"/><script type=\"text/javascript\" src=\"http://libs.baidu.com/jquery/2.0.0/jquery.min.js\"></script>";
         echo "<meta name=\"viewport\" content=\"width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no\"/>";
         echo "<script type=\"text/javascript\" src=\"/Public/home/common/layer/layer.js\"></script>";
         echo "<script type=\"text/javascript\" src=\"/Public/home/common/js/index.js\"></script>";
-        echo "<script type=\"text/javascript\">setTimeout(()=>{msg_alert('".$mes."'); setTimeout(function(){location.href='" . $jumpUrl . "'},2000)});</script>";
+        echo "<script type=\"text/javascript\">setTimeout(()=>{msg_alert('".$mes."'); setTimeout(function(){location.href='" . $jumpUrl . "'},1000)});</script>";
 
     }
     exit;
