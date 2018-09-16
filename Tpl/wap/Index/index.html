@@ -346,12 +346,12 @@
 
 	function openLayer(str){
 		console.log(str);
-		let s = new layer(str).append();
+		let s = new layermy(str).append();
 	}
 
 
 	function loginOut(){
-			new layer('是否清空当前用户名/密码',function(s){
+			new layermy('是否清空当前用户名/密码',function(s){
 				if(s == 1){
 					console.log("确认");
 					setCookie('userInfo','');

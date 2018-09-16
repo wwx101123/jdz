@@ -1,4 +1,4 @@
-function layer(con,fn = '',cancel = false){
+function layermy(con,fn = '',cancel = false){
     this.con = con;
     this.cancel = cancel == true ? '<div style="width: 32%;background-color: #a0a0a0;text-align: center;margin: 0 auto;margin-top: 10px;margin-bottom: 20px;height: 36px;line-height: 36px;border-radius: 5px;color: white;" id="cancelmy">取消</div>':'';
     this.str = ' <div id="layermy" class="layer-wrap" style="z-index:999999;display:none;position:fixed;left:0;top: 0;background-color: rgba(0,0,0,.5);width: 100%;height: 100%;margin: 0 auto;">'+
