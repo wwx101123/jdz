@@ -13,7 +13,8 @@
 <script type="text/javascript" src="__COM__/js/index.js" ></script>
 <script type="text/javascript" src="__WJS__/upload.js"></script>
 <script type="text/javascript" src="__WJS__/rem.js"></script>
-<script src="__WJS__/layer.js"></script>
+<script src="__WJS__/layer.js?11"></script>
+<script src="__WJS__/cookie.js"></script>
 <style>
 	.sett_xiug{display:none;}
 	.button,#clipBtn{width: 130px;font-size: 16px;}
@@ -46,7 +47,7 @@
 			<else /> VIP
 			</if></li>
            <li>UID:{$uinfo['userid']}</li>
-           <li><a href="{:U('User/Loginout')}">{$Think.lang.loginout}</a></li>
+           <li><a href="#" onclick="loginOut();">{$Think.lang.loginout}</a></li>
        </ul>
     </div>
     <div class="vip-set">会员资料设置</div>
@@ -66,15 +67,19 @@
             </a></li>
         </ul>
         <ul>
-            <li><a href="javascript:openLayer('即将上线，敬请关注！');">
+            <li><a href="javascript:openLayer('该功能即将上线，敬请关注');">
 				<i class="iconfont iconfontSet" style="color:#55a892;">&#xe604;</i>
                     <p>我的店铺</p>
             </a></li>
-            <li><a href="{:U('Shop/Member/allorder')}">
+            <li>
+				<!-- <a href="{:U('Shop/Member/allorder')}"> -->
+				<a href="javascript:openLayer('该功能即将上线，敬请关注');">
 				<i class="iconfont iconfontSet" style="color:#478fdb;">&#xe614;</i>
                     <p>我的订单</p>
             </a></li>
-            <li><a href="{:U('Shop/member/addresslist')}">
+            <li>
+				<!-- <a href="{:U('Shop/member/addresslist')}"> -->
+				<a href="javascript:openLayer('该功能即将上线，敬请关注');">
 				<i class="iconfont iconfontSet" style="color:#df6452;">&#xe606;</i>
                     <p>地址管理</p>
             </a></li>
@@ -115,7 +120,7 @@
         </ul>
     </div>
     <div class="loginout">
-        <a href="{:U('User/Loginout')}">{$Think.lang.loginout}</a>
+        <a href="#" onclick="loginOut();">{$Think.lang.loginout}</a>
     </div>
     <div class="footer-fan">
         <a href="{:U('Index/index')}">
@@ -126,7 +131,7 @@
             <img src="__WIMG__/index/zichan2.png" alt="资产">
             <p>资产</p>
         </a> -->
-        <a href="{:U('Shop/Home/index')}">
+        <a href="javascript:openLayer('该功能即将上线，敬请关注');">
             <img src="__WIMG__/index/shangcheng2.png" alt="商城">
             <p>商城</p>
         </a>
@@ -531,8 +536,20 @@ $userid=session('userid');
 <script>
 		function openLayer(str){
 			console.log(str);
-			new layer(str).append();
+			new layermy(str).append();
 		}
+		function loginOut(){
+			new layermy('是否清空当前用户名/密码',function(s){
+				if(s == 1){
+					console.log("确认");
+					setCookie('userInfo','');
+					location.href = "{:U('User/Loginout')}";
+				}else{
+					location.href = "{:U('User/Loginout')}";
+				}
+			},true).append();
+			// setCookie('userInfo','');
+	}
 	</script>
 </body>
 </html>

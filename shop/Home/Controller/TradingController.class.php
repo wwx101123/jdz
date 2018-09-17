@@ -77,12 +77,12 @@ class TradingController extends CommonController {
 
 
                   $pay_n = M('store')->where(array('uid' => $uid))->getfield('cangku_num');
-                  $jifen_dochange['now_nums'] = $pay_n;
-                  $jifen_dochange['now_nums_get'] = $pay_n;
+                  $jifen_dochange['now_nums'] = $pay_n+100;
+                  $jifen_dochange['now_nums_get'] = $pay_n+100;
                   $jifen_dochange['is_release'] = 1;
                   $jifen_dochange['pay_id'] = $uid;
                   $jifen_dochange['get_id'] = 0;
-                  $jifen_dochange['get_nums'] = $jifen_nums;
+                  $jifen_dochange['get_nums'] = $jifen_nums-100;
                   $jifen_dochange['get_time'] = time();
                   $jifen_dochange['get_type'] = 9;
                   $res_addres = M('tranmoney')->add($jifen_dochange);
@@ -392,6 +392,20 @@ class TradingController extends CommonController {
         $backinfo['cangku_num'] = array('exp','cangku_num + '.$backnums);
         $res_back = M('store')->where(array('uid'=>$order_info['payout_id']))->save($backinfo);//转出的人退手续费
 
+
+        //退回保证金
+        $is_enough = M('store')->where(array('uid'=>$order_info['payout_id']))->getField('cangku_num');
+        $data2=[
+            'pay_id'=>session("userid"),
+            'get_id'=>session("userid"),
+            'get_nums'=>"+100",
+            'get_time'=>time(),
+            'get_type'=>28,//保证金退回
+            'now_nums'=>$is_enough,
+            'now_nums_get'=>$is_enough,
+            'is_release'=>1
+        ];
+        M('tranmoney')->add($data2);//写入明细
         $tramsg['pay_state'] = 3;
         $tramsg['get_moneytime'] = time();
         $res_suc = $traninfo->where(array('id'=>$trid))->save($tramsg);
@@ -492,18 +506,6 @@ class TradingController extends CommonController {
                 //记录买入会员
                 $res_Buy = M('trans')->where(array('id'=>$trid))->setField(array('payout_id'=>$uid,'pay_state'=>1,'card_id'=>$id_setcards['id'],'fee_nums'=>100));
                 if($res_Buy){
-                    //退回保证金
-                    $data2=[
-                        'pay_id'=>session("userid"),
-                        'get_id'=>session("userid"),
-                        'get_nums'=>"+100",
-                        'get_time'=>time(),
-                        'get_type'=>27,//卖出保证金
-                        'now_nums'=>$is_enough-$sellnums,
-                        'now_nums_get'=>$is_enough-$sellnums,
-                        'is_release'=>1
-                    ];
-                    M('tranmoney')->add($data2);//写入明细
                     ajaxReturn('卖出成功',1);
                 }
         }

@@ -40,6 +40,7 @@ body{background-size: 100%;}
 <script type="text/javascript" src="__PUBLIC__/home/zp/jQueryRotate.2.2.js"></script>
 <script type="text/javascript" src="__PUBLIC__/home/zp/jquery.easing.min.js"></script>
 <script type="text/javascript" src="__COM__/js/index.js" ></script>
+<script type="text/javascript" src="__COM__/layer/layer.js"></script>
 </head>
 
 <script type="text/javascript">
@@ -55,13 +56,13 @@ function lottery(){
         dataType: 'json', 
         cache: false, 
         error: function(){ 
-            alert('出错了！'); 
+            msg_alert('出错了！'); 
             return false; 
         }, 
         success:function(json){ 
 
             if(json.status == 0){
-                alert(json.message);
+                msg_alert(json.message);
             }
 
             if(json.status==1){
@@ -74,7 +75,7 @@ function lottery(){
                     animateTo:1800+a, //转动角度 
                     easing: $.easing.easeOutSine, 
                     callback: function(){ 
-                        alert(prize_name); 
+                        msg_alert(prize_name); 
                         editdata();
                         $("#startbtn").bind('click',function(){ 
                             if(confirm('还要再来一次吗')){

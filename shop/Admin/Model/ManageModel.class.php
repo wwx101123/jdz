@@ -142,6 +142,7 @@ class ManageModel extends ModelModel
      */
     public function login($username, $password, $map = null)
     {
+
         //去除前后空格
         $username = trim($username);
 

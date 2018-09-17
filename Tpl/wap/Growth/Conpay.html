@@ -115,7 +115,7 @@
         reader.onload = function (e) {
             var dx = (e.total / 1024) / 1024;
             if (dx >= 2) {
-                alert("文件不能大于2M");
+                msg_alert("文件不能大于2M");
                 return;
             }
             img.src = this.result;
@@ -141,7 +141,7 @@
                 }
             },
             error: function (xhr) { //上传失败
-                alert("上传失败");
+                msg_alert("上传失败");
             }
         });
     })

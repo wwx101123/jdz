@@ -15,7 +15,8 @@
 <script type="text/javascript" src="__WJS__/jquery.glide.min.js"></script>
 <script type="text/javascript" src="__COM__/layer/layer.js"></script>
 <script type="text/javascript" src="__COM__/js/index.js"></script>
-<script src="__WJS__/layer.js"></script>
+<script src="__WJS__/layer.js?11"></script>
+<script src="__WJS__/cookie.js"></script>
 <!--<style>
 .big_width100{background: #FBF8EF}
 
@@ -173,13 +174,13 @@
 			</li>
 			
 			<li>
-				<a href="javascript:openLayer('即将上线，敬请关注！');">
+				<a href="javascript:openLayer('该功能即将上线，敬请关注');">
 					<i class="iconfont icon"  style="color:#e69d43;">&#xe7a8;</i>
 					<p>{$Think.lang.shoppingmall}</p>
 				</a>
 			</li>
 			<li>
-					<a href="javascript:openLayer('即将上线，敬请关注！');">
+					<a href="javascript:openLayer('该功能即将上线，敬请关注');">
 							<i class="iconfont icon"  style="color:#df6452;">&#xe619;</i>
 							<p>众筹</p>
 					</a>
@@ -187,7 +188,7 @@
 
 			<!-- 需要输出文字和链接 -->
 			<li>
-					<a href="javascript:openLayer('即将上线，敬请关注！');">
+					<a href="javascript:openLayer('该功能即将上线，敬请关注');">
 						<i class="iconfont icon"  style="color:#478fdb;">&#xe62a;</i>
 						<p>体育赛事</p>
 					</a>
@@ -212,7 +213,7 @@
 			 </li>
 			 <!-- 需要输出文字和链接 -->
 			<li>
-					<a href="{:U('User/Loginout')}">
+					<a href="#" onclick="loginOut();">
 						<i class="iconfont icon"  style="color:#55a892;">&#xe634;</i>
 						<p>退出</p>
 					</a>
@@ -232,7 +233,7 @@
 		<img src="__WIMG__/index/zichan2.png" alt="资产">
 		<p>资产</p>
 	</a> -->
-	<a href="javascript:openLayer('即将上线，敬请关注！');">
+	<a href="javascript:openLayer('该功能即将上线，敬请关注');">
 		<img src="__WIMG__/index/shangcheng2.png" alt="商城">
 		<p>商城</p>
 	</a>
@@ -342,10 +343,28 @@
 
 <!-- 弹窗提示框 -->
 <script>
+
 	function openLayer(str){
 		console.log(str);
-		new layer(str).append();
+		let s = new layermy(str).append();
 	}
+
+
+	function loginOut(){
+			new layermy('是否清空当前用户名/密码',function(s){
+				if(s == 1){
+					console.log("确认");
+					setCookie('userInfo','');
+					location.href = "{:U('User/Loginout')}";
+				}else{
+					location.href = "{:U('User/Loginout')}";
+				}
+			},true).append();
+			// setCookie('userInfo','');
+	}
+
+
+	
 </script>
 </body>
 
