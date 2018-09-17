@@ -28,7 +28,7 @@ class IndexController extends CommonController
             $plant_num = M('store')->where(array('uid'=>$userid))->getField('plant_num');
             $total_wb =$huafei_total+$plant_num;//总资产
 
-            $Upay_price= D('coindets')->where("cid=1")->order('coin_addtime desc')->getField("coin_price");//Upay币的当前价格
+            $Upay_price= D('coindets')->where("cid=1")->order('coin_addtime desc')->getField("coin_price");//金点子币的当前价格
 
             $wbgrade = M('store')->where(array('uid'=>$userid))->getField('vip_grade');
             $jingt=array(0.1,0.1,0.2,0.3);
@@ -304,6 +304,7 @@ private function get_banner()
     {
         $sid = trim(I('sid'));
         $uinfo = M('user as us')->JOIN('ysk_store as ms')->where(array('us.userid' => $sid))->field('us.mobile,us.userid,us.img_head,us.username,ms.cangku_num')->find();
+
         if (IS_AJAX) {
             $data = $_POST['post_data'];
             $trid = trim($data['zuid']);
@@ -396,7 +397,7 @@ private function get_banner()
 
             //判断用户等级
             $uChanlev = D('Home/index');
-            $uChanlev->Checklevel($trid);
+             $uChanlev->Checklevel($trid);
             //执行转账
              $pay_n = M('store')->where(array('uid' => $uid))->getfield('cangku_num');
              $get_n = M('store')->where(array('uid' => $trid))->getfield('cangku_num');
@@ -442,12 +443,13 @@ private function get_banner()
     private function Manage_reward($uid,$paynums){
 
     $Lasts = D('Home/index');
-    $Lastinfo = $Lasts->Getlasts($uid, 15, 'path');  
+    $Lastinfo = $Lasts->Getlasts($uid, 15, 'path');
+
     if (count($Lastinfo) > 0) {
 
         $Manage_b = M('config')->where(array('group' => 6, 'status' => 1))->order('id asc')->select();//分享奖比例
         $Manage_a = M('config')->where(array('group' => 7, 'status' => 1))->order('id asc')->select();//管理奖比例
-   
+
         foreach ($Lastinfo as $k => $v) {
   
             if (!empty($v)) {//当前会员信息

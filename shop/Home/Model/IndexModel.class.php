@@ -72,4 +72,19 @@ class IndexModel extends ModelModel
         }
 
     }
+
+    /*
+     * 转出给上级vip积分释放
+     * @param $memberid  int 上级id
+     * @param $paynums  int 本次转账实际金额
+     * */
+    public function setMoneyToUpVip($memberid,$paynums){
+        $this->Checklevel($memberid);
+        $vip_level = M('user')->where(array('userid'=>$memberid))->getField('vip_grade');
+        $vip_bili = M('config')->where(array('group' => 10, 'status' => 1))->order('id asc')->select();//vip比例
+        if($vip_level>0) {
+            $incNum = ($paynums * $vip_bili[$vip_level - 1]['value'])/100;//对应比例得积分
+            M("store")->where(['uid' => $memberid])->setInc("fengmi_num", $incNum);//增加积分
+        }
+    }
 }
