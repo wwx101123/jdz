@@ -199,7 +199,7 @@ class UserController extends CommonController
         $drpath = './Uploads/Scode';
         $imgma = 'codes' . $userid . '.png';
         $urel = './Uploads/Scode/' . $imgma;
-       if (!file_exists($drpath . '/' . $imgma)) {
+
             sp_dir_create($drpath);
             vendor("phpqrcode.phpqrcode");
             $phpqrcode = new \QRcode();
@@ -209,11 +209,9 @@ class UserController extends CommonController
             $errorLevel = "L";
             $phpqrcode->png($hurl, $drpath . '/' . $imgma, $errorLevel, $size);
 
-            
             $phpqrcode->scerweima1($hurl,$urel,$hurl);
 
-         
-       }
+
         $aurl = "http://".$_SERVER['SERVER_NAME']. U('Login/register/mobile/' . $u_ID);
 
         $this->urel = ltrim($urel,".");
