@@ -393,7 +393,7 @@ private function get_banner()
                 $this->zhuand15($uid,$paynums);//转出方15层得到转动奖
                 
 
-                $this->zhuand15($trid,$eper);//转入方15层得到转动奖
+                //$this->zhuand15($trid,$eper);//转入方15层得到转动奖
 
             //判断用户等级
             $uChanlev = D('Home/index');
