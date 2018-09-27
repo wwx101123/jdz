@@ -56,7 +56,7 @@
                         }else{
                             if($v['get_id']==$uid){
 
-                            echo "<p>转入获得</p><p>+".$v['get_nums']."</p>";
+                            echo "<p>转入获得</p><p>+".$v['now_nums_get']."</p>";
 
                             }else{
                             $zhc=$v['get_nums']*4;
@@ -119,6 +119,65 @@
                         <li>
                             <p>回答奖励</p>
                             <p>+{$v['get_nums']}</p>
+
+                            <p class="p23">
+                                <eq name="v['trtype']" value="1">{$v['now_nums']}<else/>{$v['now_nums_get']}</eq>
+
+                            </p>
+                            <p class="p24">{$v['get_timeymd']}</br>{$v['get_timedate']}</p>
+                        </li>
+                    </if>
+                    <if condition= "$v['get_type'] eq 34">
+                        <li>
+                            <p>见点奖释放</p>
+                            <p>-{$v['get_nums']}</p>
+
+                            <p class="p23">
+                                <eq name="v['trtype']" value="1">{$v['now_nums']}<else/>{$v['now_nums_get']}</eq>
+                            </p>
+                            <p class="p24">{$v['get_timeymd']}</br>{$v['get_timedate']}</p>
+                        </li>
+                    </if>
+                    <if condition= "$v['get_type'] eq 35">
+                        <li>
+                            <p>推荐奖释放</p>
+                            <p>-{$v['get_nums']}</p>
+
+                            <p class="p23">
+                                <eq name="v['trtype']" value="1">{$v['now_nums']}<else/>{$v['now_nums_get']}</eq>
+
+                            </p>
+                            <p class="p24">{$v['get_timeymd']}</br>{$v['get_timedate']}</p>
+                        </li>
+                    </if>
+                    <if condition= "$v['get_type'] eq 36">
+                        <li>
+                            <p>流通奖释放</p>
+                            <p>-{$v['get_nums']}</p>
+
+                            <p class="p23">
+                                <eq name="v['trtype']" value="1">{$v['now_nums']}<else/>{$v['now_nums_get']}</eq>
+
+                            </p>
+                            <p class="p24">{$v['get_timeymd']}</br>{$v['get_timedate']}</p>
+                        </li>
+                    </if>
+                    <if condition= "$v['get_type'] eq 37">
+                        <li>
+                            <p>vip1积分释放</p>
+                            <p>-{$v['get_nums']}</p>
+
+                            <p class="p23">
+                                <eq name="v['trtype']" value="1">{$v['now_nums']}<else/>{$v['now_nums_get']}</eq>
+
+                            </p>
+                            <p class="p24">{$v['get_timeymd']}</br>{$v['get_timedate']}</p>
+                        </li>
+                    </if>
+                    <if condition= "$v['get_type'] eq 38">
+                        <li>
+                            <p>vip2积分释放</p>
+                            <p>-{$v['get_nums']}</p>
 
                             <p class="p23">
                                 <eq name="v['trtype']" value="1">{$v['now_nums']}<else/>{$v['now_nums_get']}</eq>

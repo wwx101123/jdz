@@ -9,7 +9,12 @@ use Common\Model\ModelModel;
  */
 class StoreModel extends ModelModel
 {
-    
+    /*
+     * 减少积分
+     * */
+    public function decJiFen($num,$where){
+        return $this->where($where)->setDec('fengmi_num',$num);
+    }
 
     public function CangkuNum($where){
         if(empty($where)){

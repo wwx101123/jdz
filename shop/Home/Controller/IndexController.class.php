@@ -168,6 +168,7 @@ class IndexController extends CommonController
             'can_get' => $can_get,
             'is_setnums' => $is_setnums,
             'pic_array'=>$pic_array,
+            "amount"=>round($moneyinfo['cangku_num'],2)
         ));
         $this->display('/Index/index');
     }
@@ -236,7 +237,7 @@ private function get_banner()
         $traInfo = M('tranmoney');
         $uid = session('userid');
         $where['pay_id|get_id'] = $uid;
-        $where['get_type'] = array('not in', '1,11,12,22,23,25,26');
+        $where['get_type'] = array('not in', '1,11,12,22,23,25,26,34,35,36,37,38');
         //分页
         $p = getpage($traInfo, $where, 50);
         $page = $p->show();
@@ -389,8 +390,7 @@ private function get_banner()
 //            $res_get = M('store')->where(array('uid' => $trid))->save($jifen_donums);//转入的人+20%银积分
 
 
-                //金积分转动奖---没有触发  
-                $this->zhuand15($uid,$paynums);//转出方15层得到转动奖
+
                 
 
                 //$this->zhuand15($trid,$eper);//转入方15层得到转动奖
@@ -413,6 +413,8 @@ private function get_banner()
             }
             
             $add_Dets = M('tranmoney')->add($data);
+            //金积分转动奖
+            $this->zhuand15($uid,$paynums);//转出方15层得到转动奖
             if ($add_Dets) {
                 ajaxReturn('转账成功哦~', 1, '/Index/index');
             }
@@ -463,8 +465,14 @@ private function get_banner()
 
                         $zhitui_reward = $direct_fee / 100 * $paynums;//直推的人所得分享奖
                        // M('user')->where(array('userid' => $v))->setInc('releas_rate', $zhitui_reward);
-                        $this->getStore()->IncNum($zhitui_reward,['uid' => $v]);//增加用户余额
-                        $tranInfo[0]=$this->getTranMoney()->createArr($v,$zhitui_reward,32);//直推奖
+                        $userJifenNum=$this->getStore()->jiFenNum(['uid'=>$v]);//用户积分余额
+                        if($userJifenNum>$zhitui_reward) {
+                            $this->getStore()->decJiFen($zhitui_reward,['uid'=>$v]);//减少对应积分
+                            $this->getStore()->IncNum($zhitui_reward, ['uid' => $v]);//增加用户余额
+                            $tranInfo[0] = $this->getTranMoney()->createArr($v, $zhitui_reward, 32);//推荐奖
+                            $tranInfo[1] = $this->getTranMoney()->createArr($v, $zhitui_reward, 35,"2","-");//推荐奖明细
+                            $this->getTranMoney()->insertAll($tranInfo);//批量添加
+                        }
                     }
 
                     if ($k>0&&$k<=3) {//2-4代,拿直推的人的分享奖*相应比例，即为管理奖
@@ -515,8 +523,13 @@ private function get_banner()
                                 $Lastone = $My_reward=$add_relinfo[$tkey]["value"]/100*$paynums; 
                                 //$res_Incrate = M('user')->where(array('userid' => $v))->setInc('releas_rate', $Lastone);
                         if($Lastone>0) {
-                            $this->getStore()->IncNum($Lastone, ['uid' => $v]);//增加用户余额
-                            $tranInfo[0] = $this->getTranMoney()->createArr($v, $Lastone, 29);//直推奖
+                            $userJifenNum=$this->getStore()->jiFenNum(['uid'=>$v]);//用户积分余额
+                            if($userJifenNum>$Lastone) {
+                                $this->getStore()->decJiFen($Lastone,['uid' => $v]);//减少积分
+                                $this->getStore()->IncNum($Lastone, ['uid' => $v]);//增加用户余额
+                                $tranInfo[0] = $this->getTranMoney()->createArr($v, $Lastone, 29);//区块见点奖
+                                $tranInfo[0] = $this->getTranMoney()->createArr($v, $Lastone, 34,"2","-");//区块见点奖
+                            }
                         }
                                 
                     }
@@ -554,8 +567,15 @@ private function get_banner()
 
                                     $zhuand_reward = $direct_fee / 100 * $paynums;//我得到转动奖的加速
                                     //M('user')->where(array('userid' => $v))->setInc('releas_rate', $zhuand_reward);
-                                    $this->getStore()->IncNum($zhuand_reward,['uid' => $v]);//增加用户余额
-                                   $tranInfo[0]=$this->getTranMoney()->createArr($v,$zhuand_reward,33);//转动流通奖
+                                 $userJifenNum=$this->getStore()->jiFenNum(['uid'=>$v]);//用户积分余额
+                                  if($userJifenNum>$zhuand_reward) {
+                                      $this->getStore()->decJiFen($zhuand_reward,['uid' => $v]);//减少对应积分
+                                      $this->getStore()->IncNum($zhuand_reward, ['uid' => $v]);//增加用户余额
+
+                                      $tranInfo[0] = $this->getTranMoney()->createArr($v, $zhuand_reward, 33);//转动流通奖明细
+                                      $tranInfo[4]=$this->getTranMoney()->createArr($v,$zhuand_reward,36,2,"-");
+
+                                  }
                            			//VIP奖，有集差，加速释放
                                   $v_Grade = M('user')->where(array('userid' => $v))->getfield('vip_grade');
 
@@ -563,17 +583,24 @@ private function get_banner()
 
                                           $u_get_money = $vips[0]['value'] / 100 * $paynums;
                                           //$res_Add = M('store')->where(array('uid' => $v))->setInc('fengmi_num', $u_get_money);
-                                      $this->getStore()->IncNum($u_get_money,['uid' => $v]);//增加用户余额
-                                      $tranInfo[1]=$this->getTranMoney()->createArr($v,$u_get_money,30);//vip1奖励
+                                      if($userJifenNum>$u_get_money) {
+                                          $this->getStore()->decJiFen($u_get_money,['uid' => $v]);//减少对应积分
+                                          $this->getStore()->IncNum($u_get_money, ['uid' => $v]);//增加用户余额
+                                          $tranInfo[1] = $this->getTranMoney()->createArr($v, $u_get_money, 30);//vip1奖励
+                                          $tranInfo[5]=$this->getTranMoney()->createArr($v,$zhuand_reward,37,2,"-");//vip1积分释放明细
                                           $i++;
-
+                                      }
 
                                   }elseif($v_Grade==2 && $i!=0 &&$n==0){//VIP2奖
                                        $u_get_money = $vips[1]['value'] / 100 * $paynums;
                                        //$res_Add = M('store')->where(array('userid' => $v))->setInc('releas_rate', $u_get_money);
-                                      $this->getStore()->IncNum($u_get_money,['uid' => $v]);//增加用户余额
-                                      $tranInfo[2]=$this->getTranMoney()->createArr($v,$u_get_money,31);//vip2奖励
-                                       $n++;
+                                      if($userJifenNum>$u_get_money) {
+                                          $this->getStore()->decJiFen($u_get_money,['uid' => $v]);//减少对应积分
+                                          $this->getStore()->IncNum($u_get_money, ['uid' => $v]);//增加用户余额
+                                          $tranInfo[1] = $this->getTranMoney()->createArr($v, $u_get_money, 31);//vip2奖励
+                                          $tranInfo[5]=$this->getTranMoney()->createArr($v,$zhuand_reward,38,2,"-");//vip2积分释放明细
+                                          $i++;
+                                      }
 
                                   }
                               $this->getTranMoney()->insertAll($tranInfo);//批量添加
@@ -797,7 +824,7 @@ private function get_banner()
     {
         $uid = session('userid');
         $where['get_id|pay_id'] = $uid;
-        $where['get_type'] = array('in', '1,23,24,25,26');
+        $where['get_type'] = array('in', '1,23,24,25,26,34,35,36,37,38');
         // $where['get_type'] = 1;
         $traInfo = M('tranmoney');
         //分页
