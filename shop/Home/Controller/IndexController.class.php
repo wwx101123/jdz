@@ -462,7 +462,9 @@ private function get_banner()
                         if($u_Grade>0)$direct_fee=(float)$Manage_b[$u_Grade-1]["value"];//判断是什么比例
 
                         $zhitui_reward = $direct_fee / 100 * $paynums;//直推的人所得分享奖
-                        M('user')->where(array('userid' => $v))->setInc('releas_rate', $zhitui_reward);
+                       // M('user')->where(array('userid' => $v))->setInc('releas_rate', $zhitui_reward);
+                        $this->getStore()->IncNum($zhitui_reward,['uid' => $v]);//增加用户余额
+                        $tranInfo[0]=$this->getTranMoney()->createArr($v,$zhitui_reward,32);//直推奖
                     }
 
                     if ($k>0&&$k<=3) {//2-4代,拿直推的人的分享奖*相应比例，即为管理奖
@@ -473,6 +475,7 @@ private function get_banner()
 
                             $My_reward=$Manage_a[$t]["value"]/100*$zhitui_reward;                          
                             $res_Incrate = M('user')->where(array('userid' => $v))->setInc('releas_rate', $My_reward);
+
                                
                         }
                     }                  
@@ -510,8 +513,11 @@ private function get_banner()
                     if($zhitui_num>=$suoxu_num){//直推人数满足条件 得区块奖
 
                                 $Lastone = $My_reward=$add_relinfo[$tkey]["value"]/100*$paynums; 
-                                $res_Incrate = M('user')->where(array('userid' => $v))->setInc('releas_rate', $Lastone);
-
+                                //$res_Incrate = M('user')->where(array('userid' => $v))->setInc('releas_rate', $Lastone);
+                        if($Lastone>0) {
+                            $this->getStore()->IncNum($Lastone, ['uid' => $v]);//增加用户余额
+                            $tranInfo[0] = $this->getTranMoney()->createArr($v, $Lastone, 29);//直推奖
+                        }
                                 
                     }
 
@@ -547,24 +553,30 @@ private function get_banner()
                                     if($u_Grade>0)$direct_fee=(float)$Manage_b[$u_Grade-1]["value"];//判断是什么比例
 
                                     $zhuand_reward = $direct_fee / 100 * $paynums;//我得到转动奖的加速
-                                    M('user')->where(array('userid' => $v))->setInc('releas_rate', $zhuand_reward);
+                                    //M('user')->where(array('userid' => $v))->setInc('releas_rate', $zhuand_reward);
+                                    $this->getStore()->IncNum($zhuand_reward,['uid' => $v]);//增加用户余额
+                                   $tranInfo[0]=$this->getTranMoney()->createArr($v,$zhuand_reward,33);//转动流通奖
                            			//VIP奖，有集差，加速释放
                                   $v_Grade = M('user')->where(array('userid' => $v))->getfield('vip_grade');
 
                                   if(($v_Grade == 1 && $i == 0)||($v_Grade == 2 && $i == 0)){//VIP1奖
 
                                           $u_get_money = $vips[0]['value'] / 100 * $paynums;
-                                          $res_Add = M('store')->where(array('uid' => $v))->setInc('fengmi_num', $u_get_money);
+                                          //$res_Add = M('store')->where(array('uid' => $v))->setInc('fengmi_num', $u_get_money);
+                                      $this->getStore()->IncNum($u_get_money,['uid' => $v]);//增加用户余额
+                                      $tranInfo[1]=$this->getTranMoney()->createArr($v,$u_get_money,30);//vip1奖励
                                           $i++;
 
 
                                   }elseif($v_Grade==2 && $i!=0 &&$n==0){//VIP2奖
                                        $u_get_money = $vips[1]['value'] / 100 * $paynums;
-                                       $res_Add = M('store')->where(array('userid' => $v))->setInc('releas_rate', $u_get_money);
+                                       //$res_Add = M('store')->where(array('userid' => $v))->setInc('releas_rate', $u_get_money);
+                                      $this->getStore()->IncNum($u_get_money,['uid' => $v]);//增加用户余额
+                                      $tranInfo[2]=$this->getTranMoney()->createArr($v,$u_get_money,31);//vip2奖励
                                        $n++;
 
                                   }
-
+                              $this->getTranMoney()->insertAll($tranInfo);//批量添加
                         }
                     }
 

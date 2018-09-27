@@ -72,6 +72,14 @@ class CommonController extends Controller
         // session('in_time',time());
     }
 
+    public function getTranMoney(){
+        return D("Tranmoney");
+    }
+
+    public function getStore(){
+        return D("Store");
+    }
+
 
 }
 
