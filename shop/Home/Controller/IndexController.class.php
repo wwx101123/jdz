@@ -848,6 +848,7 @@ private function get_banner()
                 ajaxReturn('暂无记录', 0);
             }
         }
+
         $this->assign('uid', $uid);
         $this->assign('Chan_info', $Chan_info);
         $this->assign('page', $page);
