@@ -575,6 +575,7 @@ private function get_banner()
 
                                       $tranInfo[0] = $this->getTranMoney()->createArr($v, $zhuand_reward, 33);//转动流通奖明细
                                       $tranInfo[4]=$this->getTranMoney()->createArr($v,$zhuand_reward,36,2,"-");
+                                      $this->getTranMoney()->insertAll($tranInfo);//批量添加
 
                                   }
                            			//VIP奖，有集差，加速释放
@@ -586,7 +587,7 @@ private function get_banner()
                                           //$res_Add = M('store')->where(array('uid' => $v))->setInc('fengmi_num', $u_get_money);
 
                                           $this->getStore()->IncJiFen($u_get_money,['uid' => $v]);//增加对应积分
-                                          $vip[0] = $this->getTranMoney()->createArr($v, $u_get_money, 37,2);//vip1增加积分明细
+                                          $vip[$i] = $this->getTranMoney()->createArr($v, $u_get_money, 37,2);//vip1增加积分明细
                                            $this->getTranMoney()->insertAll($vip);//vip记录单独添加
                                           $i++;
 
@@ -596,13 +597,13 @@ private function get_banner()
                                        //$res_Add = M('store')->where(array('userid' => $v))->setInc('releas_rate', $u_get_money);
                                       if($userJifenNum>$u_get_money) {
                                           $this->getStore()->IncJiFen($u_get_money,['uid' => $v]);//增加对应积分
-                                          $vip[1]=$this->getTranMoney()->createArr($v,$zhuand_reward,38,2);//vip2增加积分明细
+                                          $vip[$i]=$this->getTranMoney()->createArr($v,$zhuand_reward,38,2);//vip2增加积分明细
                                           $this->getTranMoney()->insertAll($vip);//vip记录单独添加
                                           $i++;
                                       }
 
                                   }
-                              $this->getTranMoney()->insertAll($tranInfo);//批量添加
+
                         }
                     }
 
