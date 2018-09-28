@@ -15,6 +15,12 @@ class StoreModel extends ModelModel
     public function decJiFen($num,$where){
         return $this->where($where)->setDec('fengmi_num',$num);
     }
+    /*
+     * 增加积分
+     * */
+    public function IncJiFen($num,$where){
+        return $this->where($where)->setInc('fengmi_num',$num);
+    }
 
     public function CangkuNum($where){
         if(empty($where)){

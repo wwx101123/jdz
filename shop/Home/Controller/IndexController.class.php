@@ -584,22 +584,18 @@ private function get_banner()
 
                                           $u_get_money = $vips[0]['value'] / 100 * $paynums;
                                           //$res_Add = M('store')->where(array('uid' => $v))->setInc('fengmi_num', $u_get_money);
-                                      if($userJifenNum>$u_get_money) {
-                                          $this->getStore()->decJiFen($u_get_money,['uid' => $v]);//减少对应积分
-                                          $this->getStore()->IncNum($u_get_money, ['uid' => $v]);//增加用户余额
-                                          $tranInfo[1] = $this->getTranMoney()->createArr($v, $u_get_money, 30);//vip1奖励
-                                          $tranInfo[5]=$this->getTranMoney()->createArr($v,$zhuand_reward,37,2,"-");//vip1积分释放明细
+
+                                          $this->getStore()->IncJiFen($u_get_money,['uid' => $v]);//增加对应积分
+                                          $tranInfo[1] = $this->getTranMoney()->createArr($v, $u_get_money, 37,2);//vip1增加积分明细
                                           $i++;
-                                      }
+
 
                                   }elseif($v_Grade==2 && $i!=0 &&$n==0){//VIP2奖
                                        $u_get_money = $vips[1]['value'] / 100 * $paynums;
                                        //$res_Add = M('store')->where(array('userid' => $v))->setInc('releas_rate', $u_get_money);
                                       if($userJifenNum>$u_get_money) {
-                                          $this->getStore()->decJiFen($u_get_money,['uid' => $v]);//减少对应积分
-                                          $this->getStore()->IncNum($u_get_money, ['uid' => $v]);//增加用户余额
-                                          $tranInfo[1] = $this->getTranMoney()->createArr($v, $u_get_money, 31);//vip2奖励
-                                          $tranInfo[5]=$this->getTranMoney()->createArr($v,$zhuand_reward,38,2,"-");//vip2积分释放明细
+                                          $this->getStore()->IncJiFen($u_get_money,['uid' => $v]);//增加对应积分
+                                          $tranInfo[5]=$this->getTranMoney()->createArr($v,$zhuand_reward,38,2);//vip2增加积分明细
                                           $i++;
                                       }
 
