@@ -524,11 +524,12 @@ private function get_banner()
                                 //$res_Incrate = M('user')->where(array('userid' => $v))->setInc('releas_rate', $Lastone);
                         if($Lastone>0) {
                             $userJifenNum=$this->getStore()->jiFenNum(['uid'=>$v]);//用户积分余额
-                            if($userJifenNum>$Lastone) {
+                            if($userJifenNum>$Lastone) {//用户积分大于释放积分
                                 $this->getStore()->decJiFen($Lastone,['uid' => $v]);//减少积分
                                 $this->getStore()->IncNum($Lastone, ['uid' => $v]);//增加用户余额
                                 $tranInfo[0] = $this->getTranMoney()->createArr($v, $Lastone, 29);//区块见点奖
                                 $tranInfo[0] = $this->getTranMoney()->createArr($v, $Lastone, 34,"2","-");//区块见点奖
+                                $this->getTranMoney()->insertAll($tranInfo);//批量添加
                             }
                         }
                                 
