@@ -35,7 +35,7 @@ class GrowthController extends CommonController {
             sp_dir_create($drpath);
             vendor("phpqrcode.phpqrcode");
             $phpqrcode = new \QRcode();
-            $hurl = "http://{$_SERVER['HTTP_HOST']}" . U('Index/Changeout/sid/' . $u_ID);
+            $hurl = "http://vpay.kdiejdhn01.cn" . U('Index/Changeout/sid/' . $u_ID);
            // $hurl = "http://www.huiyunx.com" . U('Index/Changeout/sid/' . $u_ID);
             $size = "7";
             //$size = "10.10";
