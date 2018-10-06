@@ -106,11 +106,24 @@ class GrowthController extends CommonController {
             $res1 = M('trans')->where(array('id'=>$id))->save($payout); 
 
 
-    }elseif($type==1){//为购买单，删除订单
+    }elseif($type==1){//为购买单(买家发布)，退回卖家余额跟保证金并删除订单
+        $sellnums = $mydeal["pay_nums"] + 100;
 
-        $res1 = M('trans')->delete($id); 
+          M('store')->where(array('uid'=>$mydeal['payout_id']))->setInc('cangku_num',$sellnums);
 
+        //增加自己的余额记录
 
+        $pay_n = M('store')->where(array('uid' => $mydeal['payout_id']))->getfield('cangku_num');
+        $jifen_dochange['now_nums'] = $pay_n;
+        $jifen_dochange['now_nums_get'] = $pay_n;
+        $jifen_dochange['is_release'] = 1;
+        $jifen_dochange['pay_id'] = 0;
+        $jifen_dochange['get_id'] = $mydeal['payout_id'];
+        $jifen_dochange['get_nums'] = $sellnums;
+        $jifen_dochange['get_time'] = time();
+        $jifen_dochange['get_type'] = 10;
+        M('tranmoney')->add($jifen_dochange);
+        $res1 = M('trans')->delete($id);
     }
 
         if($res1){       
