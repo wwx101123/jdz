@@ -14,11 +14,11 @@ class QuestionController  extends CommonController{
         return M("Answer");
     }
 
-    private function getStore(){
+    public function getStore(){
         return M("Store");
     }
 
-    private function getTranMoney(){
+    public function getTranMoney(){
         return M('tranmoney');
     }
     private function getUserStore(){
